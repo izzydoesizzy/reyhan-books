@@ -53,11 +53,11 @@
     card.innerHTML =
       '<div class="card-inner">' +
         '<div class="card-front">' +
-          '<img data-src="' + book.coverFile + '" alt="Cover of ' + book.title.replace(/"/g, "&quot;") + '" width="180" height="270">' +
           '<div class="cover-fallback" style="background:linear-gradient(160deg,' + color + ' 0%, #14161c 130%)">' +
             '<span class="fb-series">' + seriesLabel + "</span>" +
             '<span class="fb-title">' + book.title + "</span>" +
           "</div>" +
+          '<img data-src="' + book.coverFile + '" alt="Cover of ' + book.title.replace(/"/g, "&quot;") + '" width="180" height="270">' +
         "</div>" +
         '<div class="card-back">' +
           '<div class="bk-title">' + book.title + "</div>" +
@@ -75,16 +75,19 @@
         "</div>" +
       "</div>";
 
-    /* cover load error -> try Open Library by ISBN -> spine fallback */
+    /* cover loads -> fade it in over the placeholder;
+       error -> retry via Open Library by ISBN; final failure just leaves
+       the placeholder visible (the img stays transparent) */
     const img = card.querySelector("img");
+    img.addEventListener("load", function () {
+      img.classList.add("loaded");
+    });
     img.addEventListener("error", function () {
       if (book.coverIsbn && !img.dataset.triedRemote) {
         img.dataset.triedRemote = "1";
         img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn +
           "-L.jpg?default=false";
-        return;
       }
-      img.closest(".card-front").classList.add("cover-error");
     });
 
     /* flip interaction */
@@ -183,17 +186,32 @@
 
   document.getElementById("book-count").textContent = BOOKS.length;
 
-  /* ---- Lazy-load covers ---- */
+  /* ---- Cover loading ----
+     Near-viewport covers load first (IntersectionObserver with a generous
+     margin); once the page has settled, the rest prefetch quietly in the
+     background so scrolling never hits a cold image. */
+  function startLoad(img) {
+    if (!img.dataset.src) return;
+    img.src = img.dataset.src;
+    img.removeAttribute("data-src");
+    io.unobserve(img);
+  }
+
   const io = new IntersectionObserver(function (entries) {
     for (const entry of entries) {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute("data-src");
-        io.unobserve(img);
-      }
+      if (entry.isIntersecting) startLoad(entry.target);
     }
-  }, { rootMargin: "200px" });
+  }, { rootMargin: "800px" });
 
   document.querySelectorAll("img[data-src]").forEach((img) => io.observe(img));
+
+  window.addEventListener("load", function () {
+    setTimeout(function prefetchRest() {
+      const pending = document.querySelectorAll("img[data-src]");
+      if (!pending.length) return;
+      /* load in small batches to keep the network friendly */
+      for (let i = 0; i < 6 && i < pending.length; i++) startLoad(pending[i]);
+      setTimeout(prefetchRest, 300);
+    }, 800);
+  });
 })();
