@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 48**
+**Total Books Read: 50**
 
 A running log of every book Reyhan and I have read together.
 
@@ -9,6 +9,18 @@ A running log of every book Reyhan and I have read together.
 ---
 
 ## By Series
+
+### Frozen — standalone
+
+| Title | Author | Date Read |
+|-------|--------|-----------|
+| Frozen: The Junior Novelization | Sarah Nathan | February 2026 |
+
+### Anna & Elsa (Disney Frozen chapter books) — by Erica David (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 3 | A Warm Welcome | Erica David | February 2026 |
 
 ### Dragon Masters — by Tracey West (complete: 31/31)
 
@@ -89,6 +101,8 @@ A running log of every book Reyhan and I have read together.
 
 | Date | Title | Series | Author |
 |------|-------|--------|--------|
+| February 2026 | Frozen: The Junior Novelization | Frozen | Sarah Nathan |
+| February 2026 | A Warm Welcome | Anna & Elsa #3 | Erica David |
 | Spring 2026 | Rise of the Earth Dragon | Dragon Masters #1 | Tracey West |
 | Spring 2026 | Saving the Sun Dragon | Dragon Masters #2 | Tracey West |
 | Spring 2026 | Secret of the Water Dragon | Dragon Masters #3 | Tracey West |
