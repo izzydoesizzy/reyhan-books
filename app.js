@@ -37,6 +37,20 @@
       ' tabindex="-1">' + label + "</a>";
   }
 
+  /* Last-resort cover source: Google Books has broader, more current ISBN
+     coverage than Open Library, especially for newer/small-press titles. */
+  function tryGoogleBooksCover(img, isbn) {
+    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn)
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (data) {
+        const item = data && data.items && data.items[0];
+        const links = item && item.volumeInfo && item.volumeInfo.imageLinks;
+        const url = links && (links.thumbnail || links.smallThumbnail);
+        if (url) img.src = url.replace(/^http:/, "https:");
+      })
+      .catch(function () {});
+  }
+
   function buildCard(book) {
     const card = document.createElement("article");
     card.className = "card";
@@ -77,17 +91,20 @@
       "</div>";
 
     /* cover loads -> fade it in over the placeholder;
-       error -> retry via Open Library by ISBN; final failure just leaves
-       the placeholder visible (the img stays transparent) */
+       error -> retry via Open Library, then Google Books, by ISBN; final
+       failure just leaves the placeholder visible (the img stays transparent) */
     const img = card.querySelector("img");
     img.addEventListener("load", function () {
       img.classList.add("loaded");
     });
     img.addEventListener("error", function () {
-      if (book.coverIsbn && !img.dataset.triedRemote) {
-        img.dataset.triedRemote = "1";
+      if (book.coverIsbn && !img.dataset.triedOpenLibrary) {
+        img.dataset.triedOpenLibrary = "1";
         img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn +
           "-L.jpg?default=false";
+      } else if (book.coverIsbn && !img.dataset.triedGoogleBooks) {
+        img.dataset.triedGoogleBooks = "1";
+        tryGoogleBooksCover(img, book.coverIsbn);
       }
     });
 
@@ -275,9 +292,12 @@
     const img = modalBody.querySelector(".modal-cover img");
     img.addEventListener("load", function () { img.classList.add("loaded"); });
     img.addEventListener("error", function () {
-      if (book.coverIsbn && !img.dataset.triedRemote) {
-        img.dataset.triedRemote = "1";
+      if (book.coverIsbn && !img.dataset.triedOpenLibrary) {
+        img.dataset.triedOpenLibrary = "1";
         img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn + "-L.jpg?default=false";
+      } else if (book.coverIsbn && !img.dataset.triedGoogleBooks) {
+        img.dataset.triedGoogleBooks = "1";
+        tryGoogleBooksCover(img, book.coverIsbn);
       }
     });
     img.src = book.coverFile;
