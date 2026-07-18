@@ -238,12 +238,16 @@ main { padding-bottom: 40px; }
 
 /* Stars: CSS overlay trick */
 .stars {
-  position: relative;
   display: inline-block;
   font-size: 0.85rem;
   line-height: 1;
   margin-top: 5px;
   color: #4a4f5c;
+}
+
+.stars .stars-track {
+  position: relative;
+  display: inline-block;
   letter-spacing: 2px;
 }
 
