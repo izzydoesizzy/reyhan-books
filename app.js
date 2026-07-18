@@ -68,6 +68,7 @@
           "</div>" +
           starMarkup(book.goodreadsRating) +
           '<div class="bk-synopsis">' + (book.synopsis || "") + "</div>" +
+          '<button class="bk-more" type="button" tabindex="-1">More details</button>' +
           '<div class="bk-links">' +
             linkMarkup(book.amazonUsUrl, book.amazonUsExact, "Amazon.com") +
             linkMarkup(book.amazonCaUrl, book.amazonCaExact, "Amazon.ca") +
@@ -94,13 +95,18 @@
     function setFlipped(on) {
       card.classList.toggle("flipped", on);
       card.setAttribute("aria-pressed", String(on));
-      card.querySelectorAll(".bk-links a").forEach((a) => {
+      card.querySelectorAll(".bk-links a, .bk-more").forEach((a) => {
         a.setAttribute("tabindex", on ? "0" : "-1");
       });
     }
 
+    card.querySelector(".bk-more").addEventListener("click", function (e) {
+      e.stopPropagation();
+      openModal(book, card);
+    });
+
     card.addEventListener("click", function (e) {
-      if (e.target.closest("a")) return; /* let buy links work */
+      if (e.target.closest("a, .bk-more")) return; /* let buy links + More work */
       const flipping = !card.classList.contains("flipped");
       /* close other flipped cards in the same row */
       card.closest(".row-scroll").querySelectorAll(".card.flipped").forEach((c) => {
@@ -115,7 +121,7 @@
 
     card.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
-        if (e.target.closest("a")) return;
+        if (e.target.closest("a, .bk-more")) return;
         e.preventDefault();
         card.click();
       } else if (e.key === "Escape" && card.classList.contains("flipped")) {
@@ -176,6 +182,137 @@
     section.appendChild(wrap);
     return section;
   }
+
+  /* ---- Detail modal ---- */
+  const META = typeof SERIES_META !== "undefined" ? SERIES_META : {};
+  let lastFocused = null;
+
+  const backdrop = document.createElement("div");
+  backdrop.className = "modal-backdrop";
+  backdrop.innerHTML =
+    '<div class="modal" role="dialog" aria-modal="true" aria-label="Book details">' +
+      '<button class="modal-close" type="button" aria-label="Close details">&times;</button>' +
+      '<div class="modal-body"></div>' +
+    "</div>";
+  document.body.appendChild(backdrop);
+  const modalBody = backdrop.querySelector(".modal-body");
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  }
+
+  function factRow(label, value) {
+    if (!value) return "";
+    return '<div class="fact"><span class="fact-label">' + label +
+      '</span><span class="fact-value">' + esc(value) + "</span></div>";
+  }
+
+  function suggestionCard(s) {
+    const links = [];
+    if (s.amazonUsUrl) links.push('<a href="' + esc(s.amazonUsUrl) + '" target="_blank" rel="noopener">Amazon.com</a>');
+    if (s.amazonCaUrl) links.push('<a href="' + esc(s.amazonCaUrl) + '" target="_blank" rel="noopener">Amazon.ca</a>');
+    return (
+      '<div class="suggestion">' +
+        '<div class="sg-title">' + esc(s.title) + "</div>" +
+        '<div class="sg-author">by ' + esc(s.author) + "</div>" +
+        '<div class="sg-blurb">' + esc(s.blurb || "") + "</div>" +
+        (links.length ? '<div class="sg-links">' + links.join(" · ") + "</div>" : "") +
+      "</div>"
+    );
+  }
+
+  function openModal(book, sourceCard) {
+    lastFocused = sourceCard || document.activeElement;
+    const meta = META[book.series] || {};
+    const seriesLabel = book.seriesNumber != null
+      ? book.series + " #" + book.seriesNumber
+      : book.series;
+    const color = SERIES_COLORS[book.series] || "#556";
+
+    const chips = (meta.tags || []).map(function (t) {
+      return '<span class="chip">' + esc(t) + "</span>";
+    }).join("");
+
+    const ratingBlock = book.goodreadsRating == null ? "" :
+      (book.goodreadsUrl
+        ? '<a class="gr-link" href="' + esc(book.goodreadsUrl) + '" target="_blank" rel="noopener">' +
+            starMarkup(book.goodreadsRating) + '<span class="gr-cta">See reviews on Goodreads &rarr;</span></a>'
+        : starMarkup(book.goodreadsRating));
+
+    const suggestions = (meta.suggestions || []).map(suggestionCard).join("");
+
+    modalBody.innerHTML =
+      '<div class="modal-grid">' +
+        '<div class="modal-cover" style="background:linear-gradient(160deg,' + color + ' 0%, #14161c 130%)">' +
+          '<img alt="Cover of ' + esc(book.title) + '">' +
+        "</div>" +
+        '<div class="modal-info">' +
+          '<h2 class="md-title">' + esc(book.title) + "</h2>" +
+          '<p class="md-sub"><span class="bk-series">' + esc(seriesLabel) + "</span> &middot; by " +
+            esc(book.author) + (meta.illustrator ? " &middot; illustrated by " + esc(meta.illustrator) : "") + "</p>" +
+          (chips ? '<div class="chips">' + chips + "</div>" : "") +
+          '<div class="facts">' +
+            factRow("Read", book.displayDateRead) +
+            factRow("Level", meta.ageRange) +
+            factRow("Grades", meta.gradeLevel && meta.gradeLevel.replace(/^Grades?\s*/i, "")) +
+            factRow("Lexile", meta.lexile) +
+            factRow("Pages", book.pages) +
+          "</div>" +
+          ratingBlock +
+          '<div class="md-synopsis">' + esc(book.synopsis || "") + "</div>" +
+          '<div class="bk-links md-links">' +
+            linkMarkup(book.amazonUsUrl, book.amazonUsExact, "Amazon.com").replace(' tabindex="-1"', "") +
+            linkMarkup(book.amazonCaUrl, book.amazonCaExact, "Amazon.ca").replace(' tabindex="-1"', "") +
+          "</div>" +
+        "</div>" +
+      "</div>" +
+      (suggestions
+        ? '<div class="suggestions"><h3>You might like next</h3><div class="suggestion-list">' +
+            suggestions + "</div></div>"
+        : "");
+
+    /* modal cover: same load chain as cards */
+    const img = modalBody.querySelector(".modal-cover img");
+    img.addEventListener("load", function () { img.classList.add("loaded"); });
+    img.addEventListener("error", function () {
+      if (book.coverIsbn && !img.dataset.triedRemote) {
+        img.dataset.triedRemote = "1";
+        img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn + "-L.jpg?default=false";
+      }
+    });
+    img.src = book.coverFile;
+
+    backdrop.classList.add("open");
+    document.body.style.overflow = "hidden";
+    backdrop.querySelector(".modal-close").focus();
+  }
+
+  function closeModal() {
+    backdrop.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+
+  backdrop.addEventListener("click", function (e) {
+    if (e.target === backdrop) closeModal();
+  });
+  backdrop.querySelector(".modal-close").addEventListener("click", closeModal);
+  document.addEventListener("keydown", function (e) {
+    if (!backdrop.classList.contains("open")) return;
+    if (e.key === "Escape") {
+      e.stopPropagation();
+      closeModal();
+    } else if (e.key === "Tab") {
+      /* simple focus trap */
+      const focusables = backdrop.querySelectorAll("button, a[href]");
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+  }, true);
 
   /* ---- Render ---- */
   const rowsEl = document.getElementById("rows");
