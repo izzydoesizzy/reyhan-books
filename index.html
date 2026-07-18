@@ -5,24 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reyhan's Reading List</title>
   <meta name="description" content="Every book Reyhan has read this year — browse the covers, flip a card for the story.">
+  <meta name="theme-color" content="#0e1015">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://covers.openlibrary.org" crossorigin>
   <link rel="preconnect" href="https://openlibrary.org" crossorigin>
   <link rel="preconnect" href="https://www.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>📚 Reyhan's Reading List</h1>
-    <p class="tagline"><span id="book-count"></span> books and counting</p>
-    <p class="hint">Tap a book to flip it over</p>
-  </header>
+  <a class="skip-link" href="#rows">Skip to books</a>
 
-  <main id="rows"></main>
+  <header class="topbar">
+    <a class="brand" href="#browse">📚&nbsp;<span>Reyhan's Reading List</span></a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#browse">Browse</a>
+      <a href="#stats">Stats</a>
+    </nav>
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Search books…" aria-label="Search books" autocomplete="off">
+    </div>
+  </header>
+  <div id="top-sentinel" aria-hidden="true"></div>
+
+  <section class="hero" id="browse" aria-label="Featured book"></section>
+
+  <div class="controls" id="controls">
+    <div class="segmented" role="group" aria-label="View">
+      <button type="button" id="view-rows" aria-pressed="true">By series</button>
+      <button type="button" id="view-grid" aria-pressed="false">All books</button>
+    </div>
+    <label class="sort-wrap" for="sort">Sort
+      <select id="sort">
+        <option value="series">Series order</option>
+        <option value="recent">Recently read</option>
+        <option value="title">Title A–Z</option>
+        <option value="rating">Top rated</option>
+        <option value="pages">Longest</option>
+      </select>
+    </label>
+    <div class="chip-strip" id="chips" role="group" aria-label="Filter by series or tag"></div>
+  </div>
+
+  <main id="content">
+    <p class="hint">Tap a book to flip it over</p>
+    <section id="search-results" aria-label="Search results" hidden></section>
+    <div id="rows"></div>
+    <div id="all-grid" class="poster-grid" hidden></div>
+    <noscript>
+      <p class="noscript-note">This site needs JavaScript to browse the bookshelf.
+        The full reading log also lives in the
+        <a href="https://github.com/izzydoesizzy/reyhan-books#readme">README</a>.</p>
+    </noscript>
+  </main>
+
+  <section class="stats" id="stats" aria-label="Reading stats"></section>
 
   <footer class="site-footer">
     <p>Made with ❤️ — a reading adventure, one book at a time.</p>
+    <p id="footer-stats"></p>
+    <p><a class="footer-link" href="https://github.com/izzydoesizzy/reyhan-books" target="_blank" rel="noopener">View on GitHub</a></p>
   </footer>
+
+  <div class="sr-only" aria-live="polite" id="live-region"></div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

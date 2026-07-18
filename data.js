@@ -3,11 +3,17 @@
    ------------------------------------------------------------
    HOW TO ADD A BOOK:
    1. Append one object to the BOOKS array below (copy an
-      existing one as a template). Keep the id a lowercase slug;
-      it must match the cover filename: covers/<id>.jpg
-   2. Drop the cover image into covers/<id>.jpg
-   3. If it's a brand-new series, add its name to SERIES_ORDER.
-   The header book count updates automatically (BOOKS.length).
+      existing one as a template). Keep the id a lowercase slug.
+      Covers load automatically from Open Library / Google Books
+      via coverIsbn — the coverFile field is legacy and unused.
+   2. If it's a brand-new series, add its name to SERIES_ORDER,
+      give it a color in SERIES_COLORS, and add its details to
+      SERIES_META (tags power the filter chips and search).
+   3. WISHLIST: to show a book in the "Up Next" row before it's
+      read, add `status: "upNext"` to its object (dateRead,
+      rating, and pages may be omitted). Once finished, delete
+      the status field and fill in dateRead + displayDateRead.
+   The book counts and stats update automatically.
    Also update the reading log tables in /README.md.
    ============================================================ */
 
