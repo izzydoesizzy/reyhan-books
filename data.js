@@ -5,7 +5,7 @@
    1. Append one object to the BOOKS array below (copy an
       existing one as a template). Keep the id a lowercase slug;
       it must match the cover filename: covers/<id>.jpg
-   2. Drop the cover image into docs/covers/<id>.jpg
+   2. Drop the cover image into covers/<id>.jpg
    3. If it's a brand-new series, add its name to SERIES_ORDER.
    The header book count updates automatically (BOOKS.length).
    Also update the reading log tables in /README.md.

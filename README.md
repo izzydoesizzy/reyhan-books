@@ -6,7 +6,7 @@ A running log of every book Reyhan and I have read together.
 
 **How this works:** every time a new book gets added, it's logged below with the date we read it, and the total count at the top gets bumped. Series are grouped together under **By Series**, and everything also appears in date order under **Chronological Log**.
 
-**🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. It lives in [`docs/`](docs/); when a book is added here, `docs/data.js` gets the same update.
+**🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. The site files live at the repo root (`index.html`, `data.js`, …); when a book is added here, `data.js` gets the same update.
 
 ---
 
