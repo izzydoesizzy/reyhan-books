@@ -21,8 +21,9 @@
     const pct = Math.max(0, Math.min(5, rating)) / 5 * 100;
     return (
       '<span class="stars" aria-label="Rated ' + rating.toFixed(1) + ' out of 5">' +
-      "☆☆☆☆☆" +
+      '<span class="stars-track">☆☆☆☆☆' +
       '<span class="stars-fill" style="width:' + pct + '%">★★★★★</span>' +
+      "</span>" +
       '<span class="stars-num">' + rating.toFixed(1) + "</span>" +
       "</span>"
     );
