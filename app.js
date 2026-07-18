@@ -37,18 +37,71 @@
       ' tabindex="-1">' + label + "</a>";
   }
 
-  /* Last-resort cover source: Google Books has broader, more current ISBN
-     coverage than Open Library, especially for newer/small-press titles. */
-  function tryGoogleBooksCover(img, isbn) {
-    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn)
-      .then(function (res) { return res.ok ? res.json() : null; })
-      .then(function (data) {
-        const item = data && data.items && data.items[0];
-        const links = item && item.volumeInfo && item.volumeInfo.imageLinks;
-        const url = links && (links.thumbnail || links.smallThumbnail);
-        if (url) img.src = url.replace(/^http:/, "https:");
-      })
-      .catch(function () {});
+  /* ---- Cover fallback chain ----
+     The local cover always 404s (no covers/ directory is committed), so
+     every cover is sourced remotely by trying progressively broader public
+     lookups until one returns art, in order:
+       1. Open Library, by this exact ISBN            (fastest, most precise)
+       2. Open Library, by title+author search         (catches editions whose
+          specific ISBN was never scanned, but some edition of the work was)
+       3. Google Books, by this exact ISBN             (broadest catalog,
+          best odds for newer/small-press titles Open Library hasn't caught up on)
+     If every step comes up empty the colored placeholder card stays put. */
+  function coverFallbackSteps(book) {
+    const steps = [];
+    if (book.coverIsbn) {
+      steps.push(function (img) {
+        img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn +
+          "-L.jpg?default=false";
+      });
+    }
+    steps.push(function (img, done) {
+      const q = encodeURIComponent(book.title + " " + book.author);
+      fetch("https://openlibrary.org/search.json?q=" + q + "&fields=cover_i&limit=1")
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          const doc = data && data.docs && data.docs[0];
+          if (doc && doc.cover_i) {
+            img.src = "https://covers.openlibrary.org/b/id/" + doc.cover_i + "-L.jpg";
+          } else {
+            done();
+          }
+        })
+        .catch(done);
+    });
+    if (book.coverIsbn) {
+      steps.push(function (img, done) {
+        fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:" + book.coverIsbn)
+          .then(function (res) { return res.ok ? res.json() : null; })
+          .then(function (data) {
+            const item = data && data.items && data.items[0];
+            const links = item && item.volumeInfo && item.volumeInfo.imageLinks;
+            const url = links && (links.thumbnail || links.smallThumbnail);
+            if (url) {
+              img.src = url.replace(/^http:/, "https:");
+            } else {
+              done();
+            }
+          })
+          .catch(done);
+      });
+    }
+    return steps;
+  }
+
+  /* Wires an <img> to fade in on load (over the color placeholder) and to
+     walk the fallback chain above on each failure; a step either sets
+     img.src itself (its own load/error result drives the next step) or
+     calls `done` right away when it found nothing to try. */
+  function wireCoverFallback(img, book) {
+    const steps = coverFallbackSteps(book);
+    let i = 0;
+    function advance() {
+      if (i >= steps.length) return;
+      steps[i++](img, advance);
+    }
+    img.addEventListener("load", function () { img.classList.add("loaded"); });
+    img.addEventListener("error", advance);
   }
 
   function buildCard(book) {
@@ -90,23 +143,11 @@
         "</div>" +
       "</div>";
 
-    /* cover loads -> fade it in over the placeholder;
-       error -> retry via Open Library, then Google Books, by ISBN; final
-       failure just leaves the placeholder visible (the img stays transparent) */
+    /* cover loads -> fade it in over the placeholder; error -> walk the
+       fallback chain; final failure just leaves the placeholder visible
+       (the img stays transparent) */
     const img = card.querySelector("img");
-    img.addEventListener("load", function () {
-      img.classList.add("loaded");
-    });
-    img.addEventListener("error", function () {
-      if (book.coverIsbn && !img.dataset.triedOpenLibrary) {
-        img.dataset.triedOpenLibrary = "1";
-        img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn +
-          "-L.jpg?default=false";
-      } else if (book.coverIsbn && !img.dataset.triedGoogleBooks) {
-        img.dataset.triedGoogleBooks = "1";
-        tryGoogleBooksCover(img, book.coverIsbn);
-      }
-    });
+    wireCoverFallback(img, book);
 
     /* flip interaction */
     function setFlipped(on) {
@@ -288,18 +329,9 @@
             suggestions + "</div></div>"
         : "");
 
-    /* modal cover: same load chain as cards */
+    /* modal cover: same load/fallback chain as cards */
     const img = modalBody.querySelector(".modal-cover img");
-    img.addEventListener("load", function () { img.classList.add("loaded"); });
-    img.addEventListener("error", function () {
-      if (book.coverIsbn && !img.dataset.triedOpenLibrary) {
-        img.dataset.triedOpenLibrary = "1";
-        img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn + "-L.jpg?default=false";
-      } else if (book.coverIsbn && !img.dataset.triedGoogleBooks) {
-        img.dataset.triedGoogleBooks = "1";
-        tryGoogleBooksCover(img, book.coverIsbn);
-      }
-    });
+    wireCoverFallback(img, book);
     img.src = book.coverFile;
 
     backdrop.classList.add("open");
