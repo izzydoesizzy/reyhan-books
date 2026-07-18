@@ -6,6 +6,8 @@ A running log of every book Reyhan and I have read together.
 
 **How this works:** every time a new book gets added, it's logged below with the date we read it, and the total count at the top gets bumped. Series are grouped together under **By Series**, and everything also appears in date order under **Chronological Log**.
 
+**🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. It lives in [`docs/`](docs/); when a book is added here, `docs/data.js` gets the same update.
+
 ---
 
 ## By Series
@@ -81,7 +83,7 @@ A running log of every book Reyhan and I have read together.
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
 | 1 | Sprite's Secret | Tracey West | July 18, 2026 |
-| 3 | Aquamarina's Folly | Tracey West | July 18, 2026 |
+| 3 | The Pet Store Sprite | Tracey West | July 18, 2026 |
 
 ### Coral Keepers — by Robin Yardi (1 read so far)
 
@@ -165,7 +167,7 @@ A running log of every book Reyhan and I have read together.
 | July 17, 2026 | My Kingdom of Darkness | Pets Rule! #1 | Susan Tan |
 | July 18, 2026 | Defending the Swamp Dragon | Dragon Masters #31 | Tracey West |
 | July 18, 2026 | Sprite's Secret | Pixie Tricks #1 | Tracey West |
-| July 18, 2026 | Aquamarina's Folly | Pixie Tricks #3 | Tracey West |
+| July 18, 2026 | The Pet Store Sprite | Pixie Tricks #3 | Tracey West |
 | July 18, 2026 | Search for the Silver Shell | Coral Keepers #1 | Robin Yardi |
 
 ---

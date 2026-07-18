@@ -74,9 +74,15 @@
         "</div>" +
       "</div>";
 
-    /* cover load error -> spine fallback */
+    /* cover load error -> try Open Library by ISBN -> spine fallback */
     const img = card.querySelector("img");
     img.addEventListener("error", function () {
+      if (book.coverIsbn && !img.dataset.triedRemote) {
+        img.dataset.triedRemote = "1";
+        img.src = "https://covers.openlibrary.org/b/isbn/" + book.coverIsbn +
+          "-L.jpg?default=false";
+        return;
+      }
       img.closest(".card-front").classList.add("cover-error");
     });
 
