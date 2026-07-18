@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 50**
+**Total Books Read: 53**
 
 A running log of every book Reyhan and I have read together.
 
@@ -75,6 +75,19 @@ A running log of every book Reyhan and I have read together.
 | 2 | Race to the Magic Mountain | Bernard Mensah | Spring 2026 |
 | 3 | Bite of the Kaba Lagoon | Bernard Mensah | Spring 2026 |
 | 4 | Curse of the Akoma Stone | Bernard Mensah | Spring 2026 |
+
+### Pixie Tricks — by Tracey West (2 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 1 | Sprite's Secret | Tracey West | July 18, 2026 |
+| 3 | Aquamarina's Folly | Tracey West | July 18, 2026 |
+
+### Coral Keepers — by Robin Yardi (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 1 | Search for the Silver Shell | Robin Yardi | July 18, 2026 |
 
 ### Pets Rule! — by Susan Tan (1 read so far)
 
@@ -151,6 +164,9 @@ A running log of every book Reyhan and I have read together.
 | Spring 2026 | The Silver Swamp | The Last Firehawk #8 | Katrina Charman |
 | July 17, 2026 | My Kingdom of Darkness | Pets Rule! #1 | Susan Tan |
 | July 18, 2026 | Defending the Swamp Dragon | Dragon Masters #31 | Tracey West |
+| July 18, 2026 | Sprite's Secret | Pixie Tricks #1 | Tracey West |
+| July 18, 2026 | Aquamarina's Folly | Pixie Tricks #3 | Tracey West |
+| July 18, 2026 | Search for the Silver Shell | Coral Keepers #1 | Robin Yardi |
 
 ---
 
