@@ -36,6 +36,324 @@ const SERIES_COLORS = {
   "Coral Keepers": "#00b8a9",
 };
 
+/* Series-level metadata: illustrator, reading level, tags, and
+   "you might like next" suggestions shown in the detail modal. */
+const SERIES_META = {
+  "Frozen": {
+    "illustrator": "RH Disney (Disney Storybook Art Team film art)",
+    "ageRange": "Ages 8–12",
+    "gradeLevel": "Grades 3–7",
+    "lexile": null,
+    "tags": [
+      "Fairy Tale",
+      "Sisters",
+      "Movie Tie-In",
+      "Fantasy"
+    ],
+    "suggestions": [
+      {
+        "title": "Unicorn Academy",
+        "author": "Julie Sykes",
+        "blurb": "If you loved Elsa's icy magic and big-hearted friendships, this sparkly school for unicorn riders delivers the same magic-and-loyalty combo.",
+        "amazonUsUrl": "https://www.amazon.com/Unicorn-Academy-1-Sophia-Rainbow/dp/1984850822",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1984850822"
+      },
+      {
+        "title": "Heidi Heckelbeck",
+        "author": "Wanda Coven",
+        "blurb": "A regular-seeming girl hiding magical powers, just like Elsa, in short cozy chapters perfect after a Disney novelization.",
+        "amazonUsUrl": "https://www.amazon.com/Heidi-Heckelbeck-Secret-Wanda-Coven/dp/1442435658",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442435658"
+      },
+      {
+        "title": "Isadora Moon",
+        "author": "Harriet Muncaster",
+        "blurb": "A half-fairy, half-vampire heroine learning to embrace being different — the same be-yourself heart that makes Frozen special.",
+        "amazonUsUrl": "https://www.amazon.com/Isadora-Moon-School-Harriet-Muncaster/dp/0399558217",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0399558217"
+      }
+    ]
+  },
+  "Anna & Elsa": {
+    "illustrator": "Bill Robinson",
+    "ageRange": "Ages 6–9",
+    "gradeLevel": "Grades 1–4",
+    "lexile": "560L",
+    "tags": [
+      "Fantasy",
+      "Sisters",
+      "Movie Tie-In",
+      "Adventure"
+    ],
+    "suggestions": [
+      {
+        "title": "Unicorn Academy",
+        "author": "Julie Sykes",
+        "blurb": "More magical kingdom adventures with brave girls and loyal companions, at the same easy chapter-book level as Anna & Elsa.",
+        "amazonUsUrl": "https://www.amazon.com/Unicorn-Academy-1-Sophia-Rainbow/dp/1984850822",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1984850822"
+      },
+      {
+        "title": "Owl Diaries",
+        "author": "Rebecca Elliott",
+        "blurb": "If you like Anna and Elsa solving problems together, Eva the owl's friendship-first adventures have the same warm, kind spirit.",
+        "amazonUsUrl": "https://www.amazon.com/Evas-Treetop-Festival-Branches-Diaries/dp/0545683629",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545683629"
+      },
+      {
+        "title": "Mermaid Tales",
+        "author": "Debbie Dadey",
+        "blurb": "Another enchanted kingdom — this one underwater — where friends use a little magic and a lot of heart to save the day.",
+        "amazonUsUrl": "https://www.amazon.com/Trouble-Trident-Academy-Mermaid-Tales/dp/1442429801",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442429801"
+      }
+    ]
+  },
+  "Dragon Masters": {
+    "illustrator": "Graham Howells & Matt Loveridge",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "510L",
+    "tags": [
+      "Fantasy",
+      "Dragons",
+      "Adventure"
+    ],
+    "suggestions": [
+      {
+        "title": "Dragon Girls",
+        "author": "Maddy Mara",
+        "blurb": "If training dragons with Drake is your thing, imagine BEING the dragon — glitter-breathing girls protect a magic forest.",
+        "amazonUsUrl": "https://www.amazon.com/Azmina-Gold-Glitter-Dragon-Girls/dp/1338680633",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338680633"
+      },
+      {
+        "title": "Press Start!",
+        "author": "Thomas Flintham",
+        "blurb": "Same fast-paced Branches action as Dragon Masters, but with a video-game hero battling a robot army level by level.",
+        "amazonUsUrl": "https://www.amazon.com/Super-Rabbit-Branches-Press-Start/dp/1338034715",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338034715"
+      },
+      {
+        "title": "The Notebook of Doom",
+        "author": "Troy Cummings",
+        "blurb": "A monster-battling Branches series with the same page-turning missions and creature-guide fun as the Dragon Masters world.",
+        "amazonUsUrl": "https://www.amazon.com/Rise-Balloon-Goons-Branches-Notebook/dp/0545493234",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545493234"
+      }
+    ]
+  },
+  "Llama Quest": {
+    "illustrator": "Kay Davault",
+    "ageRange": "Ages 6–9",
+    "gradeLevel": "Grades 1–4",
+    "lexile": "720L",
+    "tags": [
+      "Fantasy",
+      "Quest",
+      "Magical Animals",
+      "Humor"
+    ],
+    "suggestions": [
+      {
+        "title": "Zoey and Sassafras",
+        "author": "Asia Citro",
+        "blurb": "If you love questing with a magical talking llama, Zoey's backyard barn full of magical creatures needing help is a perfect next stop.",
+        "amazonUsUrl": "https://www.amazon.com/Dragons-Marshmallows-Zoey-Sassafras-Citro/dp/1943147094",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1943147094"
+      },
+      {
+        "title": "Dragon Girls",
+        "author": "Maddy Mara",
+        "blurb": "Another save-the-magical-kingdom quest with animal magic and a mission in every book, right at the Llama Quest level.",
+        "amazonUsUrl": "https://www.amazon.com/Azmina-Gold-Glitter-Dragon-Girls/dp/1338680633",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338680633"
+      },
+      {
+        "title": "Press Start!",
+        "author": "Thomas Flintham",
+        "blurb": "Lucy the llama's silly-but-brave energy matches Super Rabbit Boy's level-hopping quests to save Animal Town.",
+        "amazonUsUrl": "https://www.amazon.com/Super-Rabbit-Branches-Press-Start/dp/1338034715",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338034715"
+      }
+    ]
+  },
+  "Kwame's Magic Quest": {
+    "illustrator": "Natasha Nayo",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "600L",
+    "tags": [
+      "Fantasy",
+      "Magic School",
+      "Adventure",
+      "African Cultures"
+    ],
+    "suggestions": [
+      {
+        "title": "Zoey and Sassafras",
+        "author": "Asia Citro",
+        "blurb": "Like Kwame, Zoey figures out magic step by step — she uses science experiments to help magical creatures in trouble.",
+        "amazonUsUrl": "https://www.amazon.com/Dragons-Marshmallows-Zoey-Sassafras-Citro/dp/1943147094",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1943147094"
+      },
+      {
+        "title": "Heidi Heckelbeck",
+        "author": "Wanda Coven",
+        "blurb": "Another kid balancing school life with secret magic powers, with the same warm humor about fitting in and finding your strength.",
+        "amazonUsUrl": "https://www.amazon.com/Heidi-Heckelbeck-Secret-Wanda-Coven/dp/1442435658",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442435658"
+      },
+      {
+        "title": "Press Start!",
+        "author": "Thomas Flintham",
+        "blurb": "Same fast, fully illustrated Branches format with an underdog hero leveling up against bigger and bigger challenges.",
+        "amazonUsUrl": "https://www.amazon.com/Super-Rabbit-Branches-Press-Start/dp/1338034715",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338034715"
+      }
+    ]
+  },
+  "Pets Rule!": {
+    "illustrator": "Wendy Tan Shiau Wei",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "570L",
+    "tags": [
+      "Humor",
+      "Animals",
+      "Villainy"
+    ],
+    "suggestions": [
+      {
+        "title": "The Bad Guys",
+        "author": "Aaron Blabey",
+        "blurb": "If Ember's world-domination schemes crack you up, this gang of 'villainous' animals trying to be heroes is comedy gold.",
+        "amazonUsUrl": "https://www.amazon.com/Bad-Guys/dp/0545912407",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545912407"
+      },
+      {
+        "title": "Diary of a Pug",
+        "author": "Kyla May",
+        "blurb": "Another hilarious dog with a big personality narrating his own adventures, in the same illustrated Branches style as Pets Rule!.",
+        "amazonUsUrl": "https://www.amazon.com/Pug-Blasts-Off-Branches-Diary/dp/1338530038",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338530038"
+      },
+      {
+        "title": "InvestiGators",
+        "author": "John Patrick Green",
+        "blurb": "Absurd animal heroes, over-the-top villains, and nonstop jokes — a graphic-novel step up with the same goofy energy.",
+        "amazonUsUrl": "https://www.amazon.com/InvestiGators-John-Patrick-Green/dp/1250219957",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1250219957"
+      }
+    ]
+  },
+  "The Last Firehawk": {
+    "illustrator": "Jeremy Norton",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "560L",
+    "tags": [
+      "Fantasy",
+      "Animals",
+      "Quest",
+      "Adventure"
+    ],
+    "suggestions": [
+      {
+        "title": "The Notebook of Doom",
+        "author": "Troy Cummings",
+        "blurb": "If you like Tag and Skyla battling Thorn's dark forces, Alexander's monster-of-the-book missions bring the same brave-kid thrills.",
+        "amazonUsUrl": "https://www.amazon.com/Rise-Balloon-Goons-Branches-Notebook/dp/0545493234",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545493234"
+      },
+      {
+        "title": "Dragon Girls",
+        "author": "Maddy Mara",
+        "blurb": "Another magical-creature quest to protect an enchanted land from a shadowy threat, one mission per book.",
+        "amazonUsUrl": "https://www.amazon.com/Azmina-Gold-Glitter-Dragon-Girls/dp/1338680633",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338680633"
+      },
+      {
+        "title": "Owl Diaries",
+        "author": "Rebecca Elliott",
+        "blurb": "More adventures starring plucky owls and woodland friends, in a gentler diary style that Firehawk fans find cozy.",
+        "amazonUsUrl": "https://www.amazon.com/Evas-Treetop-Festival-Branches-Diaries/dp/0545683629",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545683629"
+      }
+    ]
+  },
+  "Pixie Tricks": {
+    "illustrator": "Xavier Bonet",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "500L",
+    "tags": [
+      "Fantasy",
+      "Fairies",
+      "Humor",
+      "Adventure"
+    ],
+    "suggestions": [
+      {
+        "title": "Isadora Moon",
+        "author": "Harriet Muncaster",
+        "blurb": "If mischievous fairies are your favorite, this half-fairy, half-vampire heroine brings the same sparkly, funny magic.",
+        "amazonUsUrl": "https://www.amazon.com/Isadora-Moon-School-Harriet-Muncaster/dp/0399558217",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0399558217"
+      },
+      {
+        "title": "Heidi Heckelbeck",
+        "author": "Wanda Coven",
+        "blurb": "Like Violet, Heidi is an ordinary kid juggling everyday life with secret magic — and things go wrong in funny ways.",
+        "amazonUsUrl": "https://www.amazon.com/Heidi-Heckelbeck-Secret-Wanda-Coven/dp/1442435658",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442435658"
+      },
+      {
+        "title": "Zoey and Sassafras",
+        "author": "Asia Citro",
+        "blurb": "Another clever girl handling magical creatures that show up in her own backyard, one tricky problem at a time.",
+        "amazonUsUrl": "https://www.amazon.com/Dragons-Marshmallows-Zoey-Sassafras-Citro/dp/1943147094",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1943147094"
+      }
+    ]
+  },
+  "Coral Keepers": {
+    "illustrator": "Paul Kellam",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "600L",
+    "tags": [
+      "Fantasy",
+      "Mermaids",
+      "Ocean",
+      "Adventure"
+    ],
+    "suggestions": [
+      {
+        "title": "Mermaid Tales",
+        "author": "Debbie Dadey",
+        "blurb": "If you love Finn's underwater queendom, Shelly's adventures at mermaid school in Trident City are a natural next dive.",
+        "amazonUsUrl": "https://www.amazon.com/Trouble-Trident-Academy-Mermaid-Tales/dp/1442429801",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442429801"
+      },
+      {
+        "title": "Dragon Girls",
+        "author": "Maddy Mara",
+        "blurb": "Magical girls with creature powers defending their realm from a scheming villain — Coral Keepers energy, on dragon wings.",
+        "amazonUsUrl": "https://www.amazon.com/Azmina-Gold-Glitter-Dragon-Girls/dp/1338680633",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338680633"
+      },
+      {
+        "title": "Unicorn Academy",
+        "author": "Julie Sykes",
+        "blurb": "Another magic academy where a girl must master her powers with friends to stop a threat to the kingdom.",
+        "amazonUsUrl": "https://www.amazon.com/Unicorn-Academy-1-Sophia-Rainbow/dp/1984850822",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1984850822"
+      }
+    ]
+  }
+};
+
 const BOOKS = [
   {
     "id": "frozen-junior-novelization",
@@ -52,7 +370,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0736431187",
     "amazonCaExact": true,
-    "coverIsbn": "0736431187"
+    "coverIsbn": "0736431187",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/18857202-frozen",
+    "pages": 128
   },
   {
     "id": "anna-elsa-03",
@@ -69,7 +389,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0736432892",
     "amazonCaExact": true,
-    "coverIsbn": "0736432892"
+    "coverIsbn": "0736432892",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/22889793-a-warm-welcome",
+    "pages": 128
   },
   {
     "id": "dragon-masters-01",
@@ -86,7 +408,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0545646235",
     "amazonCaExact": true,
-    "coverIsbn": "0545646235"
+    "coverIsbn": "0545646235",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/20578964-rise-of-the-earth-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-02",
@@ -103,7 +427,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0545646251",
     "amazonCaExact": true,
-    "coverIsbn": "0545646251"
+    "coverIsbn": "0545646251",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/20897351-saving-the-sun-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-03",
@@ -120,7 +446,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0545646286",
     "amazonCaExact": true,
-    "coverIsbn": "0545646286"
+    "coverIsbn": "0545646286",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/22749541-secret-of-the-water-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-04",
@@ -137,7 +465,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0545646316",
     "amazonCaExact": true,
-    "coverIsbn": "0545646316"
+    "coverIsbn": "0545646316",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/24944997-power-of-the-fire-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-05",
@@ -154,7 +484,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/054591387X",
     "amazonCaExact": true,
-    "coverIsbn": "054591387X"
+    "coverIsbn": "054591387X",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/26892085-song-of-the-poison-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-06",
@@ -171,7 +503,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0545913926",
     "amazonCaExact": true,
-    "coverIsbn": "0545913926"
+    "coverIsbn": "0545913926",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/29241320-flight-of-the-moon-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-07",
@@ -188,7 +522,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338042882",
     "amazonCaExact": true,
-    "coverIsbn": "1338042882"
+    "coverIsbn": "1338042882",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/37120679-search-for-the-lightning-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-08",
@@ -205,7 +541,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338042920",
     "amazonCaExact": true,
-    "coverIsbn": "1338042920"
+    "coverIsbn": "1338042920",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/34054689-roar-of-the-thunder-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-09",
@@ -222,7 +560,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338169866",
     "amazonCaExact": true,
-    "coverIsbn": "1338169866"
+    "coverIsbn": "1338169866",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/35566727-chill-of-the-ice-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-10",
@@ -239,7 +579,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338169890",
     "amazonCaExact": true,
-    "coverIsbn": "1338169890"
+    "coverIsbn": "1338169890",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/36127327-waking-the-rainbow-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-11",
@@ -256,7 +598,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/133826365X",
     "amazonCaExact": true,
-    "coverIsbn": "133826365X"
+    "coverIsbn": "133826365X",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/37825476-shine-of-the-silver-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-12",
@@ -273,7 +617,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338263684",
     "amazonCaExact": true,
-    "coverIsbn": "1338263684"
+    "coverIsbn": "1338263684",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/39983546-treasure-of-the-gold-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-13",
@@ -290,7 +636,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338263714",
     "amazonCaExact": true,
-    "coverIsbn": "1338263714"
+    "coverIsbn": "1338263714",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/40996508-eye-of-the-earthquake-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-14",
@@ -307,7 +655,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338263749",
     "amazonCaExact": true,
-    "coverIsbn": "1338263749"
+    "coverIsbn": "1338263749",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/43304809-the-land-of-the-spring-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-15",
@@ -324,7 +674,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338540254",
     "amazonCaExact": true,
-    "coverIsbn": "1338540254"
+    "coverIsbn": "1338540254",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/44575127-future-of-the-time-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-16",
@@ -341,7 +693,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338540297",
     "amazonCaExact": true,
-    "coverIsbn": "1338540297"
+    "coverIsbn": "1338540297",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/48497617-call-of-the-sound-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-17",
@@ -358,7 +712,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338540319",
     "amazonCaExact": true,
-    "coverIsbn": "1338540319"
+    "coverIsbn": "1338540319",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/50370456-fortress-of-the-stone-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-18",
@@ -375,7 +731,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/133863545X",
     "amazonCaExact": true,
-    "coverIsbn": "133863545X"
+    "coverIsbn": "133863545X",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/53578550-heat-of-the-lava-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-19",
@@ -392,7 +750,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338635484",
     "amazonCaExact": true,
-    "coverIsbn": "1338635484"
+    "coverIsbn": "1338635484",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/54776541-wave-of-the-sea-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-20",
@@ -409,7 +769,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338635514",
     "amazonCaExact": true,
-    "coverIsbn": "1338635514"
+    "coverIsbn": "1338635514",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/55977854-howl-of-the-wind-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-21",
@@ -426,7 +788,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338776878",
     "amazonCaExact": true,
-    "coverIsbn": "1338776878"
+    "coverIsbn": "1338776878",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/57468758-bloom-of-the-flower-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-22",
@@ -443,7 +807,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338776908",
     "amazonCaExact": true,
-    "coverIsbn": "1338776908"
+    "coverIsbn": "1338776908",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/59200872-guarding-the-invisible-dragons",
+    "pages": 96
   },
   {
     "id": "dragon-masters-23",
@@ -460,7 +826,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338776940",
     "amazonCaExact": true,
-    "coverIsbn": "1338776940"
+    "coverIsbn": "1338776940",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/60758278-curse-of-the-shadow-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-24",
@@ -477,7 +845,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338776975",
     "amazonCaExact": true,
-    "coverIsbn": "1338776975"
+    "coverIsbn": "1338776975",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/61779977-dawn-of-the-light-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-25",
@@ -494,7 +864,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338777009",
     "amazonCaExact": true,
-    "coverIsbn": "1338777009"
+    "coverIsbn": "1338777009",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/63898987-legend-of-the-star-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-26",
@@ -511,7 +883,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1339022370",
     "amazonCaExact": true,
-    "coverIsbn": "1339022370"
+    "coverIsbn": "1339022370",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/124932859-cave-of-the-crystal-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-27",
@@ -528,7 +902,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1339022400",
     "amazonCaExact": true,
-    "coverIsbn": "1339022400"
+    "coverIsbn": "1339022400",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/202773002-haunting-of-the-ghost-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-28",
@@ -545,7 +921,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1339022435",
     "amazonCaExact": true,
-    "coverIsbn": "1339022435"
+    "coverIsbn": "1339022435",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/210708924-night-of-the-dream-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-29",
@@ -562,7 +940,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/133902246X",
     "amazonCaExact": true,
-    "coverIsbn": "133902246X"
+    "coverIsbn": "133902246X",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/216879653-magic-of-the-wizard-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-30",
@@ -579,7 +959,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1339022494",
     "amazonCaExact": true,
-    "coverIsbn": "1339022494"
+    "coverIsbn": "1339022494",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/221737156-vortex-of-the-chaos-dragon",
+    "pages": 96
   },
   {
     "id": "dragon-masters-31",
@@ -596,7 +978,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/B0FK165TB8",
     "amazonCaExact": true,
-    "coverIsbn": null
+    "coverIsbn": null,
+    "goodreadsUrl": "https://www.goodreads.com/book/show/239320094-defending-the-swamp-dragon",
+    "pages": 96
   },
   {
     "id": "llama-quest-01",
@@ -613,7 +997,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0593808541",
     "amazonCaExact": true,
-    "coverIsbn": "0593808541"
+    "coverIsbn": "0593808541",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/213197200-danger-in-the-dragons-den",
+    "pages": 128
   },
   {
     "id": "llama-quest-02",
@@ -630,7 +1016,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0593808576",
     "amazonCaExact": true,
-    "coverIsbn": "0593808576"
+    "coverIsbn": "0593808576",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/213197156-llama-quest-2",
+    "pages": 128
   },
   {
     "id": "llama-quest-03",
@@ -647,7 +1035,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0593808606",
     "amazonCaExact": true,
-    "coverIsbn": "0593808606"
+    "coverIsbn": "0593808606",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/219334714-llama-quest-3",
+    "pages": 128
   },
   {
     "id": "llama-quest-04",
@@ -664,7 +1054,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/0593808630",
     "amazonCaExact": true,
-    "coverIsbn": "0593808630"
+    "coverIsbn": "0593808630",
+    "goodreadsUrl": null,
+    "pages": 128
   },
   {
     "id": "kwames-magic-quest-01",
@@ -681,7 +1073,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338843281",
     "amazonCaExact": true,
-    "coverIsbn": "1338843281"
+    "coverIsbn": "1338843281",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/83821759-rise-of-the-green-flame",
+    "pages": 96
   },
   {
     "id": "kwames-magic-quest-02",
@@ -698,7 +1092,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338843311",
     "amazonCaExact": true,
-    "coverIsbn": "1338843311"
+    "coverIsbn": "1338843311",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/195261537-race-to-the-magic-mountain",
+    "pages": 96
   },
   {
     "id": "kwames-magic-quest-03",
@@ -715,7 +1111,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338843346",
     "amazonCaExact": true,
-    "coverIsbn": "1338843346"
+    "coverIsbn": "1338843346",
+    "goodreadsUrl": null,
+    "pages": 96
   },
   {
     "id": "kwames-magic-quest-04",
@@ -732,7 +1130,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338843370",
     "amazonCaExact": true,
-    "coverIsbn": "1338843370"
+    "coverIsbn": "1338843370",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/216879621-curse-of-the-akoma-stone",
+    "pages": 96
   },
   {
     "id": "pets-rule-01",
@@ -749,7 +1149,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338756338",
     "amazonCaExact": true,
-    "coverIsbn": "1338756338"
+    "coverIsbn": "1338756338",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/58719187-my-kingdom-of-darkness",
+    "pages": 96
   },
   {
     "id": "last-firehawk-01",
@@ -766,7 +1168,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338122134",
     "amazonCaExact": true,
-    "coverIsbn": "1338122134"
+    "coverIsbn": "1338122134",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/34334480-the-ember-stone",
+    "pages": 96
   },
   {
     "id": "last-firehawk-02",
@@ -783,7 +1187,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338122517",
     "amazonCaExact": true,
-    "coverIsbn": "1338122517"
+    "coverIsbn": "1338122517",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/34645544",
+    "pages": 96
   },
   {
     "id": "last-firehawk-03",
@@ -800,7 +1206,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/133812255X",
     "amazonCaExact": true,
-    "coverIsbn": "133812255X"
+    "coverIsbn": "133812255X",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/35849474-the-whispering-oak",
+    "pages": 96
   },
   {
     "id": "last-firehawk-04",
@@ -817,7 +1225,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338122673",
     "amazonCaExact": true,
-    "coverIsbn": "1338122673"
+    "coverIsbn": "1338122673",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/36127400-lullaby-lake",
+    "pages": 96
   },
   {
     "id": "last-firehawk-05",
@@ -834,7 +1244,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338307118",
     "amazonCaExact": true,
-    "coverIsbn": "1338307118"
+    "coverIsbn": "1338307118",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/39983527-the-shadowlands",
+    "pages": 96
   },
   {
     "id": "last-firehawk-06",
@@ -851,7 +1263,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338307142",
     "amazonCaExact": true,
-    "coverIsbn": "1338307142"
+    "coverIsbn": "1338307142",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/41473875-the-battle-for-perodia",
+    "pages": 96
   },
   {
     "id": "last-firehawk-07",
@@ -868,7 +1282,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338307177",
     "amazonCaExact": true,
-    "coverIsbn": "1338307177"
+    "coverIsbn": "1338307177",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/43319695-the-cloud-kingdom",
+    "pages": 96
   },
   {
     "id": "last-firehawk-08",
@@ -885,7 +1301,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338565311",
     "amazonCaExact": true,
-    "coverIsbn": "1338565311"
+    "coverIsbn": "1338565311",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/50161148-the-silver-swamp",
+    "pages": 96
   },
   {
     "id": "pixie-tricks-01",
@@ -902,7 +1320,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338627783",
     "amazonCaExact": true,
-    "coverIsbn": "1338627783"
+    "coverIsbn": "1338627783",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/923930.Sprite_s_Secret",
+    "pages": 96
   },
   {
     "id": "pixie-tricks-03",
@@ -919,7 +1339,9 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1338627848",
     "amazonCaExact": true,
-    "coverIsbn": "1338627848"
+    "coverIsbn": "1338627848",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/18649267-the-pet-store-sprite",
+    "pages": 96
   },
   {
     "id": "coral-keepers-01",
@@ -936,6 +1358,8 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/1546122427",
     "amazonCaExact": true,
-    "coverIsbn": "1546122427"
+    "coverIsbn": "1546122427",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/213083755-search-for-the-silver-shell",
+    "pages": 96
   }
 ];
