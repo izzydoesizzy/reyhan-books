@@ -2,7 +2,7 @@
    The app shell is served cache-first, so after shipping a change to any
    shell file BUMP THE VERSION below (v1 -> v2) — that's the whole deploy
    story: a new version installs fresh copies and deletes the old caches. */
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = "reyhan-shell-" + VERSION;
 const COVER_CACHE = "reyhan-covers-" + VERSION;
 const COVER_LIMIT = 120;
