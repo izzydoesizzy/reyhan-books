@@ -1,17 +1,23 @@
 /* ============================================================
    Reyhan's Story Shelf (V2) — cover art pipeline
    ------------------------------------------------------------
-   No cover images live in the repo. Each cover is resolved at
-   runtime by walking an ordered chain of sources:
-     1. Per-book override URL from COVER_OVERRIDES (probed like
+   Cover art for every book we've read lives in the repo at
+   /covers/<book-id>.jpg (downloaded once, checked in). Each
+   cover is still resolved at runtime by walking an ordered
+   chain of sources, so newly-added books with no local file
+   yet fall through to the live lookups automatically:
+     1. Local file at ../covers/<id>.jpg (fast, no network
+        dependency, immune to the sources below ever changing
+        or rate-limiting)
+     2. Per-book override URL from COVER_OVERRIDES (probed like
         any other candidate, never trusted blindly)
-     2. Open Library by ISBN (?default=false makes misses 404,
+     3. Open Library by ISBN (?default=false makes misses 404,
         so onerror fires reliably)
-     3. Amazon's cover CDN by ISBN-10 / ASIN (no API, no quota;
+     4. Amazon's cover CDN by ISBN-10 / ASIN (no API, no quota;
         misses return a 1x1 GIF that the size check rejects)
-     4. Google Books API thumbnail by ISBN
-     5. Open Library title+author search -> cover id
-     6. A designed "cloth cover" SVG placeholder in the series
+     5. Google Books API thumbnail by ISBN
+     6. Open Library title+author search -> cover id
+     7. A designed "cloth cover" SVG placeholder in the series
         color — intentional-looking, never a broken image.
    Successful URLs (and 7-day-expiring misses) are remembered in
    localStorage; concurrent walks are capped and deduped so a
@@ -99,6 +105,14 @@ var Covers = (function () {
   /* ---------- the source chain ---------- */
 
   var SOURCES = [
+    {
+      id: "local",
+      label: "Local file",
+      applies: function () { return true; },
+      probe: function (book, opts) {
+        return tryImage("../covers/" + encodeURIComponent(book.id) + ".jpg", opts);
+      },
+    },
     {
       id: "override",
       label: "Hand-picked URL",

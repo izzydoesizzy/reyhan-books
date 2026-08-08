@@ -57,14 +57,23 @@
   };
 
   /* ================= Cover pipeline ================= */
-  /* Covers are sourced remotely by trying progressively broader public
-     lookups until one returns art, in order:
+  /* Cover art for every book we've read lives in the repo at
+     /covers/<book-id>.jpg (downloaded once, checked in) and is tried
+     first. Books with no local file yet (newly added) fall through to
+     progressively broader public lookups until one returns art, in order:
+       0. Local file, /covers/<id>.jpg                 (fast, no network
+          dependency, immune to the sources below ever changing or
+          rate-limiting)
        1. Open Library, by this exact ISBN            (fastest, most precise)
        2. Open Library, by title+author search         (catches editions whose
           specific ISBN was never scanned, but some edition of the work was)
        3. Google Books, by this exact ISBN             (broadest catalog,
           best odds for newer/small-press titles Open Library hasn't caught up on)
      If every step comes up empty the colored placeholder card stays put. */
+
+  function localCoverUrl(book) {
+    return "covers/" + encodeURIComponent(book.id) + ".jpg";
+  }
 
   const titleCoverCache = new Map();
   function fetchCoverByTitle(title, author) {
@@ -93,6 +102,9 @@
      loading can be deferred (lazy) or kicked off immediately (eager). */
   function wireCover(img, book) {
     const steps = [];
+    steps.push(function () {
+      img.src = localCoverUrl(book);
+    });
     if (book.coverIsbn) {
       steps.push(function () {
         img.src = isbnCoverUrl(book.coverIsbn);
