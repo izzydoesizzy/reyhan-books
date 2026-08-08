@@ -13,8 +13,12 @@
       read, add `status: "upNext"` to its object (dateRead,
       rating, and pages may be omitted). Once finished, delete
       the status field and fill in dateRead + displayDateRead.
-   The book counts and stats update automatically.
-   Also update the reading log tables in /README.md.
+   The book counts and stats on the page update automatically.
+   Two things do NOT, so finish with:
+     - update the reading log tables + total in /README.md
+     - run `node tools/make-og-image.mjs` (refreshes the share card
+       and its meta tags) and bump VERSION in /sw.js, or returning
+       visitors keep the cached copy and never see the new book.
    ============================================================ */
 
 const SERIES_ORDER = [
