@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG image source</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap">
+<style>
+  /* Source for og-image.png — the "cinema marquee" share card.
+     Rendered at 2400x1260 (2x the standard 1200x630) by tools/make-og-image.mjs.
+     Palette is lifted from styles.css / SERIES_COLORS in data.js. */
+  :root {
+    --bg: #0e1015;
+    --text: #f2f0ea;
+    --accent: #f5a623;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 2400px; height: 1260px; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  /* Warm spotlight washing down from the top, like a marquee light. */
+  .stage {
+    position: relative;
+    width: 2400px;
+    height: 1260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+      radial-gradient(ellipse 1250px 900px at 50% -60px,
+        rgba(245, 166, 35, 0.13) 0%,
+        rgba(245, 166, 35, 0.05) 38%,
+        rgba(245, 166, 35, 0) 68%),
+      var(--bg);
+  }
+
+  .kicker {
+    margin-top: 144px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    font-size: 41px;
+    font-weight: 800;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    color: #cdb890;
+  }
+
+  .title {
+    margin-top: 60px;
+    font-size: 205px;
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.005em;
+    text-align: center;
+    text-shadow: 0 0 90px rgba(245, 166, 35, 0.10);
+  }
+
+  /* Hand-drawn amber underline: thick in the middle, tapering to points. */
+  .swoosh {
+    margin-top: 52px;
+    display: block;
+  }
+
+  .now-showing {
+    margin-top: 56px;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em;
+    color: var(--accent);
+  }
+
+  .pills {
+    margin-top: 66px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 30px;
+    width: 1800px;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 38px;
+    border: 2px solid rgba(242, 240, 234, 0.14);
+    border-radius: 999px;
+    background: rgba(242, 240, 234, 0.035);
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 18px var(--c);
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="kicker"><span>📚</span><span>A FAMILY READING LOG</span><span>📚</span></div>
+
+    <h1 class="title">REYHAN'S<br>READING LIST</h1>
+
+    <svg class="swoosh" width="1116" height="40" viewBox="0 0 1116 40" fill="none">
+      <path d="M4 31 C 280 5, 836 5, 1112 27 C 836 20, 280 20, 4 31 Z"
+            fill="#f5a623"/>
+    </svg>
+
+    <div class="now-showing" id="now-showing">NOW SHOWING — 57 BOOKS AND COUNTING</div>
+
+    <div class="pills" id="pills"></div>
+  </div>
+
+<script>
+  /* Kept in sync by hand with SERIES_ORDER / SERIES_COLORS in data.js.
+     The card shows the series with cover-art rows on the site. */
+  const PILLS = [
+    ["Frozen", "#4aa8d8"],
+    ["Dragon Masters", "#c0392b"],
+    ["Llama Quest", "#27ae60"],
+    ["Kwame's Magic Quest", "#16a085"],
+    ["Pets Rule!", "#e67e22"],
+    ["The Last Firehawk", "#d35400"],
+    ["Pixie Tricks", "#9b59b6"],
+    ["Coral Keepers", "#00b8a9"],
+  ];
+  document.getElementById("pills").innerHTML = PILLS.map(function (p) {
+    return '<div class="pill"><span class="dot" style="--c:' + p[1] + '"></span>' +
+      '<span>' + p[0] + "</span></div>";
+  }).join("");
+</script>
+</body>
+</html>
