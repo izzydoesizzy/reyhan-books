@@ -1,0 +1,122 @@
+[
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 1,
+    "title": "Bo's Magical New Friend",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338323320",
+    "asin": "1338323326",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 2,
+    "title": "Bo and the Dragon-Pup",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338323382",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 3,
+    "title": "Bo the Brave",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338323429",
+    "asin": "1338323431",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-03.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 4,
+    "title": "The Goblin Princess",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338323450",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 5,
+    "title": "Bo and the Merbaby",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338745542",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 6,
+    "title": "Storm on Snowbelle Mountain",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338745627",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 7,
+    "title": "The Missing Magic",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338745573",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 8,
+    "title": "Welcome to Sparklegrove",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338745658",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 9,
+    "title": "The Glitter Bug",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338880366",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 10,
+    "title": "Bo and the Witch",
+    "author": "Rebecca Elliott",
+    "isbn": "9781338880434",
+    "asin": "",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-10.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 11,
+    "title": "The Secret of the Lost Gold",
+    "author": "Rebecca Elliott",
+    "isbn": "9781546127161",
+    "asin": "154612716X",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-11.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "unicorn-diaries",
+    "seriesNumber": 12,
+    "title": "Legend of the Sea Dragon",
+    "author": "Rebecca Elliott",
+    "isbn": "9781546127192",
+    "asin": "1546127194",
+    "coverFile": "library/unicorn-diaries/unicorn-diaries-12.jpg",
+    "source": "amazon"
+  }
+]

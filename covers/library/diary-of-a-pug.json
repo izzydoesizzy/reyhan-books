@@ -1,0 +1,152 @@
+[
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 1,
+    "title": "Pug Blasts Off",
+    "author": "Kyla May",
+    "isbn": "9781338530032",
+    "asin": "1338530038",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-01.jpg",
+    "source": "amazon:1338530038"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 2,
+    "title": "Pug's Snow Day",
+    "author": "Kyla May",
+    "isbn": "9781338530063",
+    "asin": "1338530062",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-02.jpg",
+    "source": "amazon:1338530062"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 3,
+    "title": "Paws for a Cause",
+    "author": "Kyla May",
+    "isbn": "9781338530094",
+    "asin": "1338530097",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-03.jpg",
+    "source": "amazon:1338530097"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 4,
+    "title": "Pug's Got Talent",
+    "author": "Kyla May",
+    "isbn": "9781338530124",
+    "asin": "1338530127",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-04.jpg",
+    "source": "amazon:1338530127"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 5,
+    "title": "Scaredy-Pug",
+    "author": "Kyla May",
+    "isbn": "9781338713442",
+    "asin": "1338713442",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-05.jpg",
+    "source": "amazon:1338713442"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 6,
+    "title": "Pug's Sleepover",
+    "author": "Kyla May",
+    "isbn": "9781338713473",
+    "asin": "1338713477",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-06.jpg",
+    "source": "amazon:1338713477"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 7,
+    "title": "Pug's Road Trip",
+    "author": "Kyla May",
+    "isbn": "9781338713503",
+    "asin": "1338713507",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-07.jpg",
+    "source": "amazon:1338713507"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 8,
+    "title": "Pug's New Puppy",
+    "author": "Kyla May",
+    "isbn": "9781338713534",
+    "asin": "1338713531",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-08.jpg",
+    "source": "amazon:1338713531"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 9,
+    "title": "Pug the Prince",
+    "author": "Kyla May",
+    "isbn": "9781338877571",
+    "asin": "",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-09.jpg",
+    "source": "openlibrary-isbn:9781338877571"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 10,
+    "title": "Beach Pug",
+    "author": "Kyla May",
+    "isbn": "9781338877601",
+    "asin": "1338877607",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-10.jpg",
+    "source": "amazon:1338877607"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 11,
+    "title": "Pug the Sports Star",
+    "author": "Kyla May",
+    "isbn": "9781338877632",
+    "asin": "",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-11.jpg",
+    "source": "openlibrary-isbn:9781338877632"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 12,
+    "title": "Get Well, Pug",
+    "author": "Kyla May",
+    "isbn": "9781338877663",
+    "asin": "1338877666",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-12.jpg",
+    "source": "amazon:1338877666"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 13,
+    "title": "Super Pug",
+    "author": "Kyla May",
+    "isbn": "9781546139188",
+    "asin": "1546139184",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-13.jpg",
+    "source": "amazon:1546139184"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 14,
+    "title": "Pug the Unicorn",
+    "author": "Kyla May",
+    "isbn": "9781546139225",
+    "asin": "",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-14.jpg",
+    "source": "openlibrary-isbn:9781546139225"
+  },
+  {
+    "series": "diary-of-a-pug",
+    "seriesNumber": 15,
+    "title": "Pug Goes to Hollywood",
+    "author": "Kyla May",
+    "isbn": "9781546139256",
+    "asin": "1546139257",
+    "coverFile": "library/diary-of-a-pug/diary-of-a-pug-15.jpg",
+    "source": "amazon:1546139257"
+  }
+]

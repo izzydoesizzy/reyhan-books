@@ -1,0 +1,42 @@
+[
+  {
+    "series": "the-binder-of-doom",
+    "seriesNumber": 1,
+    "title": "Brute-Cake",
+    "author": "Troy Cummings",
+    "isbn": "9781338314663",
+    "asin": "",
+    "coverFile": "library/the-binder-of-doom/the-binder-of-doom-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-binder-of-doom",
+    "seriesNumber": 2,
+    "title": "Boa Constructor",
+    "author": "Troy Cummings",
+    "isbn": "9781338314694",
+    "asin": "",
+    "coverFile": "library/the-binder-of-doom/the-binder-of-doom-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-binder-of-doom",
+    "seriesNumber": 3,
+    "title": "Speedah-Cheetah",
+    "author": "Troy Cummings",
+    "isbn": "9781338314724",
+    "asin": "1338314726",
+    "coverFile": "library/the-binder-of-doom/the-binder-of-doom-03.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "the-binder-of-doom",
+    "seriesNumber": 4,
+    "title": "Hydrant-Hydra",
+    "author": "Troy Cummings",
+    "isbn": "9781338314762",
+    "asin": "",
+    "coverFile": "library/the-binder-of-doom/the-binder-of-doom-04.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

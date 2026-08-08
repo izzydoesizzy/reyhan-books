@@ -1,0 +1,22 @@
+[
+  {
+    "series": "silver-pony-ranch",
+    "seriesNumber": 1,
+    "title": "Sparkling Jewel",
+    "author": "D. L. Green",
+    "isbn": "9780545797658",
+    "asin": "0545797659",
+    "coverFile": "library/silver-pony-ranch/silver-pony-ranch-01.jpg",
+    "source": "amazon:0545797659"
+  },
+  {
+    "series": "silver-pony-ranch",
+    "seriesNumber": 2,
+    "title": "Sweet Buttercup",
+    "author": "D. L. Green",
+    "isbn": "9780545797696",
+    "asin": "0545797691",
+    "coverFile": "library/silver-pony-ranch/silver-pony-ranch-02.jpg",
+    "source": "amazon:0545797691"
+  }
+]

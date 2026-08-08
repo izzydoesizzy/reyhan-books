@@ -1,0 +1,392 @@
+[
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 1,
+    "title": "Thea Stilton and the Dragon's Code",
+    "author": "Thea Stilton",
+    "isbn": "9780545393720",
+    "asin": "0545393728",
+    "coverFile": "library/thea-stilton/thea-stilton-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 2,
+    "title": "Thea Stilton and the Mountain of Fire",
+    "author": "Thea Stilton",
+    "isbn": "9780545150606",
+    "asin": "0545150609",
+    "coverFile": "library/thea-stilton/thea-stilton-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 3,
+    "title": "Thea Stilton and the Ghost of the Shipwreck",
+    "author": "Thea Stilton",
+    "isbn": "9781338252637",
+    "asin": "1338252639",
+    "coverFile": "library/thea-stilton/thea-stilton-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 4,
+    "title": "Thea Stilton and the Secret City",
+    "author": "Thea Stilton",
+    "isbn": "9780545150613",
+    "asin": "0545150617",
+    "coverFile": "library/thea-stilton/thea-stilton-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 5,
+    "title": "Thea Stilton and the Mystery in Paris",
+    "author": "Thea Stilton",
+    "isbn": "9780545227735",
+    "asin": "0545227736",
+    "coverFile": "library/thea-stilton/thea-stilton-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 6,
+    "title": "Thea Stilton and the Cherry Blossom Adventure",
+    "author": "Thea Stilton",
+    "isbn": "9781536418903",
+    "asin": "1536418907",
+    "coverFile": "library/thea-stilton/thea-stilton-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 7,
+    "title": "Thea Stilton and the Star Castaways",
+    "author": "Thea Stilton",
+    "isbn": "9780545227742",
+    "asin": "0545227744",
+    "coverFile": "library/thea-stilton/thea-stilton-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 8,
+    "title": "Thea Stilton: Big Trouble in the Big Apple",
+    "author": "Thea Stilton",
+    "isbn": "9780545227759",
+    "asin": "0545227752",
+    "coverFile": "library/thea-stilton/thea-stilton-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 9,
+    "title": "Thea Stilton and the Ice Treasure",
+    "author": "Thea Stilton",
+    "isbn": "9780606232395",
+    "asin": "0606232397",
+    "coverFile": "library/thea-stilton/thea-stilton-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 10,
+    "title": "Thea Stilton and the Secret of the Old Castle",
+    "author": "Thea Stilton",
+    "isbn": "9780606239301",
+    "asin": "0606239305",
+    "coverFile": "library/thea-stilton/thea-stilton-10.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 11,
+    "title": "Thea Stilton and the Blue Scarab Hunt",
+    "author": "Thea Stilton",
+    "isbn": "9780606261838",
+    "asin": "0606261832",
+    "coverFile": "library/thea-stilton/thea-stilton-11.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 12,
+    "title": "Thea Stilton and the Prince's Emerald",
+    "author": "Thea Stilton",
+    "isbn": "9780545414708",
+    "asin": "0545414709",
+    "coverFile": "library/thea-stilton/thea-stilton-12.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 13,
+    "title": "Thea Stilton and the Mystery on the Orient Express",
+    "author": "Thea Stilton",
+    "isbn": "9780545341059",
+    "asin": "0545341054",
+    "coverFile": "library/thea-stilton/thea-stilton-13.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 14,
+    "title": "Thea Stilton and the Dancing Shadows",
+    "author": "Thea Stilton",
+    "isbn": "9780545481878",
+    "asin": "0545481879",
+    "coverFile": "library/thea-stilton/thea-stilton-14.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 15,
+    "title": "Thea Stilton and the Legend of the Fire Flowers",
+    "author": "Thea Stilton",
+    "isbn": "9780545481885",
+    "asin": "0545481887",
+    "coverFile": "library/thea-stilton/thea-stilton-15.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 16,
+    "title": "Thea Stilton and the Spanish Dance Mission",
+    "author": "Thea Stilton",
+    "isbn": "9780545556262",
+    "asin": "0545556260",
+    "coverFile": "library/thea-stilton/thea-stilton-16.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 17,
+    "title": "Thea Stilton and the Journey to the Lion's Den",
+    "author": "Thea Stilton",
+    "isbn": "9780545556279",
+    "asin": "0545556279",
+    "coverFile": "library/thea-stilton/thea-stilton-17.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 18,
+    "title": "Thea Stilton and the Great Tulip Heist",
+    "author": "Thea Stilton",
+    "isbn": "9780606353861",
+    "asin": "0606353866",
+    "coverFile": "library/thea-stilton/thea-stilton-18.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 19,
+    "title": "Thea Stilton and the Chocolate Sabotage",
+    "author": "Thea Stilton",
+    "isbn": "9780545646567",
+    "asin": "0545646566",
+    "coverFile": "library/thea-stilton/thea-stilton-19.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 20,
+    "title": "Thea Stilton and the Missing Myth",
+    "author": "Thea Stilton",
+    "isbn": "9780545656016",
+    "asin": "0545656011",
+    "coverFile": "library/thea-stilton/thea-stilton-20.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 21,
+    "title": "Thea Stilton and the Lost Letters",
+    "author": "Thea Stilton",
+    "isbn": "9780606370615",
+    "asin": "0606370614",
+    "coverFile": "library/thea-stilton/thea-stilton-21.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 22,
+    "title": "Thea Stilton and the Tropical Treasure",
+    "author": "Thea Stilton",
+    "isbn": "9780545835527",
+    "asin": "0545835521",
+    "coverFile": "library/thea-stilton/thea-stilton-22.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 23,
+    "title": "Thea Stilton and the Hollywood Hoax",
+    "author": "Thea Stilton",
+    "isbn": "9780545872423",
+    "asin": "0545872423",
+    "coverFile": "library/thea-stilton/thea-stilton-23.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 24,
+    "title": "Thea Stilton and the Madagascar Madness",
+    "author": "Thea Stilton",
+    "isbn": "9781338032895",
+    "asin": "1338032891",
+    "coverFile": "library/thea-stilton/thea-stilton-24.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 25,
+    "title": "Thea Stilton and the Frozen Fiasco",
+    "author": "Thea Stilton",
+    "isbn": "9781338087864",
+    "asin": "1338087862",
+    "coverFile": "library/thea-stilton/thea-stilton-25.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 26,
+    "title": "Thea Stilton and the Venice Masquerade",
+    "author": "Thea Stilton",
+    "isbn": "9780606406567",
+    "asin": "0606406566",
+    "coverFile": "library/thea-stilton/thea-stilton-26.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 27,
+    "title": "Thea Stilton and the Niagara Splash",
+    "author": "Thea Stilton",
+    "isbn": "9781338215281",
+    "asin": "1338215283",
+    "coverFile": "library/thea-stilton/thea-stilton-27.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 28,
+    "title": "Thea Stilton and the Riddle of the Ruins",
+    "author": "Thea Stilton",
+    "isbn": "9781338268584",
+    "asin": "1338268580",
+    "coverFile": "library/thea-stilton/thea-stilton-28.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 29,
+    "title": "Thea Stilton and the Phantom of the Orchestra",
+    "author": "Thea Stilton",
+    "isbn": "9781338306156",
+    "asin": "1338306154",
+    "coverFile": "library/thea-stilton/thea-stilton-29.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 30,
+    "title": "Thea Stilton and the Black Forest Burglary",
+    "author": "Thea Stilton",
+    "isbn": "9781338547009",
+    "asin": "1338547006",
+    "coverFile": "library/thea-stilton/thea-stilton-30.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 31,
+    "title": "Thea Stilton and the Race for the Gold",
+    "author": "Thea Stilton",
+    "isbn": "9781338587517",
+    "asin": "1338587510",
+    "coverFile": "library/thea-stilton/thea-stilton-31.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 32,
+    "title": "Thea Stilton and the Rainforest Rescue",
+    "author": "Thea Stilton",
+    "isbn": "9781338655131",
+    "asin": "1338655136",
+    "coverFile": "library/thea-stilton/thea-stilton-32.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 33,
+    "title": "Thea Stilton and the American Dream",
+    "author": "Thea Stilton",
+    "isbn": "9781338687071",
+    "asin": "1338687070",
+    "coverFile": "library/thea-stilton/thea-stilton-33.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 34,
+    "title": "Thea Stilton and the Roman Holiday",
+    "author": "Thea Stilton",
+    "isbn": "9781338756876",
+    "asin": "1338756876",
+    "coverFile": "library/thea-stilton/thea-stilton-34.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 35,
+    "title": "Thea Stilton and the Fiesta in Mexico",
+    "author": "Thea Stilton",
+    "isbn": "9781338802221",
+    "asin": "1338802222",
+    "coverFile": "library/thea-stilton/thea-stilton-35.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 36,
+    "title": "Thea Stilton and the Cave of Stars",
+    "author": "Thea Stilton",
+    "isbn": "9781338848045",
+    "asin": "1338848045",
+    "coverFile": "library/thea-stilton/thea-stilton-36.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 37,
+    "title": "Thea Stilton and the Ghost of the Woods",
+    "author": "Thea Stilton",
+    "isbn": "9781339027678",
+    "asin": "1339027674",
+    "coverFile": "library/thea-stilton/thea-stilton-37.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 38,
+    "title": "Thea Stilton and the Search for the Secret Garden",
+    "author": "Thea Stilton",
+    "isbn": "9781546141815",
+    "asin": "1546141812",
+    "coverFile": "library/thea-stilton/thea-stilton-38.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "thea-stilton",
+    "seriesNumber": 39,
+    "title": "Thea Stilton and the Blue Island Thief",
+    "author": "Thea Stilton",
+    "isbn": "9798225027841",
+    "asin": "B0FK12C5GQ",
+    "coverFile": "library/thea-stilton/thea-stilton-39.jpg",
+    "source": "amazon"
+  }
+]

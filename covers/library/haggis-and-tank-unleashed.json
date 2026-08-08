@@ -1,0 +1,32 @@
+[
+  {
+    "series": "haggis-and-tank-unleashed",
+    "seriesNumber": 1,
+    "title": "All Paws on Deck",
+    "author": "Jessica Young",
+    "isbn": "9780545818865",
+    "asin": "0545818869",
+    "coverFile": "library/haggis-and-tank-unleashed/haggis-and-tank-unleashed-01.jpg",
+    "source": "amazon:0545818869"
+  },
+  {
+    "series": "haggis-and-tank-unleashed",
+    "seriesNumber": 2,
+    "title": "Digging for Dinos",
+    "author": "Jessica Young",
+    "isbn": "9780545818889",
+    "asin": "0545818885",
+    "coverFile": "library/haggis-and-tank-unleashed/haggis-and-tank-unleashed-02.jpg",
+    "source": "amazon:0545818885"
+  },
+  {
+    "series": "haggis-and-tank-unleashed",
+    "seriesNumber": 3,
+    "title": "Howl at the Moon",
+    "author": "Jessica Young",
+    "isbn": "9781338045253",
+    "asin": "1338045253",
+    "coverFile": "library/haggis-and-tank-unleashed/haggis-and-tank-unleashed-03.jpg",
+    "source": "amazon:1338045253"
+  }
+]

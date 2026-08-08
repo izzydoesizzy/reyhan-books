@@ -1,0 +1,32 @@
+[
+  {
+    "series": "sports-zone",
+    "seriesNumber": 1,
+    "title": "Hut! Hut! Hike!",
+    "author": "Andrew Maraniss",
+    "isbn": "9781546120063",
+    "asin": "1546120068",
+    "coverFile": "library/sports-zone/sports-zone-01.jpg",
+    "source": "amazon:1546120068"
+  },
+  {
+    "series": "sports-zone",
+    "seriesNumber": 2,
+    "title": "Corner Kick!",
+    "author": "Andrew Maraniss",
+    "isbn": "9781546120087",
+    "asin": "1546120084",
+    "coverFile": "library/sports-zone/sports-zone-02.jpg",
+    "source": "amazon:1546120084"
+  },
+  {
+    "series": "sports-zone",
+    "seriesNumber": 3,
+    "title": "Grand Slam!",
+    "author": "Andrew Maraniss",
+    "isbn": "9781546120117",
+    "asin": "1546120114",
+    "coverFile": "library/sports-zone/sports-zone-03.jpg",
+    "source": "amazon:1546120114"
+  }
+]

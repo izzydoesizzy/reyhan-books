@@ -1,0 +1,52 @@
+[
+  {
+    "series": "the-party-diaries",
+    "seriesNumber": 1,
+    "title": "Awesome Orange Birthday",
+    "author": "Mitali Banerjee Ruths",
+    "isbn": "9781338799620",
+    "asin": null,
+    "coverFile": "library/the-party-diaries/the-party-diaries-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-party-diaries",
+    "seriesNumber": 2,
+    "title": "Starry Henna Night",
+    "author": "Mitali Banerjee Ruths",
+    "isbn": "1338799827",
+    "asin": null,
+    "coverFile": "library/the-party-diaries/the-party-diaries-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-party-diaries",
+    "seriesNumber": 3,
+    "title": "Top Secret Anniversary",
+    "author": "Mitali Banerjee Ruths",
+    "isbn": "9781338799910",
+    "asin": null,
+    "coverFile": "library/the-party-diaries/the-party-diaries-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-party-diaries",
+    "seriesNumber": 4,
+    "title": "Fairy-Tale Puppy Picnic",
+    "author": "Mitali Banerjee Ruths",
+    "isbn": "9781338896909",
+    "asin": "1338896903",
+    "coverFile": "library/the-party-diaries/the-party-diaries-04.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "the-party-diaries",
+    "seriesNumber": 5,
+    "title": "Lucky Mermaid Sleepover",
+    "author": "Mitali Banerjee Ruths",
+    "isbn": "9781546137566",
+    "asin": "1546137564",
+    "coverFile": "library/the-party-diaries/the-party-diaries-05.jpg",
+    "source": "amazon"
+  }
+]

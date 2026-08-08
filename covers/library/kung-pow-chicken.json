@@ -1,0 +1,52 @@
+[
+  {
+    "series": "kung-pow-chicken",
+    "seriesNumber": 1,
+    "title": "Let's Get Cracking!",
+    "author": "Cyndi Marko",
+    "isbn": "9780545610629",
+    "asin": "0545610621",
+    "coverFile": "library/kung-pow-chicken/kung-pow-chicken-01.jpg",
+    "source": "openlibrary-isbn:9780545610629"
+  },
+  {
+    "series": "kung-pow-chicken",
+    "seriesNumber": 2,
+    "title": "Bok! Bok! Boom!",
+    "author": "Cyndi Marko",
+    "isbn": "9780545610636",
+    "asin": "054561063X",
+    "coverFile": "library/kung-pow-chicken/kung-pow-chicken-02.jpg",
+    "source": "amazon:054561063X"
+  },
+  {
+    "series": "kung-pow-chicken",
+    "seriesNumber": 3,
+    "title": "The Birdy Snatchers",
+    "author": "Cyndi Marko",
+    "isbn": "9780545610681",
+    "asin": "0545610680",
+    "coverFile": "library/kung-pow-chicken/kung-pow-chicken-03.jpg",
+    "source": "amazon:0545610680"
+  },
+  {
+    "series": "kung-pow-chicken",
+    "seriesNumber": 4,
+    "title": "Heroes on the Side",
+    "author": "Cyndi Marko",
+    "isbn": "9780545610742",
+    "asin": "0545610745",
+    "coverFile": "library/kung-pow-chicken/kung-pow-chicken-04.jpg",
+    "source": "amazon:0545610745"
+  },
+  {
+    "series": "kung-pow-chicken",
+    "seriesNumber": 5,
+    "title": "Jurassic Peck",
+    "author": "Cyndi Marko",
+    "isbn": "9781338596649",
+    "asin": "1338596640",
+    "coverFile": "library/kung-pow-chicken/kung-pow-chicken-05.jpg",
+    "source": "amazon:1338596640"
+  }
+]

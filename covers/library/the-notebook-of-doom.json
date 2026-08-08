@@ -1,0 +1,128 @@
+[
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 1,
+    "title": "Rise of the Balloon Goons",
+    "author": "Troy Cummings",
+    "isbn": "9780545493239",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 2,
+    "title": "Day of the Night Crawlers",
+    "author": "Troy Cummings",
+    "isbn": "9780545493253",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 3,
+    "title": "Attack of the Shadow Smashers",
+    "author": "Troy Cummings",
+    "isbn": "9780545552974",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 4,
+    "title": "Chomp of the Meat-Eating Vegetables",
+    "author": "Troy Cummings",
+    "isbn": "9780545552998",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 5,
+    "title": "Whack of the P-Rex",
+    "author": "Troy Cummings",
+    "isbn": "9781532142765",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 6,
+    "title": "Pop of the Bumpy Mummy",
+    "author": "Troy Cummings",
+    "isbn": "9780606363396",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 7,
+    "title": "Flurry of the Snombies",
+    "author": "Troy Cummings",
+    "isbn": "9780545795500",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 8,
+    "title": "Charge of the Lightning Bugs",
+    "author": "Troy Cummings",
+    "isbn": "9780545795548",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 9,
+    "title": "Rumble of the Coaster Ghost",
+    "author": "Troy Cummings",
+    "isbn": "9781532142802",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 10,
+    "title": "Snap of the Super-Goop",
+    "author": "Troy Cummings",
+    "isbn": "9780606388054",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-10.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 11,
+    "title": "Sneeze of the Octo-Schnozz",
+    "author": "Troy Cummings",
+    "isbn": "9780606397148",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-11.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 12,
+    "title": "March of the Vanderpants",
+    "author": "Troy Cummings",
+    "isbn": "9780606401920",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-12.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 13,
+    "title": "Battle of the Boss-Monster",
+    "author": "Troy Cummings",
+    "isbn": "9781338034578",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-13.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "the-notebook-of-doom",
+    "seriesNumber": 14,
+    "title": "Monster Notebook: A Branches Special Edition",
+    "author": "Troy Cummings",
+    "isbn": "9781338157420",
+    "coverFile": "library/the-notebook-of-doom/the-notebook-of-doom-14.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

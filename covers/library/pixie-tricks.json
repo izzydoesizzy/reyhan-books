@@ -1,0 +1,42 @@
+[
+  {
+    "series": "pixie-tricks",
+    "seriesNumber": 2,
+    "title": "The Greedy Gremlin",
+    "author": "Tracey West",
+    "isbn": "9781338627824",
+    "asin": null,
+    "coverFile": "library/pixie-tricks/pixie-tricks-02.jpg",
+    "source": "MISS"
+  },
+  {
+    "series": "pixie-tricks",
+    "seriesNumber": 2,
+    "title": "The Greedy Gremlin",
+    "author": "Tracey West",
+    "isbn": "9781338627817",
+    "asin": "1338627813",
+    "coverFile": "library/pixie-tricks/pixie-tricks-02.jpg",
+    "source": "amazon:1338627813"
+  },
+  {
+    "series": "pixie-tricks",
+    "seriesNumber": 4,
+    "title": "The Halloween Goblin",
+    "author": "Tracey West",
+    "isbn": "9781338627886",
+    "asin": null,
+    "coverFile": "library/pixie-tricks/pixie-tricks-04.jpg",
+    "source": "openlibrary-isbn:9781338627886"
+  },
+  {
+    "series": "pixie-tricks",
+    "seriesNumber": 5,
+    "title": "The Angry Elf",
+    "author": "Tracey West",
+    "isbn": "9781338627916",
+    "asin": null,
+    "coverFile": "library/pixie-tricks/pixie-tricks-05.jpg",
+    "source": "openlibrary-isbn:9781338627916"
+  }
+]

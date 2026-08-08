@@ -1,0 +1,61 @@
+[
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 1,
+    "title": "Hero Dog!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338141559",
+    "asin": "1338141554",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 2,
+    "title": "Bear on the Loose!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338141580",
+    "asin": "1338141589",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-02.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 3,
+    "title": "Fire! Fire!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338141610",
+    "asin": "1338141619",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-03.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 4,
+    "title": "UFO Spotted!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338141641",
+    "asin": "1338141643",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-04.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 5,
+    "title": "Tornado Hits!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338266771",
+    "asin": "1338266772",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-05.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "hilde-cracks-the-case",
+    "seriesNumber": 6,
+    "title": "Thief Strikes!",
+    "author": "Hilde Lysiak with Matthew Lysiak",
+    "isbn": "9781338283914",
+    "coverFile": "library/hilde-cracks-the-case/hilde-cracks-the-case-06.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

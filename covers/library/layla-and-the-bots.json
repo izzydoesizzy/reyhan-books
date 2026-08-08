@@ -1,0 +1,42 @@
+[
+  {
+    "series": "layla-and-the-bots",
+    "seriesNumber": 1,
+    "title": "Happy Paws",
+    "author": "Vicky Fang",
+    "isbn": "9781338582895",
+    "asin": "1338582895",
+    "coverFile": "library/layla-and-the-bots/layla-and-the-bots-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "layla-and-the-bots",
+    "seriesNumber": 2,
+    "title": "Built for Speed",
+    "author": "Vicky Fang",
+    "isbn": "9781338582925",
+    "asin": "1338582925",
+    "coverFile": "library/layla-and-the-bots/layla-and-the-bots-02.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "layla-and-the-bots",
+    "seriesNumber": 3,
+    "title": "Cupcake Fix",
+    "author": "Vicky Fang",
+    "isbn": "1338582984",
+    "asin": null,
+    "coverFile": "library/layla-and-the-bots/layla-and-the-bots-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "layla-and-the-bots",
+    "seriesNumber": 4,
+    "title": "Making Waves",
+    "author": "Vicky Fang",
+    "isbn": "9781338583014",
+    "asin": null,
+    "coverFile": "library/layla-and-the-bots/layla-and-the-bots-04.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

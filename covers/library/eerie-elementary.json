@@ -1,0 +1,92 @@
+[
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 1,
+    "title": "The School Is Alive!",
+    "author": "Jack Chabert",
+    "isbn": "9780545623926",
+    "coverFile": "library/eerie-elementary/eerie-elementary-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 2,
+    "title": "The Locker Ate Lucy!",
+    "author": "Jack Chabert",
+    "isbn": "9780545623957",
+    "coverFile": "library/eerie-elementary/eerie-elementary-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 3,
+    "title": "Recess Is a Jungle!",
+    "author": "Jack Chabert",
+    "isbn": "9780545873529",
+    "coverFile": "library/eerie-elementary/eerie-elementary-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 4,
+    "title": "The Science Fair Is Freaky!",
+    "author": "Jack Chabert",
+    "isbn": "9780545873680",
+    "coverFile": "library/eerie-elementary/eerie-elementary-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 5,
+    "title": "School Freezes Over!",
+    "author": "Jack Chabert",
+    "isbn": "9780545873734",
+    "coverFile": "library/eerie-elementary/eerie-elementary-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 6,
+    "title": "Sam Battles the Machine!",
+    "author": "Jack Chabert",
+    "isbn": "9780545873789",
+    "coverFile": "library/eerie-elementary/eerie-elementary-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 7,
+    "title": "Classes Are Canceled!",
+    "author": "Jack Chabert",
+    "isbn": "9781338181807",
+    "coverFile": "library/eerie-elementary/eerie-elementary-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 8,
+    "title": "The Hall Monitors Are Fired!",
+    "author": "Jack Chabert",
+    "isbn": "9781338181883",
+    "coverFile": "library/eerie-elementary/eerie-elementary-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 9,
+    "title": "The Art Show Attacks!",
+    "author": "Jack Chabert",
+    "isbn": "9781338181975",
+    "coverFile": "library/eerie-elementary/eerie-elementary-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "eerie-elementary",
+    "seriesNumber": 10,
+    "title": "The End of Orson Eerie?",
+    "author": "Jack Chabert",
+    "isbn": "9781338318562",
+    "coverFile": "library/eerie-elementary/eerie-elementary-10.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

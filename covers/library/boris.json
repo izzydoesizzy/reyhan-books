@@ -1,0 +1,42 @@
+[
+  {
+    "series": "boris",
+    "seriesNumber": 1,
+    "title": "Boris on the Move",
+    "author": "Andrew Joyner",
+    "isbn": "9780545484435",
+    "asin": "054548443X",
+    "coverFile": "library/boris/boris-01.jpg",
+    "source": "openlibrary-isbn:9780545484435"
+  },
+  {
+    "series": "boris",
+    "seriesNumber": 2,
+    "title": "Boris Gets a Lizard",
+    "author": "Andrew Joyner",
+    "isbn": "9780545484473",
+    "asin": "0545484472",
+    "coverFile": "library/boris/boris-02.jpg",
+    "source": "openlibrary-isbn:9780545484473"
+  },
+  {
+    "series": "boris",
+    "seriesNumber": 3,
+    "title": "Boris for the Win",
+    "author": "Andrew Joyner",
+    "isbn": "9780545484497",
+    "asin": "0545484499",
+    "coverFile": "library/boris/boris-03.jpg",
+    "source": "openlibrary-isbn:9780545484497"
+  },
+  {
+    "series": "boris",
+    "seriesNumber": 4,
+    "title": "Boris Sees the Light",
+    "author": "Andrew Joyner",
+    "isbn": "9780545484541",
+    "asin": "0545484545",
+    "coverFile": "library/boris/boris-04.jpg",
+    "source": "amazon:0545484545"
+  }
+]

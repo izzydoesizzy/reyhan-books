@@ -1,0 +1,41 @@
+[
+  {
+    "series": "disaster-squad",
+    "seriesNumber": 1,
+    "title": "Wildfire Rescue",
+    "author": "Rekha S. Rajan",
+    "isbn": "9781338828832",
+    "asin": "1338828843",
+    "coverFile": "library/disaster-squad/disaster-squad-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "disaster-squad",
+    "seriesNumber": 2,
+    "title": "Hurricane Rescue",
+    "author": "Rekha S. Rajan",
+    "isbn": "9781338828863",
+    "asin": "133882886X",
+    "coverFile": "library/disaster-squad/disaster-squad-02.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "disaster-squad",
+    "seriesNumber": 3,
+    "title": "Blizzard Rescue",
+    "author": "Rekha S. Rajan",
+    "isbn": "9781338828894",
+    "asin": "1338828894",
+    "coverFile": "library/disaster-squad/disaster-squad-03.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "disaster-squad",
+    "seriesNumber": 4,
+    "title": "Tornado Rescue",
+    "author": "Rekha S. Rajan",
+    "isbn": "9781338828924",
+    "coverFile": "library/disaster-squad/disaster-squad-04.jpg",
+    "source": "openlibrary-isbn"
+  }
+]

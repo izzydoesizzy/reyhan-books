@@ -1,0 +1,172 @@
+[
+  {
+    "series": "press-start",
+    "seriesNumber": 1,
+    "title": "Game Over, Super Rabbit Boy!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338034714",
+    "asin": "1338034715",
+    "coverFile": "library/press-start/press-start-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 2,
+    "title": "Super Rabbit Boy Powers Up!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338034738",
+    "asin": "1338034731",
+    "coverFile": "library/press-start/press-start-02.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 3,
+    "title": "Super Rabbit Racers!",
+    "author": "Thomas Flintham",
+    "isbn": "9780606406628",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 4,
+    "title": "Super Rabbit Boy vs. Super Rabbit Boss!",
+    "author": "Thomas Flintham",
+    "isbn": "1338034766",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 5,
+    "title": "Super Rabbit Boy Blasts Off!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338239706",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 6,
+    "title": "The Super Side-Quest Test!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338239782",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 7,
+    "title": "Robo-Rabbit Boy, Go!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338239812",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 8,
+    "title": "Super Rabbit All-Stars!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338239843",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 9,
+    "title": "Super Rabbit Boy's Time Jump!",
+    "author": "Thomas Flintham",
+    "isbn": "1338568965",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 10,
+    "title": "Super Rabbit Boy's Team-Up Trouble!",
+    "author": "Thomas Flintham",
+    "isbn": "1338569007",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-10.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 11,
+    "title": "Super Cheat Codes and Secret Modes!",
+    "author": "Thomas Flintham",
+    "isbn": "1338569023",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-11.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 12,
+    "title": "Super Rabbit Boy World!",
+    "author": "Thomas Flintham",
+    "isbn": "1338569058",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-12.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 13,
+    "title": "Super King Viking Land!",
+    "author": "Thomas Flintham",
+    "isbn": "9781338828757",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-13.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 14,
+    "title": "Super Game Book!",
+    "author": "Thomas Flintham",
+    "isbn": "1338828797",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-14.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 15,
+    "title": "Mega Mole Girl Digs Deep!",
+    "author": "Thomas Flintham",
+    "isbn": "9781339042770",
+    "asin": null,
+    "coverFile": "library/press-start/press-start-15.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 16,
+    "title": "Super Rabbit Boy vs. the Gigabot!",
+    "author": "Thomas Flintham",
+    "isbn": "9781546110446",
+    "asin": "1546110445",
+    "coverFile": "library/press-start/press-start-16.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "press-start",
+    "seriesNumber": 17,
+    "title": "The Super Jump Between Worlds!",
+    "author": "Thomas Flintham",
+    "isbn": "9781546183570",
+    "asin": "1546183574",
+    "coverFile": "library/press-start/press-start-17.jpg",
+    "source": "amazon"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "series": "pets-rule",
+    "seriesNumber": 5,
+    "title": "Invasion of the Pugs",
+    "author": "Susan Tan",
+    "isbn": "1339021579",
+    "asin": "1339021579",
+    "coverFile": "library/pets-rule/pets-rule-05.jpg",
+    "source": "openlibrary-isbn:1339021579"
+  },
+  {
+    "series": "pets-rule",
+    "seriesNumber": 6,
+    "title": "The Night of the Chipmunk",
+    "author": "Susan Tan",
+    "isbn": "1546119744",
+    "asin": "1546119744",
+    "coverFile": "library/pets-rule/pets-rule-06.jpg",
+    "source": "amazon:1546119744"
+  },
+  {
+    "series": "pets-rule",
+    "seriesNumber": 7,
+    "title": "Revenge of the Raccoons",
+    "author": "Susan Tan",
+    "isbn": "1546119779",
+    "asin": "1546119779",
+    "coverFile": "library/pets-rule/pets-rule-07.jpg",
+    "source": "openlibrary-isbn:1546119760"
+  },
+  {
+    "series": "pets-rule",
+    "seriesNumber": 8,
+    "title": "Beware of the Dino-Snake",
+    "author": "Susan Tan",
+    "isbn": "1546180265",
+    "asin": "1546180265",
+    "coverFile": "library/pets-rule/pets-rule-08.jpg",
+    "source": "amazon:1546180265"
+  }
+]

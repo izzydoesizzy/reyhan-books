@@ -1,0 +1,22 @@
+[
+  {
+    "series": "super-villains-in-training",
+    "seriesNumber": 1,
+    "title": "The Fantastic Freeze Ray",
+    "author": "Kailei Pew",
+    "isbn": "9781546162117",
+    "asin": "1546162127",
+    "coverFile": "library/super-villains-in-training/super-villains-in-training-01.jpg",
+    "source": "amazon"
+  },
+  {
+    "series": "super-villains-in-training",
+    "seriesNumber": 2,
+    "title": "A Wickedly Evil Pet",
+    "author": "Kailei Pew",
+    "isbn": "9781546162148",
+    "asin": "1546162143",
+    "coverFile": "library/super-villains-in-training/super-villains-in-training-02.jpg",
+    "source": "amazon"
+  }
+]
