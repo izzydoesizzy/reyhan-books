@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cover Check — Reyhan's Story Shelf</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0; padding: 24px; background: #FBF5EA; color: #43342A;
+      font: 15px/1.5 system-ui, sans-serif;
+    }
+    h1 { font-size: 1.4rem; margin: 0 0 4px; }
+    p.note { color: #7A6A5C; max-width: 72ch; margin: 0 0 16px; }
+    button {
+      font: inherit; font-weight: 700; cursor: pointer; border-radius: 10px;
+      border: 2px solid #E5D6BC; background: #fff; padding: 8px 16px; margin-right: 8px;
+    }
+    button.primary { background: #E4593B; border-color: #C74228; color: #fff; }
+    #summary { font-weight: 700; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; background: #fff; }
+    th, td { border: 1px solid #E5D6BC; padding: 6px 9px; text-align: left; vertical-align: middle; }
+    th { background: #F3E9D7; position: sticky; top: 0; }
+    td img { width: 34px; height: 51px; object-fit: cover; display: block; border-radius: 3px; }
+    td.miss { color: #A79684; text-align: center; }
+    td.pending { color: #A79684; text-align: center; font-style: italic; }
+    tr.none td { background: #FBE3DC; }
+    tr.none td:first-child { color: #C74228; font-weight: 800; }
+    .winner { font-weight: 700; color: #2E7D32; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <h1>Cover Check</h1>
+  <p class="note">
+    Probes every book against every cover source, bypassing all caches, and shows
+    exactly where each cover can come from. Books with a red <strong>NONE</strong> row
+    have no working source and need a hand-picked URL in <code>COVER_OVERRIDES</code>
+    (v2/config.js). Heads up: Open Library rate-limits ISBN lookups to roughly
+    100 per 5 minutes, so avoid re-running back-to-back.
+  </p>
+  <p>
+    <button class="primary" id="run">Run check</button>
+    <button id="clear">Clear cover cache</button>
+    <a href="./" style="margin-left:8px">← back to the shelf</a>
+  </p>
+  <div id="summary"></div>
+  <div id="out"></div>
+
+  <script src="../data.js"></script>
+  <script src="config.js"></script>
+  <script src="covers.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var books = buildLibrary().books;
+      var sources = Covers.sources;
+      var out = document.getElementById("out");
+      var summary = document.getElementById("summary");
+      var running = false;
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[<>&"]/g, function (c) {
+          return { "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c];
+        });
+      }
+
+      function buildTable() {
+        var head = "<tr><th>Book</th><th>Key</th>" +
+          sources.map(function (s) { return "<th>" + esc(s.label) + "</th>"; }).join("") +
+          "<th>Winner</th></tr>";
+        var rows = books.map(function (b, i) {
+          var cells = sources.map(function (s, j) {
+            return s.applies(b)
+              ? '<td class="pending" id="c-' + i + "-" + j + '">…</td>'
+              : '<td class="miss" id="c-' + i + "-" + j + '">n/a</td>';
+          }).join("");
+          return '<tr id="r-' + i + '"><td>' + esc(b.title) +
+            '<br><small>' + esc(b.series) + "</small></td><td><small>" +
+            esc(b.isbn || b.asin || "—") + "</small></td>" + cells +
+            '<td class="winner" id="w-' + i + '">…</td></tr>';
+        }).join("");
+        out.innerHTML = "<table>" + head + rows + "</table>";
+      }
+
+      function checkBook(b, i) {
+        var winner = null;
+        var chain = Promise.resolve();
+        sources.forEach(function (s, j) {
+          chain = chain.then(function () {
+            if (!s.applies(b)) return null;
+            return s.probe(b, { bust: true }).then(function (url) {
+              var cell = document.getElementById("c-" + i + "-" + j);
+              if (url) {
+                cell.className = "";
+                cell.innerHTML = '<img src="' + esc(url) + '" alt="">';
+                if (!winner) {
+                  winner = s.label;
+                  document.getElementById("w-" + i).textContent = s.label;
+                }
+              } else {
+                cell.className = "miss";
+                cell.textContent = "—";
+              }
+            });
+          });
+        });
+        return chain.then(function () {
+          if (!winner) {
+            document.getElementById("w-" + i).textContent = "NONE";
+            document.getElementById("r-" + i).className = "none";
+          }
+          return !!winner;
+        });
+      }
+
+      function run() {
+        if (running) return;
+        running = true;
+        buildTable();
+        summary.textContent = "Checking " + books.length + " books…";
+
+        var next = 0, hits = 0, done = 0;
+        var CONCURRENCY = 4;
+
+        function pump() {
+          if (next >= books.length) return Promise.resolve();
+          var i = next++;
+          return checkBook(books[i], i).then(function (ok) {
+            if (ok) hits++;
+            done++;
+            summary.textContent = "Checked " + done + " / " + books.length + "…";
+            return pump();
+          });
+        }
+
+        var lanes = [];
+        for (var k = 0; k < CONCURRENCY; k++) lanes.push(pump());
+        Promise.all(lanes).then(function () {
+          running = false;
+          var misses = books.length - hits;
+          summary.textContent = hits + " of " + books.length +
+            " books have at least one working cover source" +
+            (misses ? " — " + misses + " need a hand-picked override (red rows)." : ". All covered! 🎉");
+        });
+      }
+
+      document.getElementById("run").addEventListener("click", run);
+      document.getElementById("clear").addEventListener("click", function () {
+        Covers.clearCache();
+        summary.textContent = "Cover cache cleared — the main page will re-probe everything on next load.";
+      });
+    })();
+  </script>
+</body>
+</html>
