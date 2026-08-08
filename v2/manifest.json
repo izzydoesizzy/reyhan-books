@@ -1,0 +1,13 @@
+{
+  "name": "Reyhan's Story Shelf",
+  "short_name": "Story Shelf",
+  "description": "Every book Reyhan has read, on a warm little bookshelf of her own.",
+  "start_url": "/reyhan-books/v2/",
+  "scope": "/reyhan-books/v2/",
+  "display": "standalone",
+  "background_color": "#FBF5EA",
+  "theme_color": "#FBF5EA",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
