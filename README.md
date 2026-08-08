@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 55**
+**Total Books Read: 57**
 
 A running log of every book Reyhan and I have read together.
 
@@ -85,19 +85,21 @@ A running log of every book Reyhan and I have read together.
 | 1 | Sprite's Secret | Tracey West | July 18, 2026 |
 | 3 | The Pet Store Sprite | Tracey West | July 18, 2026 |
 
-### Coral Keepers — by Robin Yardi (1 read so far)
+### Coral Keepers — by Robin Yardi (2 read so far)
 
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
 | 1 | Search for the Silver Shell | Robin Yardi | July 18, 2026 |
+| 2 | Dive for the Black Pearl | Robin Yardi | August 7, 2026 |
 
-### Pets Rule! — by Susan Tan (3 read so far)
+### Pets Rule! — by Susan Tan (4 read so far)
 
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
 | 1 | My Kingdom of Darkness | Susan Tan | July 17, 2026 |
 | 2 | The Poodle of Doom | Susan Tan | July 26, 2026 |
 | 3 | Kittens Are Monsters! | Susan Tan | July 29, 2026 |
+| 4 | The Rise of the Goldfish | Susan Tan | August 8, 2026 |
 
 ### The Last Firehawk — by Katrina Charman (complete: 8/8)
 
@@ -173,6 +175,8 @@ A running log of every book Reyhan and I have read together.
 | July 18, 2026 | Search for the Silver Shell | Coral Keepers #1 | Robin Yardi |
 | July 26, 2026 | The Poodle of Doom | Pets Rule! #2 | Susan Tan |
 | July 29, 2026 | Kittens Are Monsters! | Pets Rule! #3 | Susan Tan |
+| August 7, 2026 | Dive for the Black Pearl | Coral Keepers #2 | Robin Yardi |
+| August 8, 2026 | The Rise of the Goldfish | Pets Rule! #4 | Susan Tan |
 
 ---
 
