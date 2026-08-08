@@ -23,6 +23,24 @@ const V2_SERIES_COLORS = {
 
 const V2_FALLBACK_COLOR = "#A97B4F";
 
+/* Hand-picked cover URLs for books the automatic sources miss
+   (see covercheck.html for the per-book source report). Entries
+   are probed like any other candidate, so a dead URL simply
+   falls through to the rest of the chain — safe to leave in. */
+const COVER_OVERRIDES = {
+  /* 979-prefix ISBN-13; thin Open Library coverage. Direct
+     Google Books image endpoint for volume wad0EQAAQBAJ. */
+  "dragon-masters-31": "https://books.google.com/books/content?id=wad0EQAAQBAJ&printsec=frontcover&img=1&zoom=2",
+};
+
+/* Books' ASINs equal their ISBN-10, and Amazon's cover CDN is
+   keyed by ASIN — so the /dp/ segment of the Amazon URL gives a
+   cover key even for books with no usable ISBN-10. */
+function extractAsin(url) {
+  var m = /\/dp\/([A-Z0-9]{10})/i.exec(url || "");
+  return m ? m[1] : null;
+}
+
 /* Badges shown on the Reading Passport. Each `test` receives the
    built library and returns true when the badge is earned. */
 const V2_BADGES = [
@@ -65,6 +83,8 @@ function buildLibrary() {
         synopsis: b.synopsis || "",
         pages: b.pages || null,
         isbn: b.coverIsbn || null,
+        asin: extractAsin(b.amazonUsUrl),
+        override: COVER_OVERRIDES[b.id] || null,
         amazonUs: b.amazonUsUrl || null,
         amazonCa: b.amazonCaUrl || null,
         color: V2_SERIES_COLORS[b.series] || V2_FALLBACK_COLOR,

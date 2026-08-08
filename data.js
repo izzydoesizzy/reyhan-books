@@ -988,7 +988,7 @@ const BOOKS = [
     "amazonUsExact": true,
     "amazonCaUrl": "https://www.amazon.ca/dp/B0FK165TB8",
     "amazonCaExact": true,
-    "coverIsbn": null,
+    "coverIsbn": "9798225003296",
     "goodreadsUrl": "https://www.goodreads.com/book/show/239320094-defending-the-swamp-dragon",
     "pages": 96
   },
