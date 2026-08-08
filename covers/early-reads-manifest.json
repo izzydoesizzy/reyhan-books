@@ -1,0 +1,822 @@
+[
+  {
+    "id": "ouas-a-flicker-of-hope-a-story-of-migration",
+    "title": "A Flicker of Hope: A Story of Migration",
+    "author": "Cynthia Harmony / Devon Holzwarth (illus.)",
+    "isbn": "9780593525760",
+    "asin": "0593525760",
+    "coverFile": "covers/ouas-a-flicker-of-hope-a-story-of-migration.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-a-is-for-apple",
+    "title": "A Is for Apple",
+    "author": "Tiger Tales / Georgie Birkett (illus.)",
+    "isbn": "9781589258723",
+    "asin": "158925872X",
+    "coverFile": "covers/ouas-a-is-for-apple.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/25144378-tiger-tales"
+  },
+  {
+    "id": "ouas-a-treasury-to-read-with-grandma",
+    "title": "A Treasury to Read with Grandma",
+    "author": "Cottage Door Press / Parragon Books",
+    "isbn": "9781680524659",
+    "asin": "1680524658",
+    "coverFile": "covers/ouas-a-treasury-to-read-with-grandma.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-ada-twist-scientist",
+    "title": "Ada Twist, Scientist",
+    "author": "Andrea Beaty / David Roberts",
+    "isbn": "9781419721373",
+    "asin": "1419721372",
+    "coverFile": "covers/ouas-ada-twist-scientist.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-blue-hat-green-hat",
+    "title": "Blue Hat, Green Hat",
+    "author": "Sandra Boynton",
+    "isbn": "9780671493202",
+    "asin": "0671493205",
+    "coverFile": "covers/ouas-blue-hat-green-hat.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-brown-bear-brown-bear-what-do-you-see",
+    "title": "Brown Bear, Brown Bear, What Do You See?",
+    "author": "Bill Martin Jr. / Eric Carle",
+    "isbn": "9780805047905",
+    "asin": "0805047905",
+    "coverFile": "covers/ouas-brown-bear-brown-bear-what-do-you-see.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-caillou-and-rosie-s-doll",
+    "title": "Caillou: And Rosie's Doll",
+    "author": "Francine Allen (Backpack series)",
+    "isbn": "9782894501832",
+    "asin": "2894501838",
+    "coverFile": "covers/ouas-caillou-and-rosie-s-doll.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/5039263-caillou-and-rosie-s-doll-backpack"
+  },
+  {
+    "id": "ouas-chicka-chicka-boom-boom",
+    "title": "Chicka Chicka Boom Boom",
+    "author": "Bill Martin Jr. / John Archambault / Lois Ehlert",
+    "isbn": "9780689841217",
+    "asin": "0689841213",
+    "coverFile": "covers/ouas-chicka-chicka-boom-boom.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-contemplating-your-bellybutton",
+    "title": "Contemplating Your Bellybutton",
+    "author": "Jun Nanao / Tomoko Hasegawa (illus.)",
+    "isbn": "9780916291600",
+    "asin": "091629160X",
+    "coverFile": "covers/ouas-contemplating-your-bellybutton.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-counting-on-community",
+    "title": "Counting on Community",
+    "author": "Innosanto Nagara",
+    "isbn": "9781609806323",
+    "asin": "1609806328",
+    "coverFile": "covers/ouas-counting-on-community.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-cuentos-buenas-noches-ninas-rebeldes-1",
+    "title": "Cuentos de buenas noches para niñas rebeldes",
+    "author": "Elena Favilli / Francesca Cavallo (Niñas Rebeldes)",
+    "isbn": "9788408176114",
+    "asin": "",
+    "coverFile": "covers/ouas-cuentos-buenas-noches-ninas-rebeldes-1.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-cuentos-buenas-noches-ninas-rebeldes-2",
+    "title": "Cuentos de buenas noches para niñas rebeldes 2",
+    "author": "Elena Favilli / Francesca Cavallo (Niñas Rebeldes)",
+    "isbn": "9788408183259",
+    "asin": "8408183257",
+    "coverFile": "covers/ouas-cuentos-buenas-noches-ninas-rebeldes-2.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-dc-super-hero-girls-finals-crisis",
+    "title": "DC Super Hero Girls: Finals Crisis",
+    "author": "Shea Fontana / Yancey Labat (illus.)",
+    "isbn": "9781515874324",
+    "asin": "151587432X",
+    "coverFile": "covers/ouas-dc-super-hero-girls-finals-crisis.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-dinosaur-dance",
+    "title": "Dinosaur Dance!",
+    "author": "Sandra Boynton",
+    "isbn": "9781481480994",
+    "asin": "1481480995",
+    "coverFile": "covers/ouas-dinosaur-dance.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-dinosnores",
+    "title": "Dinosnores",
+    "author": "Sandra Boynton",
+    "isbn": "9781523508136",
+    "asin": "1523508132",
+    "coverFile": "covers/ouas-dinosnores.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-dora-s-big-book-of-stories",
+    "title": "Dora's Big Book of Stories",
+    "author": "Nickelodeon",
+    "isbn": "9781416907084",
+    "asin": "1416907084",
+    "coverFile": "covers/ouas-dora-s-big-book-of-stories.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-dr-seuss-s-abc",
+    "title": "Dr. Seuss's ABC",
+    "author": "Dr. Seuss",
+    "isbn": "9780394800301",
+    "asin": "0394800303",
+    "coverFile": "covers/ouas-dr-seuss-s-abc.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-each-peach-pear-plum",
+    "title": "Each Peach Pear Plum",
+    "author": "Janet and Allan Ahlberg",
+    "isbn": "9780141379524",
+    "asin": "0141379529",
+    "coverFile": "covers/ouas-each-peach-pear-plum.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-es-hora-de-ir-al-bano",
+    "title": "Es hora de ir al baño",
+    "author": "Joceline Sanschagrin / Pierre Brignaud (illus.) - Caillou's Essentials",
+    "isbn": "9782897186395",
+    "asin": "2897186399",
+    "coverFile": "covers/ouas-es-hora-de-ir-al-bano.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-first-words-spanish",
+    "title": "First Words Spanish",
+    "author": "Lonely Planet Kids",
+    "isbn": "9781786573179",
+    "asin": "1786573172",
+    "coverFile": "covers/ouas-first-words-spanish.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-fish-upon-a-star",
+    "title": "Fish Upon a Star",
+    "author": "Emmie MacNevin / Francesca Pesci (illus.) - Little Hippo Books",
+    "isbn": "9781955044974",
+    "asin": "195504497X",
+    "coverFile": "covers/ouas-fish-upon-a-star.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-friendship-is-forever",
+    "title": "Friendship Is Forever",
+    "author": "Patricia Hegarty / Summer Macon (illus.)",
+    "isbn": "9780593377147",
+    "asin": "0593377141",
+    "coverFile": "covers/ouas-friendship-is-forever.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-good-night-grand-canyon",
+    "title": "Good Night Grand Canyon",
+    "author": "Adam Gamble / Mark Jasper",
+    "isbn": "9781602195035",
+    "asin": "160219503X",
+    "coverFile": "covers/ouas-good-night-grand-canyon.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-good-night-i-love-you",
+    "title": "Good Night, I Love You",
+    "author": "Caroline Jayne Church",
+    "isbn": "9781444925609",
+    "asin": "1444925601",
+    "coverFile": "covers/ouas-good-night-i-love-you.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-goodnight-monkey",
+    "title": "Goodnight Monkey",
+    "author": "Kidsbooks (publisher; no individual author identified)",
+    "isbn": "",
+    "asin": "",
+    "coverFile": "",
+    "source": "unresolved",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-goodnight-moon",
+    "title": "Goodnight Moon",
+    "author": "Margaret Wise Brown / Clement Hurd",
+    "isbn": "9780060207069",
+    "asin": "006020706X",
+    "coverFile": "covers/ouas-goodnight-moon.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-happy-birthday-to-you",
+    "title": "Happy Birthday to You!",
+    "author": "Dr. Seuss",
+    "isbn": "9780394800769",
+    "asin": "0394800761",
+    "coverFile": "covers/ouas-happy-birthday-to-you.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-hippos-go-berserk",
+    "title": "Hippos Go Berserk!",
+    "author": "Sandra Boynton",
+    "isbn": "9780689834349",
+    "asin": "0689834349",
+    "coverFile": "covers/ouas-hippos-go-berserk.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/815985.Hippos_Go_Berserk_"
+  },
+  {
+    "id": "ouas-how-to-tie-your-shoes",
+    "title": "How To...Tie Your Shoes",
+    "author": "Lake Press / Cottage Door Press",
+    "isbn": "9781680523188",
+    "asin": "168052318X",
+    "coverFile": "covers/ouas-how-to-tie-your-shoes.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-hugs",
+    "title": "Hugs",
+    "author": "Robert Munsch / Michael Martchenko",
+    "isbn": "9781443133135",
+    "asin": "1443133132",
+    "coverFile": "covers/ouas-hugs.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-i-am-a-big-sister",
+    "title": "I Am a Big Sister",
+    "author": "Caroline Jayne Church",
+    "isbn": "9780545688987",
+    "asin": "0545688981",
+    "coverFile": "covers/ouas-i-am-a-big-sister.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-i-am-enough",
+    "title": "I Am Enough",
+    "author": "Grace Byers / Keturah A. Bobo",
+    "isbn": "9780062667120",
+    "asin": "0062667122",
+    "coverFile": "covers/ouas-i-am-enough.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-i-am-love",
+    "title": "I Am Love",
+    "author": "Susan Verde / Peter H. Reynolds",
+    "isbn": "9781419737268",
+    "asin": "1419737260",
+    "coverFile": "covers/ouas-i-am-love.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-i-want-my-hat-back",
+    "title": "I Want My Hat Back",
+    "author": "Jon Klassen",
+    "isbn": "9780763655983",
+    "asin": "0763655988",
+    "coverFile": "covers/ouas-i-want-my-hat-back.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/11233988-i-want-my-hat-back"
+  },
+  {
+    "id": "ouas-i-will-love-you-forever",
+    "title": "I Will Love You Forever",
+    "author": "Caroline Jayne Church",
+    "isbn": "9780545942003",
+    "asin": "0545942004",
+    "coverFile": "covers/ouas-i-will-love-you-forever.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-in-my-heart-a-book-of-feelings",
+    "title": "In My Heart: A Book of Feelings",
+    "author": "Jo Witek / Christine Roussey (illus.)",
+    "isbn": "9781419713101",
+    "asin": "1419713108",
+    "coverFile": "covers/ouas-in-my-heart-a-book-of-feelings.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/20702049-in-my-heart"
+  },
+  {
+    "id": "ouas-is-your-mama-a-llama",
+    "title": "Is Your Mama a Llama?",
+    "author": "Deborah Guarino / Steven Kellogg (illus.)",
+    "isbn": "9780590259385",
+    "asin": "0590259385",
+    "coverFile": "covers/ouas-is-your-mama-a-llama.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/334452"
+  },
+  {
+    "id": "ouas-it-s-my-body",
+    "title": "It's My Body!",
+    "author": "Elise Gravel",
+    "isbn": "9781443196505",
+    "asin": "1443196509",
+    "coverFile": "covers/ouas-it-s-my-body.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-it-s-my-brain",
+    "title": "It's My Brain!",
+    "author": "Elise Gravel",
+    "isbn": "9781039710092",
+    "asin": "1039710093",
+    "coverFile": "covers/ouas-it-s-my-brain.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-just-a-special-day",
+    "title": "Just a Special Day",
+    "author": "Mercer Mayer",
+    "isbn": "9780062071989",
+    "asin": "006207198X",
+    "coverFile": "covers/ouas-just-a-special-day.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-just-go-to-bed",
+    "title": "Just Go to Bed",
+    "author": "Mercer Mayer",
+    "isbn": "9780307119407",
+    "asin": "0307119408",
+    "coverFile": "covers/ouas-just-go-to-bed.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-la-sirenita-soy-ariel",
+    "title": "La Sirenita: Soy Ariel",
+    "author": "Disney",
+    "isbn": "9780736438520",
+    "asin": "0736438521",
+    "coverFile": "covers/ouas-la-sirenita-soy-ariel.jpg",
+    "source": "amazon-english-edition-fallback",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-little-penguin-gets-the-hiccups",
+    "title": "Little Penguin Gets the Hiccups",
+    "author": "Tadgh Bentley",
+    "isbn": "9780062652249",
+    "asin": "0062652249",
+    "coverFile": "covers/ouas-little-penguin-gets-the-hiccups.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-llama-llama-red-pajama",
+    "title": "Llama Llama Red Pajama",
+    "author": "Anna Dewdney",
+    "isbn": "9780670059836",
+    "asin": "0670059838",
+    "coverFile": "covers/ouas-llama-llama-red-pajama.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/en/book/show/401679.Llama_Llama_Red_Pajama"
+  },
+  {
+    "id": "ouas-llamas-go-bananas",
+    "title": "Llamas Go Bananas",
+    "author": "Briony Britten / Pauline Reeves",
+    "isbn": "9781787720381",
+    "asin": "1787720381",
+    "coverFile": "covers/ouas-llamas-go-bananas.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-love-you-head-to-toe",
+    "title": "Love You Head to Toe",
+    "author": "Ashley Barron",
+    "isbn": "9781771474030",
+    "asin": "1771474033",
+    "coverFile": "covers/ouas-love-you-head-to-toe.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-marisol-mcdonald-doesn-t-match",
+    "title": "Marisol McDonald Doesn't Match",
+    "author": "Monica Brown",
+    "isbn": "9780892392353",
+    "asin": "0892392355",
+    "coverFile": "covers/ouas-marisol-mcdonald-doesn-t-match.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/12629258-marisol-mcdonald-doesn-t-match-marisol-mcdonald-no-combina"
+  },
+  {
+    "id": "ouas-mi-abuela-me-quiere-123",
+    "title": "Mi Abuela Me Quiere 123",
+    "author": "Laura Gates Galvin (Kidsbooks, Spanish edition)",
+    "isbn": "9781638540908",
+    "asin": "163854090X",
+    "coverFile": "covers/ouas-mi-abuela-me-quiere-123.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-mud-puddle",
+    "title": "Mud Puddle",
+    "author": "Robert Munsch / Dušan Petričić",
+    "isbn": "9781554514267",
+    "asin": "1554514266",
+    "coverFile": "covers/ouas-mud-puddle.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-narwhalicorn-and-jelly",
+    "title": "Narwhalicorn and Jelly",
+    "author": "Ben Clanton",
+    "isbn": "9780735266841",
+    "asin": "0735266840",
+    "coverFile": "covers/ouas-narwhalicorn-and-jelly.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-neither",
+    "title": "Neither",
+    "author": "Airlie Anderson",
+    "isbn": "9780316547697",
+    "asin": "0316547697",
+    "coverFile": "covers/ouas-neither.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/35604730-neither"
+  },
+  {
+    "id": "ouas-oh-the-thinks-you-can-think",
+    "title": "Oh, the Thinks You Can Think!",
+    "author": "Dr. Seuss",
+    "isbn": "9780394831299",
+    "asin": "0394831292",
+    "coverFile": "covers/ouas-oh-the-thinks-you-can-think.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-one-eagle-soaring",
+    "title": "One Eagle Soaring",
+    "author": "Robert Budd / Roy Henry Vickers (illus.)",
+    "isbn": "9781550178289",
+    "asin": "1550178288",
+    "coverFile": "covers/ouas-one-eagle-soaring.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-opposites",
+    "title": "Opposites",
+    "author": "Sandra Boynton",
+    "isbn": "9780671449032",
+    "asin": "0671449036",
+    "coverFile": "covers/ouas-opposites.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-panorama-pops-rome",
+    "title": "Panorama Pops: Rome",
+    "author": "Kristyna Litten",
+    "isbn": "9780763664152",
+    "asin": "0763664154",
+    "coverFile": "covers/ouas-panorama-pops-rome.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/15798719-rome"
+  },
+  {
+    "id": "ouas-paw-patrol-los-cachorros-ayudan-en-la-granja",
+    "title": "PAW Patrol: Los cachorros ayudan en la granja",
+    "author": "Nickelodeon",
+    "isbn": "9781503760547",
+    "asin": "1503760545",
+    "coverFile": "covers/ouas-paw-patrol-los-cachorros-ayudan-en-la-granja.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-peek-a-boo-haiku",
+    "title": "Peek-a-Boo Haiku",
+    "author": "Danna Smith / Teagan White (illus.)",
+    "isbn": "9781665926461",
+    "asin": "1665926465",
+    "coverFile": "covers/ouas-peek-a-boo-haiku.jpg",
+    "source": "amazon",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/61273196-peek-a-boo-haiku"
+  },
+  {
+    "id": "ouas-peep-inside-the-farm",
+    "title": "Peep Inside the Farm",
+    "author": "Usborne / Anna Milbourne",
+    "isbn": "9781409582045",
+    "asin": "1409582043",
+    "coverFile": "covers/ouas-peep-inside-the-farm.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-penguin-in-love",
+    "title": "Penguin in Love",
+    "author": "Salina Yoon",
+    "isbn": "9780802736000",
+    "asin": "0802736009",
+    "coverFile": "covers/ouas-penguin-in-love.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/17287023-penguin-in-love"
+  },
+  {
+    "id": "ouas-pigs",
+    "title": "Pigs",
+    "author": "Robert Munsch / Michael Martchenko",
+    "isbn": "9781550370386",
+    "asin": "1550370383",
+    "coverFile": "covers/ouas-pigs.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-princess-truly-i-am-curious",
+    "title": "Princess Truly: I Am Curious!",
+    "author": "Kelly Greenawalt / Amariah Rauscher (illus.)",
+    "isbn": "9781338818857",
+    "asin": "1338818856",
+    "coverFile": "covers/ouas-princess-truly-i-am-curious.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-big-book-of-feelings",
+    "title": "The Big Book of Feelings",
+    "author": "James O'Brien",
+    "isbn": "9781454712190",
+    "asin": "1454712198",
+    "coverFile": "covers/ouas-the-big-book-of-feelings.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-bunny-rabbit-show",
+    "title": "The Bunny Rabbit Show",
+    "author": "Sandra Boynton",
+    "isbn": "9780761180609",
+    "asin": "0761180605",
+    "coverFile": "covers/ouas-the-bunny-rabbit-show.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-family-book",
+    "title": "The Family Book",
+    "author": "Todd Parr",
+    "isbn": "9780316442541",
+    "asin": "0316442542",
+    "coverFile": "covers/ouas-the-family-book.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-going-to-bed-book",
+    "title": "The Going to Bed Book",
+    "author": "Sandra Boynton",
+    "isbn": "9780671449025",
+    "asin": "0671449028",
+    "coverFile": "covers/ouas-the-going-to-bed-book.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-greedy-python",
+    "title": "The Greedy Python",
+    "author": "Richard Buckley / Eric Carle",
+    "isbn": "9781416982906",
+    "asin": "1416982906",
+    "coverFile": "covers/ouas-the-greedy-python.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-paper-bag-princess",
+    "title": "The Paper Bag Princess",
+    "author": "Robert Munsch / Michael Martchenko",
+    "isbn": "9780920236253",
+    "asin": "0920236251",
+    "coverFile": "covers/ouas-the-paper-bag-princess.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-sunken-ship-an-acorn-book-mermaid-days-1",
+    "title": "The Sunken Ship: An Acorn Book (Mermaid Days #1)",
+    "author": "Kyle Lukoff / Kat Uno (illus.)",
+    "isbn": "9781338794601",
+    "asin": "1338794604",
+    "coverFile": "covers/ouas-the-sunken-ship-an-acorn-book-mermaid-days-1.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-very-hungry-caterpillar",
+    "title": "The Very Hungry Caterpillar",
+    "author": "Eric Carle",
+    "isbn": "9780399226908",
+    "asin": "0399226907",
+    "coverFile": "covers/ouas-the-very-hungry-caterpillar.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-the-wonky-donkey",
+    "title": "The Wonky Donkey",
+    "author": "Craig Smith / Katz Cowley",
+    "isbn": "9780545261241",
+    "asin": "0545261244",
+    "coverFile": "covers/ouas-the-wonky-donkey.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-time-for-bed",
+    "title": "Time for Bed",
+    "author": "Mem Fox / Jane Dyer",
+    "isbn": "9780152010140",
+    "asin": "0152010149",
+    "coverFile": "covers/ouas-time-for-bed.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-treasury-of-fairy-tales",
+    "title": "Treasury of Fairy Tales",
+    "author": "Publications International Ltd.",
+    "isbn": "9780785380368",
+    "asin": "0785380361",
+    "coverFile": "covers/ouas-treasury-of-fairy-tales.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-twinkle-makes-music",
+    "title": "Twinkle Makes Music",
+    "author": "Katharine Holabird / Sarah Warburton",
+    "isbn": "9781534496774",
+    "asin": "1534496777",
+    "coverFile": "covers/ouas-twinkle-makes-music.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-un-amigo-como-tu-ardilla-y-sus-amigos",
+    "title": "Un Amigo Como Tú (Ardilla y sus amigos)",
+    "author": "Andrea Schomburg / Barbara Röttgen (illus.) / Vanesa Pérez-Sauquillo (transl.)",
+    "isbn": "9788448847272",
+    "asin": "844884727X",
+    "coverFile": "covers/ouas-un-amigo-como-tu-ardilla-y-sus-amigos.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-we-re-different-we-re-the-same",
+    "title": "We're Different, We're the Same",
+    "author": "Bobbi Kates / Joe Mathieu (Sesame Street)",
+    "isbn": "9781524770563",
+    "asin": "1524770566",
+    "coverFile": "covers/ouas-we-re-different-we-re-the-same.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-what-s-wrong-little-pookie",
+    "title": "What's Wrong, Little Pookie?",
+    "author": "Sandra Boynton",
+    "isbn": "9781481497695",
+    "asin": "1481497693",
+    "coverFile": "covers/ouas-what-s-wrong-little-pookie.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-when-we-are-kind",
+    "title": "When We Are Kind",
+    "author": "Monique Gray Smith / Nicole Neidhardt",
+    "isbn": "9781459825222",
+    "asin": "1459825225",
+    "coverFile": "covers/ouas-when-we-are-kind.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-why-i-love-my-abc",
+    "title": "Why I Love My ABC",
+    "author": "Daniel Howarth",
+    "isbn": "9780008519216",
+    "asin": "0008519218",
+    "coverFile": "covers/ouas-why-i-love-my-abc.jpg",
+    "source": "amazon",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-winnie-the-pooh-opposites",
+    "title": "Winnie the Pooh: Opposites",
+    "author": "Disney",
+    "isbn": "9780736400343",
+    "asin": "0736400346",
+    "coverFile": "covers/ouas-winnie-the-pooh-opposites.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-winnie-the-pooh-senses",
+    "title": "Winnie the Pooh: Senses",
+    "author": "Disney",
+    "isbn": "9780736410090",
+    "asin": "0736410090",
+    "coverFile": "covers/ouas-winnie-the-pooh-senses.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-you-re-my-little-baby",
+    "title": "You're My Little Baby",
+    "author": "Eric Carle",
+    "isbn": "9781534474932",
+    "asin": "1534474935",
+    "coverFile": "covers/ouas-you-re-my-little-baby.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  },
+  {
+    "id": "ouas-your-personal-penguin",
+    "title": "Your Personal Penguin",
+    "author": "Sandra Boynton",
+    "isbn": "9780761143727",
+    "asin": "0761143726",
+    "coverFile": "covers/ouas-your-personal-penguin.jpg",
+    "source": "openlibrary-isbn",
+    "goodreadsUrl": ""
+  }
+]

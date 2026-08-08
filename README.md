@@ -4,7 +4,7 @@
 
 A running log of every book Reyhan and I have read together.
 
-**How this works:** every time a new book gets added, it's logged below with the date we read it, and the total count at the top gets bumped. Series are grouped together under **By Series**, and everything also appears in date order under **Chronological Log**.
+**How this works:** every time a new book gets added, it's logged below with the date we read it, and the total count at the top gets bumped. Series are grouped together under **By Series**, and everything also appears in date order under **Chronological Log**. A separate, undated collection of picture books and board books from before this log started lives in `data.js`'s `EARLY_BOOKS` array — see **Once Upon a Shelf** below, not part of the total above.
 
 **🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. The site files live at the repo root (`index.html`, `data.js`, …); when a book is added here, `data.js` gets the same update.
 
@@ -177,6 +177,101 @@ A running log of every book Reyhan and I have read together.
 | July 29, 2026 | Kittens Are Monsters! | Pets Rule! #3 | Susan Tan |
 | August 7, 2026 | Dive for the Black Pearl | Coral Keepers #2 | Robin Yardi |
 | August 8, 2026 | The Rise of the Goldfish | Pets Rule! #4 | Susan Tan |
+
+---
+
+## Once Upon a Shelf — Early Reads (2022–2025)
+
+Picture books, board books, bilingual stories, and early readers Reyhan read before this
+log's chapter-book chronicle begins. Exact dates weren't tracked for this stretch, so
+they're gathered here as one collection instead of a month-by-month log. See it as its own
+page on the site: **[Beginnings](https://izzydoesizzy.github.io/reyhan-books/v2/#/beginnings)**.
+
+**Books in this collection: 82**
+
+| Title | Author |
+|-------|--------|
+| A Flicker of Hope: A Story of Migration | Cynthia Harmony / Devon Holzwarth (illus.) |
+| A Is for Apple | Tiger Tales / Georgie Birkett (illus.) |
+| A Treasury to Read with Grandma | Cottage Door Press / Parragon Books |
+| Ada Twist, Scientist | Andrea Beaty / David Roberts |
+| Blue Hat, Green Hat | Sandra Boynton |
+| Brown Bear, Brown Bear, What Do You See? | Bill Martin Jr. / Eric Carle |
+| Caillou: And Rosie's Doll | Francine Allen (Backpack series) |
+| Chicka Chicka Boom Boom | Bill Martin Jr. / John Archambault / Lois Ehlert |
+| Contemplating Your Bellybutton | Jun Nanao / Tomoko Hasegawa (illus.) |
+| Counting on Community | Innosanto Nagara |
+| Cuentos de buenas noches para niñas rebeldes | Elena Favilli / Francesca Cavallo (Niñas Rebeldes) |
+| Cuentos de buenas noches para niñas rebeldes 2 | Elena Favilli / Francesca Cavallo (Niñas Rebeldes) |
+| DC Super Hero Girls: Finals Crisis | Shea Fontana / Yancey Labat (illus.) |
+| Dinosaur Dance! | Sandra Boynton |
+| Dinosnores | Sandra Boynton |
+| Dora's Big Book of Stories | Nickelodeon |
+| Dr. Seuss's ABC | Dr. Seuss |
+| Each Peach Pear Plum | Janet and Allan Ahlberg |
+| Es hora de ir al baño | Joceline Sanschagrin / Pierre Brignaud (illus.) - Caillou's Essentials |
+| First Words Spanish | Lonely Planet Kids |
+| Fish Upon a Star | Emmie MacNevin / Francesca Pesci (illus.) - Little Hippo Books |
+| Friendship Is Forever | Patricia Hegarty / Summer Macon (illus.) |
+| Good Night Grand Canyon | Adam Gamble / Mark Jasper |
+| Good Night, I Love You | Caroline Jayne Church |
+| Goodnight Monkey | Kidsbooks (publisher; no individual author identified) |
+| Goodnight Moon | Margaret Wise Brown / Clement Hurd |
+| Happy Birthday to You! | Dr. Seuss |
+| Hippos Go Berserk! | Sandra Boynton |
+| How To...Tie Your Shoes | Lake Press / Cottage Door Press |
+| Hugs | Robert Munsch / Michael Martchenko |
+| I Am a Big Sister | Caroline Jayne Church |
+| I Am Enough | Grace Byers / Keturah A. Bobo |
+| I Am Love | Susan Verde / Peter H. Reynolds |
+| I Want My Hat Back | Jon Klassen |
+| I Will Love You Forever | Caroline Jayne Church |
+| In My Heart: A Book of Feelings | Jo Witek / Christine Roussey (illus.) |
+| Is Your Mama a Llama? | Deborah Guarino / Steven Kellogg (illus.) |
+| It's My Body! | Elise Gravel |
+| It's My Brain! | Elise Gravel |
+| Just a Special Day | Mercer Mayer |
+| Just Go to Bed | Mercer Mayer |
+| La Sirenita: Soy Ariel | Disney |
+| Little Penguin Gets the Hiccups | Tadgh Bentley |
+| Llama Llama Red Pajama | Anna Dewdney |
+| Llamas Go Bananas | Briony Britten / Pauline Reeves |
+| Love You Head to Toe | Ashley Barron |
+| Marisol McDonald Doesn't Match | Monica Brown |
+| Mi Abuela Me Quiere 123 | Laura Gates Galvin (Kidsbooks, Spanish edition) |
+| Mud Puddle | Robert Munsch / Dušan Petričić |
+| Narwhalicorn and Jelly | Ben Clanton |
+| Neither | Airlie Anderson |
+| One Eagle Soaring | Robert Budd / Roy Henry Vickers (illus.) |
+| Opposites | Sandra Boynton |
+| Panorama Pops: Rome | Kristyna Litten |
+| PAW Patrol: Los cachorros ayudan en la granja | Nickelodeon |
+| Peek-a-Boo Haiku | Danna Smith / Teagan White (illus.) |
+| Peep Inside the Farm | Usborne / Anna Milbourne |
+| Penguin in Love | Salina Yoon |
+| Pigs | Robert Munsch / Michael Martchenko |
+| Princess Truly: I Am Curious! | Kelly Greenawalt / Amariah Rauscher (illus.) |
+| The Big Book of Feelings | James O'Brien |
+| The Bunny Rabbit Show | Sandra Boynton |
+| The Family Book | Todd Parr |
+| The Going to Bed Book | Sandra Boynton |
+| The Greedy Python | Richard Buckley / Eric Carle |
+| The Paper Bag Princess | Robert Munsch / Michael Martchenko |
+| The Sunken Ship: An Acorn Book (Mermaid Days #1) | Kyle Lukoff / Kat Uno (illus.) |
+| The Very Hungry Caterpillar | Eric Carle |
+| The Wonky Donkey | Craig Smith / Katz Cowley |
+| Time for Bed | Mem Fox / Jane Dyer |
+| Treasury of Fairy Tales | Publications International Ltd. |
+| Twinkle Makes Music | Katharine Holabird / Sarah Warburton |
+| Un Amigo Como Tú (Ardilla y sus amigos) | Andrea Schomburg / Barbara Röttgen (illus.) / Vanesa Pérez-Sauquillo (transl.) |
+| We're Different, We're the Same | Bobbi Kates / Joe Mathieu (Sesame Street) |
+| What's Wrong, Little Pookie? | Sandra Boynton |
+| When We Are Kind | Monique Gray Smith / Nicole Neidhardt |
+| Why I Love My ABC | Daniel Howarth |
+| Winnie the Pooh: Opposites | Disney |
+| Winnie the Pooh: Senses | Disney |
+| You're My Little Baby | Eric Carle |
+| Your Personal Penguin | Sandra Boynton |
 
 ---
 

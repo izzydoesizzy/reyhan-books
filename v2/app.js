@@ -235,6 +235,29 @@
     view.innerHTML = html;
   }
 
+  function renderBeginnings() {
+    var books = lib.earlyBooks;
+    var html =
+      '<h1 class="view-title">' + esc(lib.earlyReadsLabel) + "</h1>" +
+      '<p class="view-sub">Picture books, board books, and bedtime stories from before this shelf’s ' +
+        "chapter-book chronicle begins — read sometime across " + esc(lib.earlyReadsRange) +
+        ". Exact dates weren’t tracked for this stretch, so they’re gathered here together " +
+        "instead of month by month.</p>" +
+      '<p class="view-sub"><strong>' + books.length + (books.length === 1 ? " book" : " books") + "</strong></p>" +
+      '<ul class="early-grid">' +
+      books.map(function (b) {
+        return '<li><a class="early-card" href="#/book/' + esc(b.id) + '">' +
+          coverImg(b, "early-cover") +
+          '<span class="early-title">' + esc(b.title) + "</span>" +
+          '<span class="early-author">' + esc(b.author) + "</span>" +
+          "</a></li>";
+      }).join("") +
+      "</ul>";
+
+    view.innerHTML = html;
+    hydrateCovers(view);
+  }
+
   /* ---------- router ---------- */
 
   function route() {
@@ -256,6 +279,11 @@
       homeScrollMaybeSave();
       renderPassport();
       current = "passport";
+      window.scrollTo(0, 0);
+    } else if (hash.indexOf("#/beginnings") === 0) {
+      homeScrollMaybeSave();
+      renderBeginnings();
+      current = "beginnings";
       window.scrollTo(0, 0);
     } else {
       renderShelves();

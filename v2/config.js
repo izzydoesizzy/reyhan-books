@@ -23,6 +23,14 @@ const V2_SERIES_COLORS = {
 
 const V2_FALLBACK_COLOR = "#A97B4F";
 
+/* "Once Upon a Shelf" — the early-reads collection (picture books,
+   board books, bilingual and one-off titles from before this log's
+   chapter-book chronicle begins). No individual dateRead is tracked
+   for these, so they're shown as one approximate-range shelf instead
+   of a dated log. See EARLY_BOOKS in ../data.js. */
+const EARLY_READS_LABEL = "Once Upon a Shelf";
+const EARLY_READS_RANGE = "2022–2025";
+
 /* Hand-picked cover URLs for books the automatic sources miss
    (see covercheck.html for the per-book source report). Entries
    are probed like any other candidate, so a dead URL simply
@@ -59,37 +67,52 @@ const V2_BADGES = [
   { id: "streak-6", icon: "⚡", name: "Unstoppable", desc: "Read books 6 months in a row", test: (lib) => lib.stats.streakMonths >= 6 },
 ];
 
+/* Shared view-model mapper for both BOOKS and EARLY_BOOKS entries. */
+function toViewModel(b) {
+  var meta = SERIES_META[b.series] || {};
+  return {
+    id: b.id,
+    title: b.title,
+    series: b.series,
+    seriesNumber: b.seriesNumber,
+    author: b.author || "Unknown",
+    illustrator: meta.illustrator || null,
+    ageRange: meta.ageRange || null,
+    gradeLevel: meta.gradeLevel || null,
+    lexile: meta.lexile || null,
+    tags: meta.tags || [],
+    dateRead: b.dateRead || null,
+    displayDateRead: b.displayDateRead || null,
+    rating: b.goodreadsRating || null,
+    ratingUrl: b.goodreadsUrl || null,
+    synopsis: b.synopsis || "",
+    pages: b.pages || null,
+    isbn: b.coverIsbn || null,
+    asin: extractAsin(b.amazonUsUrl),
+    override: COVER_OVERRIDES[b.id] || null,
+    amazonUs: b.amazonUsUrl || null,
+    amazonCa: b.amazonCaUrl || null,
+    color: V2_SERIES_COLORS[b.series] || V2_FALLBACK_COLOR,
+  };
+}
+
 /* Normalize the V1 globals into the shapes V2 renders. */
 function buildLibrary() {
-  var books = BOOKS
-    .filter(function (b) { return b.status !== "upNext"; })
+  var mainRaw = BOOKS.filter(function (b) { return b.status !== "upNext"; });
+
+  /* Once Upon a Shelf: skip anything whose title already exists in
+     the main chapter-book log, and stamp the rest into one shared
+     "series" so they group as a single shelf instead of scattering
+     as ungrouped standalones. */
+  var mainTitles = {};
+  mainRaw.forEach(function (b) { mainTitles[b.title.trim().toLowerCase()] = true; });
+  var earlyRaw = (typeof EARLY_BOOKS !== "undefined" ? EARLY_BOOKS : [])
+    .filter(function (b) { return !mainTitles[b.title.trim().toLowerCase()]; })
     .map(function (b) {
-      var meta = SERIES_META[b.series] || {};
-      return {
-        id: b.id,
-        title: b.title,
-        series: b.series,
-        seriesNumber: b.seriesNumber,
-        author: b.author,
-        illustrator: meta.illustrator || null,
-        ageRange: meta.ageRange || null,
-        gradeLevel: meta.gradeLevel || null,
-        lexile: meta.lexile || null,
-        tags: meta.tags || [],
-        dateRead: b.dateRead || null,
-        displayDateRead: b.displayDateRead || null,
-        rating: b.goodreadsRating || null,
-        ratingUrl: b.goodreadsUrl || null,
-        synopsis: b.synopsis || "",
-        pages: b.pages || null,
-        isbn: b.coverIsbn || null,
-        asin: extractAsin(b.amazonUsUrl),
-        override: COVER_OVERRIDES[b.id] || null,
-        amazonUs: b.amazonUsUrl || null,
-        amazonCa: b.amazonCaUrl || null,
-        color: V2_SERIES_COLORS[b.series] || V2_FALLBACK_COLOR,
-      };
+      return Object.assign({}, b, { series: EARLY_READS_LABEL, seriesNumber: null });
     });
+
+  var books = mainRaw.concat(earlyRaw).map(toViewModel);
 
   var byId = {};
   books.forEach(function (b) { byId[b.id] = b; });
@@ -149,6 +172,13 @@ function buildLibrary() {
     ? rated.reduce(function (sum, b) { return sum + b.rating; }, 0) / rated.length
     : null;
 
+  /* Once Upon a Shelf books have no dateRead, so they never enter
+     `dated`/`byMonth` and can never become `latest` — alphabetical
+     is the only ordering that makes sense without dates. */
+  var earlyBooks = books
+    .filter(function (b) { return b.series === EARLY_READS_LABEL; })
+    .sort(function (a, z) { return a.title.localeCompare(z.title); });
+
   var lib = {
     books: books,
     byId: byId,
@@ -159,11 +189,14 @@ function buildLibrary() {
     latest: dated.length ? dated[dated.length - 1] : books[0],
     firstDate: dated.length ? dated[0].dateRead : null,
     lastDate: dated.length ? dated[dated.length - 1].dateRead : null,
+    earlyBooks: earlyBooks,
+    earlyReadsLabel: EARLY_READS_LABEL,
+    earlyReadsRange: EARLY_READS_RANGE,
     stats: {
       totalBooks: books.length,
       totalPages: totalPages,
       avgRating: avgRating,
-      seriesStarted: series.length,
+      seriesStarted: series.length + (earlyBooks.length ? 1 : 0),
       busiestMonthKey: busiestKey,
       busiestMonthCount: busiestCount,
       streakMonths: bestStreak,

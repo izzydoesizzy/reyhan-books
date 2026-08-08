@@ -907,6 +907,58 @@ button { font-family: inherit; cursor: pointer; }
   list-style: none;
 }
 
+/* ---------- Once Upon a Shelf (early reads) ---------- */
+
+.early-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 20px 16px;
+  padding: 0;
+  margin: 8px 0 42px;
+  list-style: none;
+}
+
+.early-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.early-card:hover,
+.early-card:focus-visible {
+  transform: translateY(-5px);
+}
+
+.early-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 4px 8px 8px 4px;
+  background: var(--parchment-edge);
+  box-shadow: inset 3px 0 5px -2px rgba(0, 0, 0, .35), var(--card-shadow);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.early-cover.is-loaded { opacity: 1; }
+
+.early-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .88rem;
+  line-height: 1.2;
+}
+
+.early-author {
+  color: var(--ink-soft);
+  font-size: .74rem;
+  font-weight: 700;
+}
+
 .badge {
   display: flex;
   align-items: center;
