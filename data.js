@@ -1198,6 +1198,25 @@ const BOOKS = [
     "pages": 96
   },
   {
+    "id": "pets-rule-04",
+    "title": "The Rise of the Goldfish",
+    "series": "Pets Rule!",
+    "seriesNumber": 4,
+    "author": "Susan Tan",
+    "dateRead": "2026-08-08",
+    "displayDateRead": "August 8, 2026",
+    "goodreadsRating": 4.3,
+    "synopsis": "Ember the chihuahua is thrilled to finally have a nemesis worthy of an evil overlord: Bubbles, a goldfish living upstairs in Mr. Chin's office who dreams of flooding the whole town and turning it into her own personal fish tank. Ember and the other pets are sure they can outsmart one goldfish, until Bubbles assembles an army of fish and the flooding begins for real. Ember must rally his friends to stop Bubbles before the local pool, and the whole neighborhood, goes underwater.",
+    "coverFile": "covers/pets-rule-04.jpg",
+    "amazonUsUrl": "https://www.amazon.com/dp/1338756427",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1338756427",
+    "amazonCaExact": true,
+    "coverIsbn": "1338756427",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/74830487-the-rise-of-the-goldfish",
+    "pages": 96
+  },
+  {
     "id": "last-firehawk-01",
     "title": "The Ember Stone",
     "series": "The Last Firehawk",
@@ -1404,6 +1423,25 @@ const BOOKS = [
     "amazonCaExact": true,
     "coverIsbn": "1546122427",
     "goodreadsUrl": "https://www.goodreads.com/book/show/213083755-search-for-the-silver-shell",
+    "pages": 96
+  },
+  {
+    "id": "coral-keepers-02",
+    "title": "Dive for the Black Pearl",
+    "series": "Coral Keepers",
+    "seriesNumber": 2,
+    "author": "Robin Yardi",
+    "dateRead": "2026-08-07",
+    "displayDateRead": "August 7, 2026",
+    "goodreadsRating": null,
+    "synopsis": "Evil magician Rozaro has put every Coral Keeper in the Queendom of Anjeea under a sleeping spell, and only the legendary Black Pearl can wake them. Finn and her friends Moon and Link set off for the icy Sapphire Sea to find it, but the pearl lies deep inside an enchanted tunnel guarded by a pod of powerful orcas. Finn will need every bit of her shark magic, and a lot of courage, if she hopes to break the spell before Rozaro strikes again.",
+    "coverFile": "covers/coral-keepers-02.jpg",
+    "amazonUsUrl": "https://www.amazon.com/dp/1546122451",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1546122451",
+    "amazonCaExact": true,
+    "coverIsbn": "1546122451",
+    "goodreadsUrl": null,
     "pages": 96
   }
 ];
