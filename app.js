@@ -263,6 +263,70 @@
     hydrateCovers(view);
   }
 
+  function renderDiscover() {
+    var all = (typeof LIBRARY_SERIES !== "undefined" ? LIBRARY_SERIES : []).slice()
+      .sort(function (a, z) { return a.name.localeCompare(z.name); });
+    var continuing = all.filter(function (s) { return s.isContinuation; });
+    var fresh = all.filter(function (s) { return !s.isContinuation; });
+
+    function seriesCard(s) {
+      var count = s.books.length + (s.books.length === 1 ? " book waiting" : " books waiting");
+      var tag = s.isContinuation ? "" : '<span class="discover-tag">' + esc(s.collection) + "</span>";
+      return "<li>" +
+        '<button type="button" class="discover-card" data-series="' + esc(s.slug) + '" aria-expanded="false">' +
+          '<img class="discover-cover" data-discover-cover src="covers/' + esc(s.books[0].coverFile) + '" alt="" loading="lazy">' +
+          '<span class="discover-card-body">' +
+            '<span class="discover-name">' + esc(s.name) + "</span>" +
+            '<span class="discover-author">' + esc(s.author) + "</span>" +
+            '<span class="discover-count">' + count + "</span>" +
+            tag +
+          "</span>" +
+        "</button>" +
+        '<ul class="discover-books" data-series-books="' + esc(s.slug) + '" hidden>' +
+          s.books.map(function (b) {
+            return "<li>" +
+              '<img data-discover-cover src="covers/' + esc(b.coverFile) + '" alt="" loading="lazy">' +
+              "<span>" + (b.seriesNumber ? "#" + b.seriesNumber + " " : "") + esc(b.title) + "</span>" +
+              "</li>";
+          }).join("") +
+        "</ul>" +
+      "</li>";
+    }
+
+    function section(title, list) {
+      if (!list.length) return "";
+      return '<h2 class="passport-section-title">' + esc(title) + "</h2>" +
+        '<ul class="discover-grid">' + list.map(seriesCard).join("") + "</ul>";
+    }
+
+    var byCollection = {};
+    fresh.forEach(function (s) { (byCollection[s.collection] = byCollection[s.collection] || []).push(s); });
+
+    var html =
+      '<h1 class="view-title">Discover</h1>' +
+      '<p class="view-sub">More books waiting whenever Reyhan’s ready: the rest of the series ' +
+        "she’s already in, and new ones worth trying next. Tap a series to peek inside.</p>" +
+      section("More from series you’re already reading", continuing);
+    Object.keys(byCollection).sort().forEach(function (col) {
+      html += section(col, byCollection[col]);
+    });
+
+    view.innerHTML = html;
+
+    view.querySelectorAll("img[data-discover-cover]").forEach(function (img) {
+      img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
+    });
+
+    view.querySelectorAll(".discover-card").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var books = view.querySelector('[data-series-books="' + btn.getAttribute("data-series") + '"]');
+        var open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        if (books) books.hidden = open;
+      });
+    });
+  }
+
   /* ---------- router ---------- */
 
   function route() {
@@ -289,6 +353,11 @@
       homeScrollMaybeSave();
       renderBeginnings();
       current = "beginnings";
+      window.scrollTo(0, 0);
+    } else if (hash.indexOf("#/discover") === 0) {
+      homeScrollMaybeSave();
+      renderDiscover();
+      current = "discover";
       window.scrollTo(0, 0);
     } else {
       renderShelves();

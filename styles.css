@@ -959,6 +959,134 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
 }
 
+/* ---------- Discover (unread series to try next) ---------- */
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  padding: 0;
+  margin: 8px 0 36px;
+  list-style: none;
+}
+
+.discover-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 2px solid var(--parchment-edge);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: box-shadow .18s, transform .18s, border-color .18s;
+}
+
+.discover-card:hover,
+.discover-card:focus-visible {
+  border-color: var(--poppy);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+.discover-card[aria-expanded="true"] {
+  border-color: var(--poppy);
+  background: color-mix(in srgb, var(--poppy) 6%, #fff);
+}
+
+.discover-cover {
+  flex: none;
+  width: 56px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px 6px 6px 3px;
+  background: var(--parchment-edge);
+  box-shadow: inset 2px 0 4px -2px rgba(0, 0, 0, .35);
+}
+
+.discover-cover.is-missing { background: var(--parchment-edge); }
+
+.discover-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.discover-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .92rem;
+  line-height: 1.2;
+}
+
+.discover-author {
+  color: var(--ink-soft);
+  font-size: .74rem;
+  font-weight: 700;
+}
+
+.discover-count {
+  color: var(--poppy);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-top: 3px;
+}
+
+.discover-tag {
+  align-self: flex-start;
+  margin-top: 3px;
+  font-size: .66rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  background: var(--parchment);
+  border: 1px solid var(--parchment-edge);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.discover-books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px 8px;
+  padding: 10px 4px 22px;
+  margin: 0;
+  list-style: none;
+}
+
+.discover-books[hidden] { display: none; }
+
+.discover-books li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.discover-books img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px 6px 6px 3px;
+  background: var(--parchment-edge);
+  box-shadow: inset 2px 0 4px -2px rgba(0, 0, 0, .35);
+}
+
+.discover-books img.is-missing { background: var(--parchment-edge); }
+
+.discover-books span {
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink-soft);
+}
+
 .badge {
   display: flex;
   align-items: center;
