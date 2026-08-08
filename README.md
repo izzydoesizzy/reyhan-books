@@ -6,7 +6,7 @@ A running log of every book Reyhan and I have read together.
 
 **How this works:** every time a new book gets added, it's logged below with the date we read it, and the total count at the top gets bumped. Series are grouped together under **By Series**, and everything also appears in date order under **Chronological Log**. A separate, undated collection of picture books and board books from before this log started lives in `data.js`'s `EARLY_BOOKS` array — see **Once Upon a Shelf** below, not part of the total above.
 
-**🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. The site files live at the repo root (`index.html`, `data.js`, …); when a book is added here, `data.js` gets the same update.
+**🎬 Browse it like Netflix:** [izzydoesizzy.github.io/reyhan-books](https://izzydoesizzy.github.io/reyhan-books/) — an interactive site with cover art, flip-card details, ratings, and Amazon links. The site files live at the repo root (`index.html`, `data.js`, …); when a book is added here, `data.js` gets the same update. The original version of the shelf is kept at [/archived/](https://izzydoesizzy.github.io/reyhan-books/archived/) for posterity.
 
 ---
 
@@ -185,7 +185,7 @@ A running log of every book Reyhan and I have read together.
 Picture books, board books, bilingual stories, and early readers Reyhan read before this
 log's chapter-book chronicle begins. Exact dates weren't tracked for this stretch, so
 they're gathered here as one collection instead of a month-by-month log. See it as its own
-page on the site: **[Beginnings](https://izzydoesizzy.github.io/reyhan-books/v2/#/beginnings)**.
+page on the site: **[Beginnings](https://izzydoesizzy.github.io/reyhan-books/#/beginnings)**.
 
 **Books in this collection: 82**
 

@@ -35,11 +35,13 @@ async function loadChromium() {
 }
 
 /* data.js is a plain script (no exports), so evaluate it in a sandbox
-   and read BOOKS back out — the same shape app.js sees. */
+   and read BOOKS back out — the same shape app.js sees. It lives at
+   the true repo root (shared with the main site), one level up from
+   this archived/ copy. */
 function readBookCount() {
   const sandbox = {};
   createContext(sandbox);
-  runInContext(readFileSync(join(ROOT, "data.js"), "utf8") +
+  runInContext(readFileSync(join(ROOT, "..", "data.js"), "utf8") +
     "\nthis.__BOOKS = BOOKS;", sandbox);
   return sandbox.__BOOKS.filter((b) => (b.status || "read") === "read").length;
 }

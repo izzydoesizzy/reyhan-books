@@ -1,10 +1,10 @@
 /* ============================================================
    Reyhan's Story Shelf (V2) — configuration + data adapter
    ------------------------------------------------------------
-   V2 reads the shared library data from ../data.js (BOOKS,
+   V2 reads the shared library data from data.js (BOOKS,
    SERIES_ORDER, SERIES_META). This file is the only place V1
    field names appear: buildLibrary() normalizes everything into
-   the view models the V2 app renders. Add books in ../data.js
+   the view models the V2 app renders. Add books in data.js
    and both versions of the site pick them up.
    ============================================================ */
 
@@ -27,7 +27,7 @@ const V2_FALLBACK_COLOR = "#A97B4F";
    board books, bilingual and one-off titles from before this log's
    chapter-book chronicle begins). No individual dateRead is tracked
    for these, so they're shown as one approximate-range shelf instead
-   of a dated log. See EARLY_BOOKS in ../data.js. */
+   of a dated log. See EARLY_BOOKS in data.js. */
 const EARLY_READS_LABEL = "Once Upon a Shelf";
 const EARLY_READS_RANGE = "2022–2025";
 

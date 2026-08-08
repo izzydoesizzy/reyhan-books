@@ -1,90 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reyhan's Reading List</title>
-  <meta name="description" content="Every book Reyhan has read this year — browse the covers, flip a card for the story.">
-  <meta name="theme-color" content="#0e1015">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reyhan's Story Shelf</title>
+  <meta name="description" content="Reyhan's Story Shelf — every book Reyhan has read, on a warm little bookshelf of her own. Browse the shelves, open a book, collect stamps in her reading passport.">
+  <meta name="theme-color" content="#FBF5EA">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+
+  <meta property="og:title" content="Reyhan's Story Shelf">
+  <meta property="og:description" content="Every book Reyhan has read, on a warm little bookshelf of her own.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://izzydoesizzy.github.io/reyhan-books/">
-  <meta property="og:title" content="Reyhan's Reading List">
-  <meta property="og:description" content="Every book Reyhan has read this year — browse the covers, flip a card for the story. 57 books and counting.">
   <meta property="og:image" content="https://izzydoesizzy.github.io/reyhan-books/og-image.png">
-  <meta property="og:image:width" content="2400">
-  <meta property="og:image:height" content="1260">
-  <meta property="og:image:alt" content="Reyhan's Reading List — a family reading log, now showing 57 books and counting.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reyhan's Reading List">
-  <meta name="twitter:description" content="Every book Reyhan has read this year — 57 books and counting.">
-  <meta name="twitter:image" content="https://izzydoesizzy.github.io/reyhan-books/og-image.png">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-  <link rel="manifest" href="manifest.json">
-  <link rel="preconnect" href="https://covers.openlibrary.org" crossorigin>
-  <link rel="preconnect" href="https://openlibrary.org" crossorigin>
-  <link rel="preconnect" href="https://www.googleapis.com" crossorigin>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#rows">Skip to books</a>
 
-  <header class="topbar">
-    <a class="brand" href="#browse">📚&nbsp;<span>Reyhan's Reading List</span></a>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 12 C18 7, 8 7, 5 10 L5 36 C8 33, 18 33, 24 38 C30 33, 40 33, 43 36 L43 10 C40 7, 30 7, 24 12 Z" fill="#E4593B"/>
+        <path d="M24 12 C18 7, 8 7, 5 10 L5 36 C8 33, 18 33, 24 38 Z" fill="#F2A93B"/>
+        <path d="M24 12 L24 38" stroke="#43342A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Reyhan's <em>Story Shelf</em></span>
+    </a>
+
     <nav class="topnav" aria-label="Sections">
-      <a href="#browse">Browse</a>
-      <a href="#stats">Stats</a>
+      <a href="#/" data-nav="shelves">Shelves</a>
+      <a href="#/journey" data-nav="journey">Journey</a>
+      <a href="#/passport" data-nav="passport">Passport</a>
+      <a href="#/beginnings" data-nav="beginnings">Beginnings</a>
     </nav>
-    <div class="search-wrap">
-      <input type="search" id="search" placeholder="Search books…" aria-label="Search books" autocomplete="off">
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="search-open" aria-label="Search the shelf" title="Search (press /)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+      <button class="dice-btn" id="dice-btn" aria-label="Pick a random book">
+        <span class="dice" aria-hidden="true">🎲</span><span class="dice-label">Pick for me!</span>
+      </button>
     </div>
   </header>
-  <div id="top-sentinel" aria-hidden="true"></div>
 
-  <section class="hero" id="browse" aria-label="Featured book"></section>
+  <main id="view" class="view" tabindex="-1"></main>
 
-  <div class="controls" id="controls">
-    <div class="segmented" role="group" aria-label="View">
-      <button type="button" id="view-rows" aria-pressed="true">By series</button>
-      <button type="button" id="view-grid" aria-pressed="false">All books</button>
-    </div>
-    <label class="sort-wrap" for="sort">Sort
-      <select id="sort">
-        <option value="series">Series order</option>
-        <option value="recent">Recently read</option>
-        <option value="title">Title A–Z</option>
-        <option value="rating">Top rated</option>
-        <option value="pages">Longest</option>
-      </select>
-    </label>
-    <div class="chip-strip" id="chips" role="group" aria-label="Filter by series or tag"></div>
-  </div>
-
-  <main id="content">
-    <p class="hint">Tap a book to flip it over</p>
-    <section id="search-results" aria-label="Search results" hidden></section>
-    <div id="rows"></div>
-    <div id="all-grid" class="poster-grid" hidden></div>
-    <noscript>
-      <p class="noscript-note">This site needs JavaScript to browse the bookshelf.
-        The full reading log also lives in the
-        <a href="https://github.com/izzydoesizzy/reyhan-books#readme">README</a>.</p>
-    </noscript>
-  </main>
-
-  <section class="stats" id="stats" aria-label="Reading stats"></section>
-
-  <footer class="site-footer">
-    <p>Made with ❤️ — a reading adventure, one book at a time.</p>
-    <p id="footer-stats"></p>
-    <p><a class="footer-link" href="https://github.com/izzydoesizzy/reyhan-books" target="_blank" rel="noopener">View on GitHub</a></p>
+  <footer class="footer">
+    <p class="footer-note">Made with <span aria-hidden="true">❤️</span> by Reyhan &amp; Dad — one story at a time.</p>
+    <p class="footer-links">
+      <span id="footer-stats"></span> ·
+      <a href="archived/" >the original shelf</a> ·
+      <a href="https://github.com/izzydoesizzy/reyhan-books" rel="noopener">GitHub</a>
+    </p>
   </footer>
 
-  <div class="sr-only" aria-live="polite" id="live-region"></div>
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search books">
+      <div class="search-bar">
+        <input type="search" id="search-input" placeholder="Search a title, author, or series…" autocomplete="off">
+        <button class="icon-btn" id="search-close" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="padding:2rem;font-family:sans-serif">Reyhan's Story Shelf needs JavaScript.
+    The full reading log also lives in the <a href="https://github.com/izzydoesizzy/reyhan-books#readme">README</a>.</p>
+  </noscript>
 
   <script src="data.js"></script>
+  <script src="config.js"></script>
+  <script src="covers.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

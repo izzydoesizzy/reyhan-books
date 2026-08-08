@@ -6,7 +6,7 @@
    cover is still resolved at runtime by walking an ordered
    chain of sources, so newly-added books with no local file
    yet fall through to the live lookups automatically:
-     1. Local file at ../covers/<id>.jpg (fast, no network
+     1. Local file at covers/<id>.jpg (fast, no network
         dependency, immune to the sources below ever changing
         or rate-limiting)
      2. Per-book override URL from COVER_OVERRIDES (probed like
@@ -110,7 +110,7 @@ var Covers = (function () {
       label: "Local file",
       applies: function () { return true; },
       probe: function (book, opts) {
-        return tryImage("../covers/" + encodeURIComponent(book.id) + ".jpg", opts);
+        return tryImage("covers/" + encodeURIComponent(book.id) + ".jpg", opts);
       },
     },
     {
