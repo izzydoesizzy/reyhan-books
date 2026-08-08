@@ -160,13 +160,18 @@
   }
 
   function renderJourney() {
+    /* Newest month first. lib.monthKeys stays ascending (the streak/
+       busiest-month math in buildLibrary() depends on that order),
+       so it's only reversed here for display. */
+    var monthsNewestFirst = lib.monthKeys.slice().reverse();
+
     var html =
       '<h1 class="view-title">The Reading Journey</h1>' +
-      '<p class="view-sub">Follow the trail from the very first book to the newest one — every stop is a month of stories.</p>' +
+      '<p class="view-sub">Newest stories first. Follow the trail back to where it all began, one month at a time.</p>' +
       '<div class="trail">';
 
-    lib.monthKeys.forEach(function (key) {
-      var books = lib.byMonth[key];
+    monthsNewestFirst.forEach(function (key) {
+      var books = lib.byMonth[key].slice().reverse();
       html +=
         '<section class="trail-stop">' +
           '<h2 class="trail-month">' + monthLabel(key) + "</h2>" +
@@ -180,7 +185,7 @@
         "</section>";
     });
 
-    html += '</div><p class="trail-start">…and the adventure continues! ✨</p>';
+    html += '</div><p class="trail-start">…and that’s where the story began! 🌱</p>';
     view.innerHTML = html;
     hydrateCovers(view);
   }
