@@ -1228,6 +1228,25 @@ const BOOKS = [
     "pages": 96
   },
   {
+    "id": "pets-rule-05",
+    "title": "Invasion of the Pugs",
+    "series": "Pets Rule!",
+    "seriesNumber": 5,
+    "author": "Susan Tan",
+    "dateRead": "2026-08-09",
+    "displayDateRead": "August 9, 2026",
+    "goodreadsRating": 4.21,
+    "synopsis": "Ember the chihuahua is ready to add to his evil empire when a dog walker shows up with the strangest crew of dogs Ember has ever seen: a whole pack of pugs. Their squished faces and odd waddle convince Ember they must be aliens sent to conquer Earth, and he's determined to expose their invasion before anyone else falls for their cute act. But as Ember digs deeper into the mystery of the pugs, he discovers the truth is stranger, and much funnier, than he expected.",
+    "coverFile": "covers/pets-rule-05.jpg",
+    "amazonUsUrl": "https://www.amazon.com/dp/1339021579",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1339021579",
+    "amazonCaExact": true,
+    "coverIsbn": "1339021579",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/124932857-invasion-of-the-pugs",
+    "pages": 96
+  },
+  {
     "id": "last-firehawk-01",
     "title": "The Ember Stone",
     "series": "The Last Firehawk",
