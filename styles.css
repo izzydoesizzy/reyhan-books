@@ -1076,40 +1076,34 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 0 16px;
 }
 
-.stamp-grid {
+/* Visa stamps: inked SVG stamps that thunk onto the page. */
+
+.visa-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px 16px;
   margin: 0 0 42px;
   padding: 0;
   list-style: none;
+  /* The thunk entrance scales stamps to 1.7x; without a clip the
+     outer columns momentarily overflow the viewport and the page
+     jiggles sideways on phones. */
+  overflow: clip;
 }
 
-.stamp {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  text-align: center;
-  padding: 12px;
-  border: 3px dashed var(--ink-faint);
-  color: var(--ink-faint);
-  background: transparent;
+.visa {
   transform: rotate(var(--tilt, -3deg));
 }
 
-.stamp .stamp-count { font-family: var(--font-display); font-weight: 900; font-size: 1.7rem; line-height: 1; }
-.stamp .stamp-name { font-family: var(--font-hand); font-size: 1.05rem; line-height: 1.05; font-weight: 700; }
-.stamp .stamp-sub { font-size: .62rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.visa svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  opacity: .88;
+}
 
-.stamp.is-earned {
-  border: 3.5px solid var(--stamp-color, var(--poppy));
-  color: var(--stamp-color, var(--poppy));
-  background: color-mix(in srgb, var(--stamp-color, var(--poppy)) 9%, transparent);
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--stamp-color, var(--poppy)) 30%, transparent);
+.visa.is-earned {
   animation: stamp-thunk .38s cubic-bezier(.34, 1.56, .64, 1) backwards;
   animation-delay: var(--delay, 0s);
 }
@@ -1119,13 +1113,337 @@ button { font-family: inherit; cursor: pointer; }
   to { transform: rotate(var(--tilt, -3deg)) scale(1); opacity: 1; }
 }
 
-.badge-grid {
+/* Medal wall: gold discs with ribbons; locked medals show a
+   progress ring instead. */
+
+.medal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
-  gap: 13px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 22px 14px;
+  margin: 0 0 42px;
   padding: 0;
-  margin: 0;
   list-style: none;
+}
+
+.medal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.medal-wrap {
+  position: relative;
+  width: 108px;
+  height: 108px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+
+.medal-ring {
+  position: absolute;
+  inset: 0;
+}
+
+.medal-disc {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
+.medal.is-earned .medal-disc {
+  background:
+    linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .55) 46%, transparent 60%) -120px 0 / 200% 100% no-repeat,
+    radial-gradient(circle at 35% 30%, #FFE9B8, var(--honey) 55%, var(--honey-deep));
+  border: 3px solid var(--honey-deep);
+  box-shadow:
+    inset 0 0 0 6px rgba(255, 248, 236, .35),
+    0 3px 0 var(--honey-deep),
+    var(--card-shadow);
+  animation: medal-shine 1.2s ease-out .5s 1 backwards;
+}
+
+/* One shimmer sweep across each medal shortly after load. */
+@keyframes medal-shine {
+  from { background-position: -120px 0, 0 0; }
+  to { background-position: 220px 0, 0 0; }
+}
+
+/* Ribbon tails behind the earned disc. */
+.medal.is-earned .medal-wrap::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  width: 34px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--poppy), var(--poppy-deep));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  z-index: -1;
+}
+
+.medal.is-locked .medal-disc {
+  background: var(--paper-deep);
+  border: 3px solid var(--parchment-edge);
+}
+
+.medal.is-locked .medal-icon {
+  filter: grayscale(1);
+  opacity: .45;
+}
+
+.medal-name {
+  font-weight: 800;
+  font-size: .9rem;
+  line-height: 1.15;
+}
+
+.medal-desc {
+  color: var(--ink-soft);
+  font-size: .76rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.medal-progress-label {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--honey-deep);
+  line-height: 1;
+}
+
+/* Favourites shelf */
+
+.fave-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 20px 16px;
+  margin: 0 0 42px;
+  padding: 0;
+  list-style: none;
+}
+
+.fave-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+.fave-card > a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.fave-card > a:hover,
+.fave-card > a:focus-visible { transform: translateY(-5px); }
+
+.fave-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  border-radius: 4px 8px 8px 4px;
+  background: var(--parchment-edge);
+  box-shadow: inset 3px 0 5px -2px rgba(0, 0, 0, .35), var(--card-shadow);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.fave-cover.is-loaded { opacity: 1; }
+
+.fave-star {
+  position: absolute;
+  top: -9px;
+  right: -6px;
+  font-size: 1.15rem;
+  filter: drop-shadow(0 2px 2px rgba(67, 52, 42, .35));
+}
+
+.fave-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .86rem;
+  line-height: 1.2;
+}
+
+/* Share chips + Share Studio */
+
+.share-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid var(--parchment-edge);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink-soft);
+  font-size: .74rem;
+  font-weight: 800;
+  padding: 4px 11px;
+  transition: color .15s, border-color .15s, transform .15s;
+}
+
+.share-chip:hover,
+.share-chip:focus-visible {
+  color: var(--poppy);
+  border-color: var(--honey);
+  transform: translateY(-1px);
+}
+
+.share-chip svg { width: 12px; height: 12px; }
+
+.studio-overlay[hidden] { display: none; }
+
+.studio-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(67, 52, 42, .45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(12px, 6vh, 60px) 16px 20px;
+  overflow-y: auto;
+}
+
+.studio-panel {
+  width: min(720px, 100%);
+  background: var(--paper);
+  border: 2px solid var(--parchment-edge);
+  border-radius: 18px;
+  box-shadow: var(--lift-shadow);
+  animation: spread-open .3s cubic-bezier(.22, 1, .36, 1);
+  padding: 18px;
+}
+
+.studio-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.studio-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.studio-canvas-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.studio-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 630;
+  border: 2px solid var(--parchment-edge);
+  border-radius: 12px;
+  background: var(--parchment);
+}
+
+.studio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.studio-seg {
+  display: inline-flex;
+  border: 2px solid var(--parchment-edge);
+  border-radius: 999px;
+  background: #fff;
+  padding: 3px;
+  gap: 2px;
+}
+
+.studio-seg button {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: .82rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  transition: background .15s, color .15s;
+}
+
+.studio-seg button.is-active {
+  background: var(--honey);
+  color: var(--ink);
+}
+
+.studio-subject {
+  flex: 1;
+  min-width: 180px;
+  border: 2px solid var(--parchment-edge);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.studio-subject:focus { outline: none; border-color: var(--honey); }
+
+.studio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.studio-note {
+  margin: 10px 0 0;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.studio-note.is-error { color: var(--poppy-deep); }
+
+/* Shared entrance animation for passport sections. */
+
+.pp-animate {
+  animation: pp-rise .5s cubic-bezier(.22, 1, .36, 1) backwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes pp-rise {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+/* Booklet stacks to a single page on small screens. */
+@media (max-width: 720px) {
+  .passport-book { grid-template-columns: 1fr; }
+  .passport-book::before,
+  .passport-book::after { display: none; }
+  .pp-page-id { border-bottom: 2px dashed var(--parchment-edge); }
+}
+
+@media (max-width: 460px) {
+  .visa-grid,
+  .medal-grid { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+  .pp-field dd { font-size: 1.05rem; }
+  .milestone-card { flex-direction: column; align-items: stretch; text-align: center; }
+  .milestone-icon { margin: 0 auto; }
 }
 
 /* ---------- Once Upon a Shelf (early reads) ---------- */
@@ -1462,34 +1780,6 @@ button { font-family: inherit; cursor: pointer; }
   .book-pop-cover { width: min(58%, 190px); margin: 0 auto; }
 }
 
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  background: #fff;
-  border: 2px solid var(--parchment-edge);
-  border-radius: 14px;
-  padding: 13px 15px;
-}
-
-.badge .badge-icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  flex: none;
-  border-radius: 50%;
-  font-size: 1.4rem;
-  background: color-mix(in srgb, var(--honey) 22%, #fff);
-  border: 2px solid var(--honey);
-}
-
-.badge b { display: block; font-size: .96rem; }
-.badge span { color: var(--ink-soft); font-size: .82rem; font-weight: 700; }
-
-.badge.is-locked { opacity: .55; filter: saturate(.15); }
-.badge.is-locked .badge-icon { background: var(--paper-deep); border-color: var(--parchment-edge); }
-
 /* ---------------------------------------------------------- */
 /* Search overlay                                              */
 /* ---------------------------------------------------------- */
@@ -1654,5 +1944,9 @@ button { font-family: inherit; cursor: pointer; }
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+    /* Staggered entrances use `backwards` fill + a delay; zeroing
+       only the duration would leave them invisible until their
+       delay elapsed, so the delay has to go too. */
+    animation-delay: 0ms !important;
   }
 }

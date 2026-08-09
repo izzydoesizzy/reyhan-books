@@ -13,6 +13,8 @@
   var view = document.getElementById("view");
   var homeScroll = 0;
 
+  if (typeof ShareCards !== "undefined") ShareCards.init(lib);
+
   /* Set by renderDiscoverSeries so the global Escape handler can
      close the book pop-up; safe to call after leaving the view. */
   var bookPopClose = null;
@@ -29,6 +31,71 @@
     var names = ["January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"];
     return names[+key.slice(5, 7) - 1] + " " + key.slice(0, 4);
+  }
+
+  function monthShort(key) { /* "2026-03" -> "Mar 2026" */
+    var parts = monthLabel(key).split(" ");
+    return parts[0].slice(0, 3) + " " + parts[1];
+  }
+
+  /* One series visa as an inline SVG rubber stamp. Shape cycles
+     with `i` (circle / rounded square / hexagon / oval), the series
+     name arcs over the top, the first-visit month under the bottom.
+     `firstKey` may be null - a series with no dated reads yet. */
+  function visaSVG(name, color, count, firstKey, i) {
+    var earned = count > 0;
+    var c = earned ? color : "#A79684";
+    var topId = "pv-top-" + i, botId = "pv-bot-" + i;
+    var dash = earned ? "" : ' stroke-dasharray="6 7"';
+    var shape;
+    if (i % 4 === 0) {
+      shape = '<circle cx="80" cy="80" r="74" fill="none" stroke="' + c + '" stroke-width="3.5"' + dash + "/>" +
+        '<circle cx="80" cy="80" r="66" fill="none" stroke="' + c + '" stroke-width="1.5"/>';
+    } else if (i % 4 === 1) {
+      shape = '<rect x="8" y="8" width="144" height="144" rx="22" fill="none" stroke="' + c + '" stroke-width="3.5"' + dash + "/>" +
+        '<rect x="16" y="16" width="128" height="128" rx="16" fill="none" stroke="' + c + '" stroke-width="1.5"/>';
+    } else if (i % 4 === 2) {
+      shape = '<polygon points="80,4 150,42 150,118 80,156 10,118 10,42" fill="none" stroke="' + c + '" stroke-width="3.5"' + dash + "/>" +
+        '<polygon points="80,15 141,48 141,112 80,145 19,112 19,48" fill="none" stroke="' + c + '" stroke-width="1.5"/>';
+    } else {
+      shape = '<ellipse cx="80" cy="80" rx="75" ry="63" fill="none" stroke="' + c + '" stroke-width="3.5"' + dash + "/>" +
+        '<ellipse cx="80" cy="80" rx="67" ry="55" fill="none" stroke="' + c + '" stroke-width="1.5"/>';
+    }
+    var bottomText = earned
+      ? (firstKey ? "FIRST VISIT · " + monthShort(firstKey).toUpperCase() : "ON THE SHELF")
+      : "NOT YET";
+    return '<svg viewBox="0 0 160 160" aria-hidden="true">' +
+      "<defs>" +
+        '<path id="' + topId + '" d="M 30 80 A 50 50 0 0 1 130 80"/>' +
+        '<path id="' + botId + '" d="M 26 80 A 54 54 0 0 0 134 80"/>' +
+      "</defs>" +
+      shape +
+      '<text font-family="Nunito, sans-serif" font-weight="800" font-size="12" letter-spacing="1" fill="' + c + '">' +
+        '<textPath href="#' + topId + '" startOffset="50%" text-anchor="middle">' + esc(name.toUpperCase()) + "</textPath></text>" +
+      '<text x="80" y="92" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="42" fill="' + c + '">' + (earned ? count : "?") + "</text>" +
+      (earned
+        ? '<text x="80" y="110" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="9" letter-spacing="3" fill="' + c + '">' + (count === 1 ? "BOOK" : "BOOKS") + "</text>"
+        : "") +
+      '<text font-family="Nunito, sans-serif" font-weight="800" font-size="10" letter-spacing="1.5" fill="' + c + '">' +
+        '<textPath href="#' + botId + '" startOffset="50%" text-anchor="middle">' + bottomText + "</textPath></text>" +
+      "</svg>";
+  }
+
+  /* Progress ring drawn around a locked medal. */
+  function ringSVG(pct) {
+    var C = 2 * Math.PI * 48;
+    return '<svg class="medal-ring" viewBox="0 0 108 108" aria-hidden="true">' +
+      '<circle cx="54" cy="54" r="48" fill="none" stroke="#E5D6BC" stroke-width="6"/>' +
+      '<circle cx="54" cy="54" r="48" fill="none" stroke="#D98E1B" stroke-width="6" stroke-linecap="round"' +
+        ' stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (C * (1 - pct)).toFixed(1) + '"' +
+        ' transform="rotate(-90 54 54)"/>' +
+      "</svg>";
+  }
+
+  function shareChip(subject, label) {
+    return '<button type="button" class="share-chip" data-share="' + esc(subject) + '">' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      esc(label) + "</button>";
   }
 
   function starString(rating) {
@@ -247,48 +314,126 @@
       ? Math.max(1, Math.round((new Date(lib.lastDate) - new Date(lib.firstDate)) / 6048e5))
       : 0;
 
+    function field(label, value) {
+      if (!value) return "";
+      return '<div class="pp-field"><dt>' + label + '</dt><span class="pp-dots"></span><dd>' + value + "</dd></div>";
+    }
+
     var html =
-      '<h1 class="view-title">Reading Passport</h1>' +
-      '<p class="view-sub">Stamps for every series visited, and badges for the big milestones.</p>' +
-
-      '<section class="passport-card">' +
-        '<p class="passport-holder">This passport belongs to</p>' +
-        '<h2 class="passport-name">Reyhan ⭐</h2>' +
-        '<div class="stat-row">' +
-          '<div class="stat"><b>' + fmt(s.totalBooks) + "</b><span>books finished</span></div>" +
-          '<div class="stat"><b>' + fmt(s.totalPages) + "</b><span>pages read</span></div>" +
-          '<div class="stat"><b>' + weeks + "</b><span>weeks of reading</span></div>" +
-          (s.avgRating ? '<div class="stat"><b>' + s.avgRating.toFixed(1) + " ★</b><span>avg. Goodreads score</span></div>" : "") +
-          (s.busiestMonthKey ? '<div class="stat"><b>' + s.busiestMonthCount + "</b><span>best month (" + monthLabel(s.busiestMonthKey).split(" ")[0] + ")</span></div>" : "") +
+      '<div class="passport-head">' +
+        "<div>" +
+          '<h1 class="view-title">Reading Passport</h1>' +
+          '<p class="view-sub">Visa stamps for every series visited, medals for the big milestones, and share cards to show them off.</p>' +
         "</div>" +
-      "</section>" +
+        '<button type="button" class="btn btn-ghost" data-share="passport">Share this passport</button>' +
+      "</div>" +
 
-      '<h2 class="passport-section-title">Series stamps</h2>' +
-      '<ul class="stamp-grid">' +
+      '<div class="passport-cover pp-animate" style="--delay:0ms">' +
+        '<div class="passport-book">' +
+          '<div class="pp-page pp-page-id">' +
+            '<div class="pp-emblem" aria-hidden="true">' +
+              '<svg viewBox="0 0 48 48"><path d="M24 12 C18 7, 8 7, 5 10 L5 36 C8 33, 18 33, 24 38 C30 33, 40 33, 43 36 L43 10 C40 7, 30 7, 24 12 Z" fill="#E4593B"/><path d="M24 12 C18 7, 8 7, 5 10 L5 36 C8 33, 18 33, 24 38 Z" fill="#F2A93B"/><path d="M24 12 L24 38" stroke="#43342A" stroke-width="2.5" stroke-linecap="round"/></svg>' +
+            "</div>" +
+            '<p class="pp-doc-title">Storyland Reading Passport</p>' +
+            '<div class="pp-photo">R<span class="pp-photo-star" aria-hidden="true">⭐</span></div>' +
+            '<h2 class="pp-name">Reyhan</h2>' +
+            (lib.firstDate
+              ? '<p class="pp-since">Keeping this log since ' + monthLabel(lib.firstDate.slice(0, 7)) + "</p>"
+              : "") +
+            '<span class="pp-rank">★ ' + esc(s.readerRank) + " ★</span>" +
+          "</div>" +
+          '<dl class="pp-page pp-page-fields">' +
+            field("Passport No.", "RSS-" + String(s.totalBooks).padStart(4, "0")) +
+            field("Books finished", fmt(s.totalBooks)) +
+            field("Pages read", fmt(s.totalPages)) +
+            (weeks ? field("Weeks of reading", weeks) : "") +
+            (s.avgRating ? field("Avg. Goodreads", s.avgRating.toFixed(1) + " ★") : "") +
+            (s.busiestMonthKey ? field("Best month", s.busiestMonthCount + " in " + monthShort(s.busiestMonthKey).split(" ")[0]) : "") +
+            (s.streakMonths ? field("Longest streak", s.streakMonths + (s.streakMonths === 1 ? " month" : " months")) : "") +
+          "</dl>" +
+        "</div>" +
+      "</div>";
+
+    if (lib.nextMilestone) {
+      var m = lib.nextMilestone;
+      var pctText = Math.round(m.pct * 100);
+      html +=
+        '<section class="milestone-card pp-animate" style="--delay:80ms" aria-label="Next milestone">' +
+          '<span class="milestone-icon" aria-hidden="true">' + m.icon + "</span>" +
+          '<div class="milestone-body">' +
+            '<p class="milestone-title">Next medal: ' + esc(m.name) + "</p>" +
+            '<p class="milestone-sub">' + fmt(m.current) + " of " + fmt(m.target) + ", only " + fmt(m.target - m.current) + " to go!</p>" +
+            '<div class="milestone-bar" role="progressbar" aria-valuenow="' + pctText + '" aria-valuemin="0" aria-valuemax="100">' +
+              '<div class="milestone-fill" style="width:' + pctText + '%"></div>' +
+            "</div>" +
+          "</div>" +
+          shareChip("stats", "Share") +
+        "</section>";
+    }
+
+    if (lib.favorites.length) {
+      html +=
+        '<h2 class="passport-section-title">Reyhan’s favourites</h2>' +
+        '<ul class="fave-row">' +
+        lib.favorites.map(function (b, i) {
+          return '<li class="fave-card pp-animate" style="--delay:' + (120 + i * 50) + 'ms">' +
+            '<a href="#/book/' + esc(b.id) + '">' + coverImg(b, "fave-cover") + "</a>" +
+            '<span class="fave-star" aria-hidden="true">⭐</span>' +
+            '<span class="fave-title">' + esc(b.title) + "</span>" +
+            shareChip("book:" + b.id, "Card") +
+            "</li>";
+        }).join("") +
+        "</ul>";
+    }
+
+    html +=
+      '<h2 class="passport-section-title">Series visas</h2>' +
+      '<ul class="visa-grid">' +
       SERIES_ORDER.map(function (name, i) {
         var count = lib.seriesCounts[name] || 0;
         var color = V2_SERIES_COLORS[name] || V2_FALLBACK_COLOR;
         var tilt = (i % 3 === 0 ? -4 : i % 3 === 1 ? 3 : -1) + "deg";
-        return '<li><div class="stamp' + (count ? " is-earned" : "") +
-          '" style="--stamp-color:' + color + ";--tilt:" + tilt + ";--delay:" + (i * 70) + 'ms">' +
-          '<span class="stamp-count">' + (count || "?") + "</span>" +
-          '<span class="stamp-name">' + esc(name) + "</span>" +
-          '<span class="stamp-sub">' + (count ? "visited" : "not yet") + "</span>" +
+        var label = count
+          ? name + ": " + count + (count === 1 ? " book" : " books") +
+            (lib.seriesFirstDate[name] ? ", first visited " + monthShort(lib.seriesFirstDate[name].slice(0, 7)) : "")
+          : name + ": not visited yet";
+        return '<li><div class="visa' + (count ? " is-earned" : " pp-animate") +
+          '" style="--tilt:' + tilt + ";--delay:" + (200 + i * 70) + 'ms" role="img" aria-label="' + esc(label) + '">' +
+          visaSVG(name, color, count, lib.seriesFirstDate[name] ? lib.seriesFirstDate[name].slice(0, 7) : null, i) +
           "</div></li>";
       }).join("") +
       "</ul>" +
 
-      '<h2 class="passport-section-title">Badges</h2>' +
-      '<ul class="badge-grid">' +
-      lib.badges.map(function (b) {
-        return '<li><div class="badge' + (b.earned ? "" : " is-locked") + '">' +
-          '<span class="badge-icon" aria-hidden="true">' + (b.earned ? b.icon : "🔒") + "</span>" +
-          "<div><b>" + esc(b.name) + "</b><span>" + esc(b.desc) + "</span></div>" +
-          "</div></li>";
+      '<h2 class="passport-section-title">Medals</h2>' +
+      '<ul class="medal-grid">' +
+      lib.badges.map(function (b, i) {
+        var inner =
+          '<div class="medal-wrap">' +
+            (b.earned ? "" : ringSVG(b.pct)) +
+            '<div class="medal-disc"><span class="medal-icon" aria-hidden="true">' + b.icon + "</span></div>" +
+          "</div>" +
+          '<span class="medal-name">' + esc(b.name) + "</span>" +
+          '<span class="medal-desc">' + esc(b.desc) + "</span>" +
+          (b.earned
+            ? shareChip("badge:" + b.id, "Share")
+            : '<span class="medal-progress-label">' + fmt(b.current) + " / " + fmt(b.target) + "</span>");
+        return '<li><div class="medal ' + (b.earned ? "is-earned" : "is-locked") +
+          ' pp-animate" style="--delay:' + (260 + i * 45) + 'ms">' + inner + "</div></li>";
       }).join("") +
       "</ul>";
 
     view.innerHTML = html;
+    hydrateCovers(view);
+    fitCoverRatio(view, ".fave-cover");
+
+    if (typeof ShareCards !== "undefined") {
+      view.querySelectorAll("[data-share]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var parts = btn.getAttribute("data-share").split(":");
+          ShareCards.openStudio({ type: parts[0], id: parts[1] || null });
+        });
+      });
+    }
   }
 
   function renderBeginnings() {

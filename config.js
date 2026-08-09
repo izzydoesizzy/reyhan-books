@@ -50,21 +50,52 @@ function extractAsin(url) {
 }
 
 /* Badges shown on the Reading Passport. Each `test` receives the
-   built library and returns true when the badge is earned. */
+   built library and returns true when the badge is earned; `metric`
+   + `target` drive the progress rings on locked medals (metric
+   returns the current count for that badge's goal). */
 const V2_BADGES = [
-  { id: "first-book", icon: "🌱", name: "First Book", desc: "Finished your very first book", test: (lib) => lib.stats.totalBooks >= 1 },
-  { id: "ten-books", icon: "🐛", name: "Bookworm", desc: "Read 10 books", test: (lib) => lib.stats.totalBooks >= 10 },
-  { id: "twenty-five", icon: "🦉", name: "Wise Owl", desc: "Read 25 books", test: (lib) => lib.stats.totalBooks >= 25 },
-  { id: "fifty-books", icon: "🐲", name: "Book Dragon", desc: "Read 50 books", test: (lib) => lib.stats.totalBooks >= 50 },
-  { id: "hundred-books", icon: "👑", name: "Century Reader", desc: "Read 100 books", test: (lib) => lib.stats.totalBooks >= 100 },
-  { id: "thousand-pages", icon: "⛰️", name: "Page Climber", desc: "Read 1,000 pages", test: (lib) => lib.stats.totalPages >= 1000 },
-  { id: "fivek-pages", icon: "🏔️", name: "Page Mountaineer", desc: "Read 5,000 pages", test: (lib) => lib.stats.totalPages >= 5000 },
-  { id: "sampler", icon: "🎨", name: "Series Sampler", desc: "Started 5 different series", test: (lib) => lib.stats.seriesStarted >= 5 },
-  { id: "explorer", icon: "🧭", name: "Shelf Explorer", desc: "Started 8 different series", test: (lib) => lib.stats.seriesStarted >= 8 },
-  { id: "dragon-master", icon: "🔥", name: "Dragon Master", desc: "Read 5 Dragon Masters books", test: (lib) => (lib.seriesCounts["Dragon Masters"] || 0) >= 5 },
-  { id: "big-month", icon: "🚀", name: "Rocket Month", desc: "Read 8 books in a single month", test: (lib) => lib.stats.busiestMonthCount >= 8 },
-  { id: "streak-3", icon: "🔗", name: "Chain of Months", desc: "Read books 3 months in a row", test: (lib) => lib.stats.streakMonths >= 3 },
-  { id: "streak-6", icon: "⚡", name: "Unstoppable", desc: "Read books 6 months in a row", test: (lib) => lib.stats.streakMonths >= 6 },
+  { id: "first-book", icon: "🌱", name: "First Book", desc: "Finished your very first book", target: 1, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 1 },
+  { id: "ten-books", icon: "🐛", name: "Bookworm", desc: "Read 10 books", target: 10, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 10 },
+  { id: "twenty-five", icon: "🦉", name: "Wise Owl", desc: "Read 25 books", target: 25, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 25 },
+  { id: "fifty-books", icon: "🐲", name: "Book Dragon", desc: "Read 50 books", target: 50, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 50 },
+  { id: "hundred-books", icon: "👑", name: "Century Reader", desc: "Read 100 books", target: 100, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 100 },
+  { id: "one-fifty", icon: "🌟", name: "Sky-High Stack", desc: "Read 150 books", target: 150, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 150 },
+  { id: "two-hundred", icon: "🏰", name: "Story Castle", desc: "Read 200 books", target: 200, metric: (lib) => lib.stats.totalBooks, test: (lib) => lib.stats.totalBooks >= 200 },
+  { id: "thousand-pages", icon: "⛰️", name: "Page Climber", desc: "Read 1,000 pages", target: 1000, metric: (lib) => lib.stats.totalPages, test: (lib) => lib.stats.totalPages >= 1000 },
+  { id: "fivek-pages", icon: "🏔️", name: "Page Mountaineer", desc: "Read 5,000 pages", target: 5000, metric: (lib) => lib.stats.totalPages, test: (lib) => lib.stats.totalPages >= 5000 },
+  { id: "tenk-pages", icon: "🌕", name: "Page Moonwalker", desc: "Read 10,000 pages", target: 10000, metric: (lib) => lib.stats.totalPages, test: (lib) => lib.stats.totalPages >= 10000 },
+  { id: "sampler", icon: "🎨", name: "Series Sampler", desc: "Started 5 different series", target: 5, metric: (lib) => lib.stats.seriesStarted, test: (lib) => lib.stats.seriesStarted >= 5 },
+  { id: "explorer", icon: "🧭", name: "Shelf Explorer", desc: "Started 8 different series", target: 8, metric: (lib) => lib.stats.seriesStarted, test: (lib) => lib.stats.seriesStarted >= 8 },
+  { id: "dragon-master", icon: "🔥", name: "Dragon Master", desc: "Read 5 Dragon Masters books", target: 5, metric: (lib) => lib.seriesCounts["Dragon Masters"] || 0, test: (lib) => (lib.seriesCounts["Dragon Masters"] || 0) >= 5 },
+  { id: "big-month", icon: "🚀", name: "Rocket Month", desc: "Read 8 books in a single month", target: 8, metric: (lib) => lib.stats.busiestMonthCount, test: (lib) => lib.stats.busiestMonthCount >= 8 },
+  { id: "month-15", icon: "☄️", name: "Comet Month", desc: "Read 15 books in a single month", target: 15, metric: (lib) => lib.stats.busiestMonthCount, test: (lib) => lib.stats.busiestMonthCount >= 15 },
+  { id: "streak-3", icon: "🔗", name: "Chain of Months", desc: "Read books 3 months in a row", target: 3, metric: (lib) => lib.stats.streakMonths, test: (lib) => lib.stats.streakMonths >= 3 },
+  { id: "streak-6", icon: "⚡", name: "Unstoppable", desc: "Read books 6 months in a row", target: 6, metric: (lib) => lib.stats.streakMonths, test: (lib) => lib.stats.streakMonths >= 6 },
+  { id: "streak-12", icon: "🗓️", name: "Year of Stories", desc: "Read books 12 months in a row", target: 12, metric: (lib) => lib.stats.streakMonths, test: (lib) => lib.stats.streakMonths >= 12 },
+];
+
+/* Reader rank ladder shown on the passport ID page. The last entry
+   whose `min` is at or under the total book count is the current
+   rank; the one after it is the next rank to chase. */
+const V2_READER_RANKS = [
+  { min: 0, name: "Story Sprout" },
+  { min: 10, name: "Page Turner" },
+  { min: 25, name: "Chapter Champion" },
+  { min: 60, name: "Story Voyager" },
+  { min: 100, name: "Book Dragon" },
+  { min: 150, name: "Legendary Librarian" },
+];
+
+/* Reyhan's favourite books — shown as a starred shelf on the
+   passport, and offered first in the Share Studio's book picker.
+   Edit freely: any id from BOOKS or EARLY_BOOKS in data.js works,
+   and unknown ids are simply skipped. */
+const REYHAN_FAVORITES = [
+  "kwames-magic-quest-04",
+  "last-firehawk-06",
+  "dragon-masters-30",
+  "last-firehawk-04",
+  "dragon-masters-06",
 ];
 
 /* Shared view-model mapper for both BOOKS and EARLY_BOOKS entries. */
@@ -143,6 +174,14 @@ function buildLibrary() {
     .filter(function (b) { return b.dateRead; })
     .sort(function (a, z) { return a.dateRead.localeCompare(z.dateRead); });
 
+  /* First read per series ("first visit" on the visa stamps).
+     `dated` is ascending, so the first book seen per series wins.
+     Series with only undated books simply have no entry. */
+  var seriesFirstDate = {};
+  dated.forEach(function (b) {
+    if (!seriesFirstDate[b.series]) seriesFirstDate[b.series] = b.dateRead;
+  });
+
   /* Books-per-month map, e.g. { "2026-03": 9 } */
   var byMonth = {};
   dated.forEach(function (b) {
@@ -179,11 +218,21 @@ function buildLibrary() {
     .filter(function (b) { return b.series === EARLY_READS_LABEL; })
     .sort(function (a, z) { return a.title.localeCompare(z.title); });
 
+  /* Current + next reader rank from the total book count. */
+  var rank = V2_READER_RANKS[0], nextRank = null;
+  V2_READER_RANKS.forEach(function (r, i) {
+    if (books.length >= r.min) {
+      rank = r;
+      nextRank = V2_READER_RANKS[i + 1] || null;
+    }
+  });
+
   var lib = {
     books: books,
     byId: byId,
     series: series,
     seriesCounts: seriesCounts,
+    seriesFirstDate: seriesFirstDate,
     byMonth: byMonth,
     monthKeys: monthKeys,
     latest: dated.length ? dated[dated.length - 1] : books[0],
@@ -200,12 +249,32 @@ function buildLibrary() {
       busiestMonthKey: busiestKey,
       busiestMonthCount: busiestCount,
       streakMonths: bestStreak,
+      readerRank: rank.name,
+      nextRank: nextRank ? nextRank.name : null,
+      nextRankAt: nextRank ? nextRank.min : null,
     },
   };
 
   lib.badges = V2_BADGES.map(function (def) {
-    return { id: def.id, icon: def.icon, name: def.name, desc: def.desc, earned: !!def.test(lib) };
+    var current = def.metric(lib), earned = !!def.test(lib);
+    return {
+      id: def.id, icon: def.icon, name: def.name, desc: def.desc,
+      earned: earned,
+      current: Math.min(current, def.target),
+      target: def.target,
+      pct: Math.min(1, current / def.target),
+    };
   });
+
+  /* The closest unearned badge powers the "next milestone" tracker
+     (null once every badge is earned). */
+  lib.nextMilestone = lib.badges
+    .filter(function (b) { return !b.earned; })
+    .sort(function (a, z) { return z.pct - a.pct; })[0] || null;
+
+  lib.favorites = REYHAN_FAVORITES
+    .map(function (id) { return byId[id]; })
+    .filter(Boolean);
 
   return lib;
 }
