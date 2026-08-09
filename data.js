@@ -2049,10 +2049,10 @@ const EARLY_BOOKS = [
   {
     "id": "ouas-treasury-of-fairy-tales",
     "title": "Treasury of Fairy Tales",
-    "author": "Publications International Ltd.",
+    "author": "Bette Killion / Dorothea S. Goldenberg",
     "coverFile": "covers/ouas-treasury-of-fairy-tales.jpg",
-    "coverIsbn": "9780785380368",
-    "amazonUsUrl": "https://www.amazon.com/dp/0785380361"
+    "coverIsbn": "9780785307013",
+    "amazonUsUrl": "https://www.amazon.com/dp/078530701X"
   },
   {
     "id": "ouas-twinkle-makes-music",

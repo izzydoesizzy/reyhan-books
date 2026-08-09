@@ -261,7 +261,7 @@ page on the site: **[Beginnings](https://izzydoesizzy.github.io/reyhan-books/#/b
 | The Very Hungry Caterpillar | Eric Carle |
 | The Wonky Donkey | Craig Smith / Katz Cowley |
 | Time for Bed | Mem Fox / Jane Dyer |
-| Treasury of Fairy Tales | Publications International Ltd. |
+| Treasury of Fairy Tales | Bette Killion / Dorothea S. Goldenberg |
 | Twinkle Makes Music | Katharine Holabird / Sarah Warburton |
 | Un Amigo Como Tú (Ardilla y sus amigos) | Andrea Schomburg / Barbara Röttgen (illus.) / Vanesa Pérez-Sauquillo (transl.) |
 | We're Different, We're the Same | Bobbi Kates / Joe Mathieu (Sesame Street) |
