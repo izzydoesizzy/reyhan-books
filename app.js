@@ -266,37 +266,38 @@
   function renderDiscover() {
     var all = (typeof LIBRARY_SERIES !== "undefined" ? LIBRARY_SERIES : []).slice()
       .sort(function (a, z) { return a.name.localeCompare(z.name); });
+
+    if (!all.length) {
+      view.innerHTML = '<h1 class="view-title">Discover</h1>' +
+        '<p class="view-sub">Nothing waiting to be discovered yet — check back soon!</p>';
+      return;
+    }
+
     var continuing = all.filter(function (s) { return s.isContinuation; });
     var fresh = all.filter(function (s) { return !s.isContinuation; });
 
-    function seriesCard(s) {
-      var count = s.books.length + (s.books.length === 1 ? " book waiting" : " books waiting");
-      var tag = s.isContinuation ? "" : '<span class="discover-tag">' + esc(s.collection) + "</span>";
-      return "<li>" +
-        '<button type="button" class="discover-card" data-series="' + esc(s.slug) + '" aria-expanded="false">' +
-          '<img class="discover-cover" data-discover-cover src="covers/' + esc(s.books[0].coverFile) + '" alt="" loading="lazy">' +
-          '<span class="discover-card-body">' +
-            '<span class="discover-name">' + esc(s.name) + "</span>" +
-            '<span class="discover-author">' + esc(s.author) + "</span>" +
-            '<span class="discover-count">' + count + "</span>" +
-            tag +
-          "</span>" +
-        "</button>" +
-        '<ul class="discover-books" data-series-books="' + esc(s.slug) + '" hidden>' +
-          s.books.map(function (b) {
-            return "<li>" +
-              '<img data-discover-cover src="covers/' + esc(b.coverFile) + '" alt="" loading="lazy">' +
-              "<span>" + (b.seriesNumber ? "#" + b.seriesNumber + " " : "") + esc(b.title) + "</span>" +
-              "</li>";
-          }).join("") +
-        "</ul>" +
+    /* A stable "today's pick" — same all day, changes daily, rather
+       than reshuffling (and feeling random/arbitrary) on every load. */
+    var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 864e5);
+    var featured = all[dayOfYear % all.length];
+
+    function poster(s) {
+      var count = s.books.length + (s.books.length === 1 ? " book" : " books");
+      var tag = s.isContinuation ? "More to read" : s.collection;
+      return '<li class="discover-tile">' +
+        '<img class="discover-cover" data-discover-cover src="covers/' + esc(s.books[0].coverFile) + '" alt="" loading="lazy">' +
+        '<span class="discover-caption">' +
+          '<span class="discover-name">' + esc(s.name) + "</span>" +
+          '<span class="discover-author">' + esc(s.author) + "</span>" +
+          '<span class="discover-count">' + count + " · " + esc(tag) + "</span>" +
+        "</span>" +
       "</li>";
     }
 
     function section(title, list) {
       if (!list.length) return "";
-      return '<h2 class="passport-section-title">' + esc(title) + "</h2>" +
-        '<ul class="discover-grid">' + list.map(seriesCard).join("") + "</ul>";
+      return '<h2 class="discover-section-title">' + esc(title) + "</h2>" +
+        '<ul class="discover-grid">' + list.map(poster).join("") + "</ul>";
     }
 
     var byCollection = {};
@@ -304,8 +305,24 @@
 
     var html =
       '<h1 class="view-title">Discover</h1>' +
-      '<p class="view-sub">More books waiting whenever Reyhan’s ready: the rest of the series ' +
-        "she’s already in, and new ones worth trying next. Tap a series to peek inside.</p>" +
+      '<p class="view-sub"><strong>' + all.length + " series</strong> waiting to be discovered — the rest of the shelves " +
+        "Reyhan’s already in, and new ones worth trying next.</p>" +
+
+      '<section class="discover-hero">' +
+        '<div class="discover-hero-stand">' +
+          '<img class="discover-hero-cover" src="covers/' + esc(featured.books[0].coverFile) + '" alt="">' +
+        "</div>" +
+        '<div class="discover-hero-note">' +
+          '<p class="discover-hero-kicker">Ready for something new?</p>' +
+          '<h2 class="discover-hero-title">' + esc(featured.name) + "</h2>" +
+          '<p class="discover-hero-meta">' + esc(featured.author) +
+            '<span class="dot">•</span>' + featured.books.length + (featured.books.length === 1 ? " book" : " books") +
+            '<span class="dot">•</span>' + (featured.isContinuation ? "Already on the shelf" : esc(featured.collection)) +
+          "</p>" +
+          '<button type="button" class="btn btn-primary" id="discover-browse-btn">Browse everything</button>' +
+        "</div>" +
+      "</section>" +
+
       section("More from series you’re already reading", continuing);
     Object.keys(byCollection).sort().forEach(function (col) {
       html += section(col, byCollection[col]);
@@ -317,14 +334,13 @@
       img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
     });
 
-    view.querySelectorAll(".discover-card").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var books = view.querySelector('[data-series-books="' + btn.getAttribute("data-series") + '"]');
-        var open = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!open));
-        if (books) books.hidden = open;
+    var browseBtn = document.getElementById("discover-browse-btn");
+    var grid = view.querySelector(".discover-grid");
+    if (browseBtn && grid) {
+      browseBtn.addEventListener("click", function () {
+        grid.scrollIntoView({ behavior: "smooth", block: "start" });
       });
-    });
+    }
   }
 
   /* ---------- router ---------- */

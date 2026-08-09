@@ -974,130 +974,147 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Discover (unread series to try next) ---------- */
 
-.discover-grid {
+.discover-hero {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 14px;
-  padding: 0;
-  margin: 8px 0 36px;
-  list-style: none;
-}
-
-.discover-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  width: 100%;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-  background: #fff;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(22px, 5vw, 56px);
+  margin: 6px 0 44px;
+  padding: clamp(20px, 3.5vw, 36px);
+  background:
+    radial-gradient(700px 240px at 20% 0%, rgba(242, 169, 59, .16), transparent 70%),
+    var(--parchment);
   border: 2px solid var(--parchment-edge);
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-  transition: box-shadow .18s, transform .18s, border-color .18s;
-}
-
-.discover-card:hover,
-.discover-card:focus-visible {
-  border-color: var(--poppy);
-  transform: translateY(-2px);
+  border-radius: 22px;
   box-shadow: var(--card-shadow);
 }
 
-.discover-card[aria-expanded="true"] {
-  border-color: var(--poppy);
-  background: color-mix(in srgb, var(--poppy) 6%, #fff);
+.discover-hero-stand {
+  width: clamp(132px, 18vw, 190px);
+  flex: none;
+  filter: drop-shadow(0 14px 18px rgba(67, 52, 42, .28));
+}
+
+.discover-hero-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 5px solid #fff;
+  transform: rotate(-2.2deg);
+  background: var(--parchment-edge);
+}
+
+.discover-hero-note { min-width: 0; }
+
+.discover-hero-kicker {
+  font-family: var(--font-hand);
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  color: var(--poppy);
+  margin: 0 0 2px;
+  transform: rotate(-1deg);
+}
+
+.discover-hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+  line-height: 1.12;
+  margin: 0 0 8px;
+}
+
+.discover-hero-meta {
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: .95rem;
+  margin: 0 0 18px;
+}
+
+.discover-hero-meta .dot { color: var(--ink-faint); padding: 0 6px; }
+
+.discover-section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 0 0 14px;
+}
+
+/* Poster wall: one cover per series, minimal chrome, name/author/
+   count as an always-visible caption (never hidden behind hover-only
+   interaction — the muted-to-vivid cover treatment on hover/focus is
+   pure decoration on top, not required to read the card). */
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0 0 40px;
+  list-style: none;
+}
+
+.discover-tile {
+  position: relative;
+  border-radius: 6px 10px 10px 6px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform .2s cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s;
+}
+
+.discover-tile:hover,
+.discover-tile:focus-within {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--lift-shadow);
 }
 
 .discover-cover {
-  flex: none;
-  width: 56px;
+  display: block;
+  width: 100%;
   aspect-ratio: 2 / 3;
-  object-fit: cover;
-  border-radius: 3px 6px 6px 3px;
+  object-fit: contain;
   background: var(--parchment-edge);
-  box-shadow: inset 2px 0 4px -2px rgba(0, 0, 0, .35);
+  filter: saturate(.6) brightness(.95);
+  transition: filter .25s ease;
 }
+
+.discover-tile:hover .discover-cover,
+.discover-tile:focus-within .discover-cover { filter: saturate(1) brightness(1); }
 
 .discover-cover.is-missing { background: var(--parchment-edge); }
 
-.discover-card-body {
+.discover-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 0;
+  gap: 1px;
+  padding: 20px 8px 6px;
+  background: linear-gradient(to top, rgba(24, 17, 12, .82), rgba(24, 17, 12, 0));
+  color: #fff;
 }
 
 .discover-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: .92rem;
+  font-size: .82rem;
   line-height: 1.2;
 }
 
 .discover-author {
-  color: var(--ink-soft);
-  font-size: .74rem;
+  font-size: .68rem;
   font-weight: 700;
+  opacity: .85;
 }
 
 .discover-count {
-  color: var(--poppy);
-  font-size: .72rem;
+  font-size: .62rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .04em;
-  margin-top: 3px;
-}
-
-.discover-tag {
-  align-self: flex-start;
-  margin-top: 3px;
-  font-size: .66rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-  background: var(--parchment);
-  border: 1px solid var(--parchment-edge);
-  border-radius: 999px;
-  padding: 2px 8px;
-}
-
-.discover-books {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 10px 8px;
-  padding: 10px 4px 22px;
-  margin: 0;
-  list-style: none;
-}
-
-.discover-books[hidden] { display: none; }
-
-.discover-books li {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.discover-books img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  border-radius: 3px 6px 6px 3px;
-  background: var(--parchment-edge);
-  box-shadow: inset 2px 0 4px -2px rgba(0, 0, 0, .35);
-}
-
-.discover-books img.is-missing { background: var(--parchment-edge); }
-
-.discover-books span {
-  font-size: .68rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--ink-soft);
+  letter-spacing: .03em;
+  opacity: .9;
+  margin-top: 2px;
 }
 
 .badge {
