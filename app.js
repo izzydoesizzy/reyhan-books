@@ -15,9 +15,23 @@
 
   if (typeof ShareCards !== "undefined") ShareCards.init(lib);
 
-  /* Set by renderDiscoverSeries so the global Escape handler can
-     close the book pop-up; safe to call after leaving the view. */
-  var bookPopClose = null;
+  /* Discover-library books (not yet read) get the same #/book/<id>
+     spread as read books. Index them lazily by id, and overlay any
+     fetched metadata from book-details.js (generated file; may be
+     absent, so both lookups stay guarded). */
+  var libraryIndex = null;
+  function getLibraryBook(id) {
+    if (!libraryIndex) {
+      libraryIndex = {};
+      (typeof LIBRARY_SERIES !== "undefined" ? LIBRARY_SERIES : []).forEach(function (s) {
+        s.books.forEach(function (b) { libraryIndex[b.id] = { book: b, series: s }; });
+      });
+    }
+    return libraryIndex[id] || null;
+  }
+  function bookDetails(id) {
+    return (typeof BOOK_DETAILS !== "undefined" && BOOK_DETAILS[id]) || {};
+  }
 
   /* ---------- tiny helpers ---------- */
 
@@ -194,7 +208,44 @@
 
   function renderBook(id) {
     var b = lib.byId[id];
-    if (!b) { location.hash = "#/"; return; }
+    var libEntry = b ? null : getLibraryBook(id);
+    if (!b && !libEntry) { location.hash = "#/"; return; }
+
+    var d = bookDetails(id);
+    var isLibrary = !!libEntry;
+    var backHref = "#/shelves", backLabel = "← Back to the shelves";
+    var libraryCoverFile = null;
+
+    if (isLibrary) {
+      /* Normalize a not-yet-read library book into the same shape a
+         read book has, so one spread template serves both. */
+      var ls = libEntry.series, lb = libEntry.book;
+      libraryCoverFile = lb.coverFile;
+      var isbn10 = d.isbn10;
+      var search = encodeURIComponent(lb.title + " " + lb.author);
+      b = {
+        id: lb.id,
+        title: lb.title,
+        author: lb.author,
+        series: ls.name,
+        seriesNumber: lb.seriesNumber,
+        color: V2_SERIES_COLORS[ls.name] || V2_FALLBACK_COLOR,
+        tags: [],
+        synopsis: d.synopsis || "",
+        pages: d.pages,
+        amazonUs: isbn10 ? "https://www.amazon.com/dp/" + isbn10 : "https://www.amazon.com/s?k=" + search,
+        amazonCa: isbn10 ? "https://www.amazon.ca/dp/" + isbn10 : "https://www.amazon.ca/s?k=" + search,
+      };
+      backHref = "#/discover/" + encodeURIComponent(ls.slug);
+      backLabel = "← Back to " + ls.name;
+    } else {
+      /* Read + early books: fill gaps from fetched details (early
+         books have no hand-written synopsis or page count). */
+      if (!b.synopsis && d.synopsis) b.synopsis = d.synopsis;
+      if (!b.pages && d.pages) b.pages = d.pages;
+    }
+    var chipHref = isLibrary ? backHref : "#/shelves";
+
     var series = lib.series.filter(function (s) { return s.name === b.series; })[0];
 
     var facts = "";
@@ -207,6 +258,8 @@
     fact("Grades", esc(b.gradeLevel));
     fact("Lexile", esc(b.lexile));
     fact("Illustrated by", esc(b.illustrator));
+    fact("Publisher", esc(d.publisher));
+    fact("Published", esc(d.published));
     if (b.rating) {
       var stars = '<span class="stars" aria-hidden="true">' + starString(b.rating) + "</span> " + b.rating.toFixed(2);
       fact("Goodreads", b.ratingUrl
@@ -215,7 +268,7 @@
     }
 
     var suggestions = "";
-    if (series && series.suggestions.length) {
+    if (!isLibrary && series && series.suggestions.length) {
       suggestions =
         '<div class="next-up"><h3>If you loved this, try…</h3>' +
         '<div class="suggestion-grid">' +
@@ -231,11 +284,13 @@
     }
 
     view.innerHTML =
-      '<div class="spread-back"><a class="btn btn-ghost" href="#/shelves">← Back to the shelves</a></div>' +
+      '<div class="spread-back"><a class="btn btn-ghost" href="' + backHref + '">' + esc(backLabel) + "</a></div>" +
       '<article class="spread">' +
         '<div class="page page-left">' +
-          coverImg(b, "spread-cover") +
-          '<a class="series-chip" style="background:' + b.color + '" href="#/shelves">' +
+          (isLibrary
+            ? '<img class="spread-cover is-loaded" src="covers/' + esc(libraryCoverFile) + '" alt="Cover of ' + esc(b.title) + '">'
+            : coverImg(b, "spread-cover")) +
+          '<a class="series-chip" style="background:' + b.color + '" href="' + chipHref + '">' +
             esc(b.series) + (b.seriesNumber ? " · Book " + b.seriesNumber : "") + "</a>" +
           '<dl class="fact-list">' + facts + "</dl>" +
         "</div>" +
@@ -611,22 +666,15 @@
       "</section>" +
 
       '<h2 class="discover-section-title">Every book, in order</h2>' +
-      '<ul class="early-grid" id="library-grid">' +
+      '<ul class="early-grid">' +
       books.map(function (b) {
-        return '<li><button type="button" class="early-card library-card" data-lib-id="' + esc(b.id) + '">' +
+        return '<li><a class="early-card" href="#/book/' + esc(b.id) + '">' +
           '<img class="library-cover" data-discover-cover src="covers/' + esc(b.coverFile) + '" alt="" loading="lazy">' +
           (b.seriesNumber ? '<span class="library-num">Book ' + b.seriesNumber + "</span>" : "") +
           '<span class="early-title">' + esc(b.title) + "</span>" +
-          "</button></li>";
+          "</a></li>";
       }).join("") +
-      "</ul>" +
-
-      '<div class="book-pop" id="book-pop" hidden>' +
-        '<div class="book-pop-panel" role="dialog" aria-modal="true" aria-label="Book details">' +
-          '<button class="icon-btn book-pop-close" id="book-pop-close" aria-label="Close">✕</button>' +
-          '<div class="book-pop-body" id="book-pop-body"></div>' +
-        "</div>" +
-      "</div>";
+      "</ul>";
 
     view.innerHTML = html;
 
@@ -634,63 +682,6 @@
       img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
     });
     fitCoverRatio(view, ".library-cover, .discover-hero-cover");
-
-    var byId = {};
-    books.forEach(function (b) { byId[b.id] = b; });
-
-    var pop = document.getElementById("book-pop");
-    var popBody = document.getElementById("book-pop-body");
-    var lastCard = null;
-
-    function openPop(b) {
-      var search = encodeURIComponent(b.title + " " + b.author);
-      var facts = "";
-      if (b.seriesNumber) facts += "<div><dt>Book</dt><dd>#" + b.seriesNumber + "</dd></div>";
-      facts += "<div><dt>Series</dt><dd>" + esc(s.name) + "</dd></div>";
-      facts += "<div><dt>Collection</dt><dd>" + esc(s.collection) + "</dd></div>";
-      if (readCount) {
-        facts += "<div><dt>Read from this series</dt><dd>" + readCount +
-          (readCount === 1 ? " book" : " books") + "</dd></div>";
-      }
-
-      popBody.innerHTML =
-        '<img class="book-pop-cover" src="covers/' + esc(b.coverFile) + '" alt="Cover of ' + esc(b.title) + '">' +
-        "<div>" +
-          '<span class="series-chip" style="background:' + color + '">' + esc(s.name) +
-            (b.seriesNumber ? " · Book " + b.seriesNumber : "") + "</span>" +
-          '<h2 class="book-pop-title">' + esc(b.title) + "</h2>" +
-          '<p class="book-pop-author">by ' + esc(b.author) + "</p>" +
-          '<dl class="fact-list">' + facts + "</dl>" +
-          '<p class="book-pop-note">' +
-            (readCount ? "Not on the shelf yet. Maybe the next adventure?" : "A whole new world to fall into!") +
-          "</p>" +
-          '<div class="spread-actions" style="margin:0">' +
-            '<a class="btn btn-primary" href="https://www.amazon.com/s?k=' + search + '" rel="noopener">Find it on Amazon US</a>' +
-            '<a class="btn btn-ghost" href="https://www.amazon.ca/s?k=' + search + '" rel="noopener">Amazon CA</a>' +
-          "</div>" +
-        "</div>";
-      pop.hidden = false;
-      fitCoverRatio(popBody, ".book-pop-cover");
-      document.getElementById("book-pop-close").focus();
-    }
-
-    function closePop() {
-      if (pop.hidden) return;
-      pop.hidden = true;
-      if (lastCard) lastCard.focus();
-    }
-    bookPopClose = closePop;
-
-    document.getElementById("library-grid").addEventListener("click", function (e) {
-      var card = e.target.closest(".library-card");
-      if (!card) return;
-      var b = byId[card.getAttribute("data-lib-id")];
-      if (b) { lastCard = card; openPop(b); }
-    });
-
-    pop.addEventListener("click", function (e) {
-      if (e.target === pop || e.target.closest(".book-pop-close")) closePop();
-    });
   }
 
   /* ---------- router ---------- */
@@ -837,7 +828,6 @@
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && bookPopClose) bookPopClose();
     if (e.key === "Escape" && !overlay.hidden) closeSearch();
     if (e.key === "/" && overlay.hidden &&
         !/^(input|textarea|select)$/i.test(document.activeElement.tagName)) {

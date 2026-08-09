@@ -1670,17 +1670,6 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Discover: inside one series ---------- */
 
-.library-card {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
 .library-cover {
   display: block;
   width: 100%;
@@ -1697,87 +1686,6 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
   letter-spacing: .05em;
   color: var(--ink-soft);
-}
-
-/* ---------- Discover: book pop-up ---------- */
-
-.book-pop[hidden] { display: none; }
-
-.book-pop {
-  position: fixed;
-  inset: 0;
-  z-index: 70;
-  background: rgba(67, 52, 42, .45);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-}
-
-.book-pop-panel {
-  position: relative;
-  width: min(640px, 100%);
-  max-height: 100%;
-  overflow-y: auto;
-  background: var(--paper);
-  border: 2px solid var(--parchment-edge);
-  border-radius: 20px;
-  box-shadow: var(--lift-shadow);
-  padding: clamp(20px, 4vw, 32px);
-  animation: spread-open .3s cubic-bezier(.22, 1, .36, 1);
-}
-
-.book-pop-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-
-.book-pop-body {
-  display: grid;
-  grid-template-columns: minmax(120px, 170px) 1fr;
-  gap: clamp(16px, 3.5vw, 28px);
-  align-items: start;
-}
-
-.book-pop-cover {
-  display: block;
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 5px solid #fff;
-  background: var(--parchment-edge);
-  box-shadow: var(--card-shadow);
-  transform: rotate(-2deg);
-}
-
-.book-pop-title {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  line-height: 1.15;
-  margin: 12px 0 2px;
-}
-
-.book-pop-author {
-  color: var(--ink-soft);
-  font-weight: 700;
-  margin: 0 0 14px;
-}
-
-.book-pop-note {
-  font-family: var(--font-hand);
-  font-size: 1.3rem;
-  color: var(--poppy);
-  margin: 14px 0 16px;
-  transform: rotate(-.6deg);
-}
-
-@media (max-width: 560px) {
-  .book-pop-body { grid-template-columns: 1fr; }
-  .book-pop-cover { width: min(58%, 190px); margin: 0 auto; }
 }
 
 /* ---------------------------------------------------------- */

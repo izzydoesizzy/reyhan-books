@@ -1,0 +1,125 @@
+[
+  {
+    "id": "ouas-cuentos-buenas-noches-ninas-rebeldes-1",
+    "title": "Cuentos de buenas noches para niñas rebeldes",
+    "author": "Elena Favilli / Francesca Cavallo (Niñas Rebeldes)",
+    "isbn": "9788408176114",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "Cuentos de buenas noches para las niñas rebeldes",
+      "authors": "Elena Favilli"
+    }
+  },
+  {
+    "id": "ouas-dora-s-big-book-of-stories",
+    "title": "Dora's Big Book of Stories",
+    "author": "Nickelodeon",
+    "isbn": "9781416907084",
+    "problem": "author mismatch",
+    "isbnResolvesTo": {
+      "title": "Dora's Big Book of Stories",
+      "authors": "Various"
+    }
+  },
+  {
+    "id": "ouas-es-hora-de-ir-al-bano",
+    "title": "Es hora de ir al baño",
+    "author": "Joceline Sanschagrin / Pierre Brignaud (illus.) - Caillou's Essentials",
+    "isbn": "9782897186395",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "Caillou",
+      "authors": "Joceline Sanschagrin"
+    }
+  },
+  {
+    "id": "ouas-first-words-spanish",
+    "title": "First Words Spanish",
+    "author": "Lonely Planet Kids",
+    "isbn": "9781786573179",
+    "problem": "author mismatch",
+    "isbnResolvesTo": {
+      "title": "First words",
+      "authors": "Sebastien Iwohn"
+    }
+  },
+  {
+    "id": "ouas-it-s-my-brain",
+    "title": "It's My Brain!",
+    "isbn": "9781039710092",
+    "problem": "ISBN not found in Open Library"
+  },
+  {
+    "id": "ouas-la-sirenita-soy-ariel",
+    "title": "La Sirenita: Soy Ariel",
+    "author": "Disney",
+    "isbn": "9780736438520",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "I Am Ariel (Disney Princess)",
+      "authors": "Andrea Posner-Sanchez / RH Disney Staff / Alan Batson"
+    }
+  },
+  {
+    "id": "ouas-llamas-go-bananas",
+    "title": "Llamas Go Bananas",
+    "isbn": "9781787720381",
+    "problem": "ISBN not found in Open Library"
+  },
+  {
+    "id": "ouas-paw-patrol-los-cachorros-ayudan-en-la-granja",
+    "title": "PAW Patrol: Los cachorros ayudan en la granja",
+    "isbn": "9781503760547",
+    "problem": "ISBN not found in Open Library"
+  },
+  {
+    "id": "ouas-peep-inside-the-farm",
+    "title": "Peep Inside the Farm",
+    "author": "Usborne / Anna Milbourne",
+    "isbn": "9781409582045",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "Peek Inside the Farm",
+      "authors": "Anna Milbourne"
+    }
+  },
+  {
+    "id": "ouas-the-big-book-of-feelings",
+    "title": "The Big Book of Feelings",
+    "isbn": "9781454712190",
+    "problem": "ISBN not found in Open Library"
+  },
+  {
+    "id": "ouas-the-greedy-python",
+    "title": "The Greedy Python",
+    "author": "Richard Buckley / Eric Carle",
+    "isbn": "9781416982906",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "Die Riesenschlange Sansibar",
+      "authors": "Eric Carle / Richard Buckley"
+    }
+  },
+  {
+    "id": "ouas-winnie-the-pooh-opposites",
+    "title": "Winnie the Pooh: Opposites",
+    "author": "Disney",
+    "isbn": "9780736400343",
+    "problem": "title mismatch",
+    "isbnResolvesTo": {
+      "title": "Disney's Winnie the Pooh's Opposites",
+      "authors": "Ellen Milnes / A. A. Milne"
+    }
+  },
+  {
+    "id": "ouas-winnie-the-pooh-senses",
+    "title": "Winnie the Pooh: Senses",
+    "author": "Disney",
+    "isbn": "9780736410090",
+    "problem": "author mismatch",
+    "isbnResolvesTo": {
+      "title": "Senses",
+      "authors": "Rachel Smith"
+    }
+  }
+]
