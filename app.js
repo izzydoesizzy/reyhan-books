@@ -13,6 +13,10 @@
   var view = document.getElementById("view");
   var homeScroll = 0;
 
+  /* Set by renderDiscoverSeries so the global Escape handler can
+     close the book pop-up; safe to call after leaving the view. */
+  var bookPopClose = null;
+
   /* ---------- tiny helpers ---------- */
 
   function esc(s) {
@@ -333,14 +337,14 @@
     function poster(s) {
       var count = s.books.length + (s.books.length === 1 ? " book" : " books");
       var tag = s.isContinuation ? "More to read" : s.collection;
-      return '<li class="discover-tile">' +
+      return '<li><a class="discover-tile" href="#/discover/' + esc(s.slug) + '">' +
         '<img class="discover-cover" data-discover-cover src="covers/' + esc(s.books[0].coverFile) + '" alt="" loading="lazy">' +
         '<span class="discover-caption">' +
           '<span class="discover-name">' + esc(s.name) + "</span>" +
           '<span class="discover-author">' + esc(s.author) + "</span>" +
           '<span class="discover-count">' + count + " · " + esc(tag) + "</span>" +
         "</span>" +
-      "</li>";
+      "</a></li>";
     }
 
     function section(title, list) {
@@ -352,23 +356,32 @@
     var byCollection = {};
     fresh.forEach(function (s) { (byCollection[s.collection] = byCollection[s.collection] || []).push(s); });
 
+    function heroMeta(s) {
+      return esc(s.author) +
+        '<span class="dot">•</span>' + s.books.length + (s.books.length === 1 ? " book" : " books") +
+        '<span class="dot">•</span>' + (s.isContinuation ? "Already on the shelf" : esc(s.collection));
+    }
+
     var html =
       '<h1 class="view-title">Discover</h1>' +
       '<p class="view-sub"><strong>' + all.length + " series</strong> waiting to be discovered — the rest of the shelves " +
-        "Reyhan’s already in, and new ones worth trying next.</p>" +
+        "Reyhan’s already in, and new ones worth trying next. Tap any series to flip through its books.</p>" +
 
       '<section class="discover-hero">' +
-        '<div class="discover-hero-stand">' +
-          '<img class="discover-hero-cover" src="covers/' + esc(featured.books[0].coverFile) + '" alt="">' +
+        '<div class="discover-hero-stand" id="discover-hero-stand">' +
+          '<img class="discover-hero-cover" id="discover-hero-cover" src="covers/' + esc(featured.books[0].coverFile) + '" alt="">' +
         "</div>" +
         '<div class="discover-hero-note">' +
           '<p class="discover-hero-kicker">Ready for something new?</p>' +
-          '<h2 class="discover-hero-title">' + esc(featured.name) + "</h2>" +
-          '<p class="discover-hero-meta">' + esc(featured.author) +
-            '<span class="dot">•</span>' + featured.books.length + (featured.books.length === 1 ? " book" : " books") +
-            '<span class="dot">•</span>' + (featured.isContinuation ? "Already on the shelf" : esc(featured.collection)) +
-          "</p>" +
-          '<button type="button" class="btn btn-primary" id="discover-browse-btn">Browse everything</button>' +
+          '<h2 class="discover-hero-title" id="discover-hero-title">' + esc(featured.name) + "</h2>" +
+          '<p class="discover-hero-meta" id="discover-hero-meta">' + heroMeta(featured) + "</p>" +
+          '<div class="spread-actions" style="margin:0">' +
+            '<a class="btn btn-primary" id="discover-peek-btn" href="#/discover/' + esc(featured.slug) + '">Peek inside</a>' +
+            '<button type="button" class="dice-btn" id="discover-dice" aria-label="Roll for a different series">' +
+              '<span class="dice" aria-hidden="true">🎲</span><span class="dice-label">Roll again!</span>' +
+            "</button>" +
+            '<button type="button" class="btn btn-ghost" id="discover-browse-btn">Browse everything</button>' +
+          "</div>" +
         "</div>" +
       "</section>" +
 
@@ -391,6 +404,148 @@
         grid.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
+
+    /* The hero die: spin the cover, and while it's edge-on swap in a
+       freshly rolled series so the flip "lands" on the new book. */
+    var heroDice = document.getElementById("discover-dice");
+    var heroStand = document.getElementById("discover-hero-stand");
+    heroDice.addEventListener("click", function () {
+      if (heroDice.classList.contains("is-rolling")) return;
+      var next = featured;
+      while (all.length > 1 && next === featured) {
+        next = all[Math.floor(Math.random() * all.length)];
+      }
+      featured = next;
+      heroDice.classList.add("is-rolling");
+      heroStand.classList.add("is-spinning");
+      setTimeout(function () {
+        document.getElementById("discover-hero-cover").src = "covers/" + featured.books[0].coverFile;
+        document.getElementById("discover-hero-title").textContent = featured.name;
+        document.getElementById("discover-hero-meta").innerHTML = heroMeta(featured);
+        document.getElementById("discover-peek-btn").href = "#/discover/" + encodeURIComponent(featured.slug);
+      }, 300);
+      setTimeout(function () {
+        heroDice.classList.remove("is-rolling");
+        heroStand.classList.remove("is-spinning");
+      }, 640);
+    });
+  }
+
+  function renderDiscoverSeries(slug) {
+    var all = typeof LIBRARY_SERIES !== "undefined" ? LIBRARY_SERIES : [];
+    var s = all.filter(function (x) { return x.slug === slug; })[0];
+    if (!s) { location.hash = "#/discover"; return; }
+
+    var color = V2_SERIES_COLORS[s.name] || V2_FALLBACK_COLOR;
+    var readCount = lib.seriesCounts[s.name] || 0;
+    var books = s.books.slice().sort(function (a, z) {
+      return (a.seriesNumber || 0) - (z.seriesNumber || 0);
+    });
+
+    var html =
+      '<div class="spread-back"><a class="btn btn-ghost" href="#/discover">← Back to Discover</a></div>' +
+
+      '<section class="discover-hero">' +
+        '<div class="discover-hero-stand">' +
+          '<img class="discover-hero-cover" data-discover-cover src="covers/' + esc(books[0].coverFile) + '" alt="">' +
+        "</div>" +
+        '<div class="discover-hero-note">' +
+          '<p class="discover-hero-kicker">' + (readCount ? "Already a favourite shelf!" : esc(s.collection)) + "</p>" +
+          '<h1 class="discover-hero-title">' + esc(s.name) + "</h1>" +
+          '<p class="discover-hero-meta">' + esc(s.author) +
+            '<span class="dot">•</span>' + books.length + (books.length === 1 ? " book" : " books") + " to explore" +
+            (readCount ? '<span class="dot">•</span>' + readCount + " already read" : "") +
+          "</p>" +
+          '<p class="view-sub" style="margin:0">' +
+            (readCount
+              ? "Reyhan has read " + readCount + (readCount === 1 ? " book" : " books") +
+                " from this series. These are the ones still waiting on the shelf. Tap a book for a closer look."
+              : "A brand-new series to try. Tap any book for a closer look.") +
+          "</p>" +
+        "</div>" +
+      "</section>" +
+
+      '<h2 class="discover-section-title">Every book, in order</h2>' +
+      '<ul class="early-grid" id="library-grid">' +
+      books.map(function (b) {
+        return '<li><button type="button" class="early-card library-card" data-lib-id="' + esc(b.id) + '">' +
+          '<img class="library-cover" data-discover-cover src="covers/' + esc(b.coverFile) + '" alt="" loading="lazy">' +
+          (b.seriesNumber ? '<span class="library-num">Book ' + b.seriesNumber + "</span>" : "") +
+          '<span class="early-title">' + esc(b.title) + "</span>" +
+          "</button></li>";
+      }).join("") +
+      "</ul>" +
+
+      '<div class="book-pop" id="book-pop" hidden>' +
+        '<div class="book-pop-panel" role="dialog" aria-modal="true" aria-label="Book details">' +
+          '<button class="icon-btn book-pop-close" id="book-pop-close" aria-label="Close">✕</button>' +
+          '<div class="book-pop-body" id="book-pop-body"></div>' +
+        "</div>" +
+      "</div>";
+
+    view.innerHTML = html;
+
+    view.querySelectorAll("img[data-discover-cover]").forEach(function (img) {
+      img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
+    });
+    fitCoverRatio(view, ".library-cover, .discover-hero-cover");
+
+    var byId = {};
+    books.forEach(function (b) { byId[b.id] = b; });
+
+    var pop = document.getElementById("book-pop");
+    var popBody = document.getElementById("book-pop-body");
+    var lastCard = null;
+
+    function openPop(b) {
+      var search = encodeURIComponent(b.title + " " + b.author);
+      var facts = "";
+      if (b.seriesNumber) facts += "<div><dt>Book</dt><dd>#" + b.seriesNumber + "</dd></div>";
+      facts += "<div><dt>Series</dt><dd>" + esc(s.name) + "</dd></div>";
+      facts += "<div><dt>Collection</dt><dd>" + esc(s.collection) + "</dd></div>";
+      if (readCount) {
+        facts += "<div><dt>Read from this series</dt><dd>" + readCount +
+          (readCount === 1 ? " book" : " books") + "</dd></div>";
+      }
+
+      popBody.innerHTML =
+        '<img class="book-pop-cover" src="covers/' + esc(b.coverFile) + '" alt="Cover of ' + esc(b.title) + '">' +
+        "<div>" +
+          '<span class="series-chip" style="background:' + color + '">' + esc(s.name) +
+            (b.seriesNumber ? " · Book " + b.seriesNumber : "") + "</span>" +
+          '<h2 class="book-pop-title">' + esc(b.title) + "</h2>" +
+          '<p class="book-pop-author">by ' + esc(b.author) + "</p>" +
+          '<dl class="fact-list">' + facts + "</dl>" +
+          '<p class="book-pop-note">' +
+            (readCount ? "Not on the shelf yet. Maybe the next adventure?" : "A whole new world to fall into!") +
+          "</p>" +
+          '<div class="spread-actions" style="margin:0">' +
+            '<a class="btn btn-primary" href="https://www.amazon.com/s?k=' + search + '" rel="noopener">Find it on Amazon US</a>' +
+            '<a class="btn btn-ghost" href="https://www.amazon.ca/s?k=' + search + '" rel="noopener">Amazon CA</a>' +
+          "</div>" +
+        "</div>";
+      pop.hidden = false;
+      fitCoverRatio(popBody, ".book-pop-cover");
+      document.getElementById("book-pop-close").focus();
+    }
+
+    function closePop() {
+      if (pop.hidden) return;
+      pop.hidden = true;
+      if (lastCard) lastCard.focus();
+    }
+    bookPopClose = closePop;
+
+    document.getElementById("library-grid").addEventListener("click", function (e) {
+      var card = e.target.closest(".library-card");
+      if (!card) return;
+      var b = byId[card.getAttribute("data-lib-id")];
+      if (b) { lastCard = card; openPop(b); }
+    });
+
+    pop.addEventListener("click", function (e) {
+      if (e.target === pop || e.target.closest(".book-pop-close")) closePop();
+    });
   }
 
   /* ---------- router ---------- */
@@ -398,6 +553,7 @@
   function route() {
     var hash = location.hash || "#/";
     var bookMatch = hash.match(/^#\/book\/([^/?#]+)/);
+    var librarySeriesMatch = hash.match(/^#\/discover\/([^/?#]+)/);
     var current;
 
     if (bookMatch) {
@@ -423,6 +579,11 @@
       homeScrollMaybeSave();
       renderBeginnings();
       current = "shelves";
+      window.scrollTo(0, 0);
+    } else if (librarySeriesMatch) {
+      homeScrollMaybeSave();
+      renderDiscoverSeries(decodeURIComponent(librarySeriesMatch[1]));
+      current = "discover";
       window.scrollTo(0, 0);
     } else if (hash.indexOf("#/discover") === 0) {
       homeScrollMaybeSave();
@@ -531,6 +692,7 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && bookPopClose) bookPopClose();
     if (e.key === "Escape" && !overlay.hidden) closeSearch();
     if (e.key === "/" && overlay.hidden &&
         !/^(input|textarea|select)$/i.test(document.activeElement.tagName)) {
