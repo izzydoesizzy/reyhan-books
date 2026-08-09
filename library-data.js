@@ -333,6 +333,216 @@ const LIBRARY_SERIES = [
     "author": "Geronimo Stilton",
     "books": [
       {
+        "id": "geronimo-stilton-1",
+        "title": "Lost Treasure of the Emerald Eye",
+        "seriesNumber": 1,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-01.jpg"
+      },
+      {
+        "id": "geronimo-stilton-2",
+        "title": "The Curse of the Cheese Pyramid",
+        "seriesNumber": 2,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-02.jpg"
+      },
+      {
+        "id": "geronimo-stilton-3",
+        "title": "Cat and Mouse in a Haunted House",
+        "seriesNumber": 3,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-03.jpg"
+      },
+      {
+        "id": "geronimo-stilton-4",
+        "title": "I'm Too Fond of My Fur!",
+        "seriesNumber": 4,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-04.jpg"
+      },
+      {
+        "id": "geronimo-stilton-5",
+        "title": "Four Mice Deep in the Jungle",
+        "seriesNumber": 5,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-05.jpg"
+      },
+      {
+        "id": "geronimo-stilton-6",
+        "title": "Paws Off, Cheddarface!",
+        "seriesNumber": 6,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-06.jpg"
+      },
+      {
+        "id": "geronimo-stilton-7",
+        "title": "Red Pizzas for a Blue Count",
+        "seriesNumber": 7,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-07.jpg"
+      },
+      {
+        "id": "geronimo-stilton-8",
+        "title": "Attack of the Bandit Cats",
+        "seriesNumber": 8,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-08.jpg"
+      },
+      {
+        "id": "geronimo-stilton-9",
+        "title": "A Fabumouse Vacation for Geronimo",
+        "seriesNumber": 9,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-09.jpg"
+      },
+      {
+        "id": "geronimo-stilton-10",
+        "title": "All Because of a Cup of Coffee",
+        "seriesNumber": 10,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-10.jpg"
+      },
+      {
+        "id": "geronimo-stilton-11",
+        "title": "It's Halloween, You 'Fraidy Mouse!",
+        "seriesNumber": 11,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-11.jpg"
+      },
+      {
+        "id": "geronimo-stilton-12",
+        "title": "Merry Christmas, Geronimo!",
+        "seriesNumber": 12,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-12.jpg"
+      },
+      {
+        "id": "geronimo-stilton-13",
+        "title": "The Phantom of the Subway",
+        "seriesNumber": 13,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-13.jpg"
+      },
+      {
+        "id": "geronimo-stilton-14",
+        "title": "The Temple of the Ruby of Fire",
+        "seriesNumber": 14,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-14.jpg"
+      },
+      {
+        "id": "geronimo-stilton-15",
+        "title": "The Mona Mousa Code",
+        "seriesNumber": 15,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-15.jpg"
+      },
+      {
+        "id": "geronimo-stilton-16",
+        "title": "A Cheese-Colored Camper",
+        "seriesNumber": 16,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-16.jpg"
+      },
+      {
+        "id": "geronimo-stilton-17",
+        "title": "Watch Your Whiskers, Stilton!",
+        "seriesNumber": 17,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-17.jpg"
+      },
+      {
+        "id": "geronimo-stilton-18",
+        "title": "Shipwreck on the Pirate Islands",
+        "seriesNumber": 18,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-18.jpg"
+      },
+      {
+        "id": "geronimo-stilton-19",
+        "title": "My Name Is Stilton, Geronimo Stilton",
+        "seriesNumber": 19,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-19.jpg"
+      },
+      {
+        "id": "geronimo-stilton-20",
+        "title": "Surf's Up, Geronimo!",
+        "seriesNumber": 20,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-20.jpg"
+      },
+      {
+        "id": "geronimo-stilton-21",
+        "title": "The Wild, Wild West",
+        "seriesNumber": 21,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-21.jpg"
+      },
+      {
+        "id": "geronimo-stilton-22",
+        "title": "The Secret of Cacklefur Castle",
+        "seriesNumber": 22,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-22.jpg"
+      },
+      {
+        "id": "geronimo-stilton-23",
+        "title": "Valentine's Day Disaster",
+        "seriesNumber": 23,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-23.jpg"
+      },
+      {
+        "id": "geronimo-stilton-24",
+        "title": "Field Trip to Niagara Falls",
+        "seriesNumber": 24,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-24.jpg"
+      },
+      {
+        "id": "geronimo-stilton-25",
+        "title": "The Search for Sunken Treasure",
+        "seriesNumber": 25,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-25.jpg"
+      },
+      {
+        "id": "geronimo-stilton-26",
+        "title": "The Mummy with No Name",
+        "seriesNumber": 26,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-26.jpg"
+      },
+      {
+        "id": "geronimo-stilton-27",
+        "title": "The Christmas Toy Factory",
+        "seriesNumber": 27,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-27.jpg"
+      },
+      {
+        "id": "geronimo-stilton-28",
+        "title": "Wedding Crasher",
+        "seriesNumber": 28,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-28.jpg"
+      },
+      {
+        "id": "geronimo-stilton-29",
+        "title": "Down and Out Down Under",
+        "seriesNumber": 29,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-29.jpg"
+      },
+      {
+        "id": "geronimo-stilton-30",
+        "title": "The Mouse Island Marathon",
+        "seriesNumber": 30,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton/geronimo-stilton-30.jpg"
+      },
+      {
         "id": "geronimo-stilton-31",
         "title": "The Mysterious Cheese Thief",
         "seriesNumber": 31,
@@ -720,6 +930,113 @@ const LIBRARY_SERIES = [
     ]
   },
   {
+    "slug": "geronimo-stilton-cavemice",
+    "name": "Geronimo Stilton Cavemice",
+    "isContinuation": false,
+    "collection": "Geronimo Stilton universe",
+    "author": "Geronimo Stilton",
+    "books": [
+      {
+        "id": "geronimo-stilton-cavemice-1",
+        "title": "The Stone of Fire",
+        "seriesNumber": 1,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-01.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-2",
+        "title": "Watch Your Tail!",
+        "seriesNumber": 2,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-02.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-3",
+        "title": "Help, I'm in Hot Lava!",
+        "seriesNumber": 3,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-03.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-4",
+        "title": "The Fast and the Frozen",
+        "seriesNumber": 4,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-04.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-5",
+        "title": "The Great Mouse Race",
+        "seriesNumber": 5,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-05.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-6",
+        "title": "Don't Wake the Dinosaur!",
+        "seriesNumber": 6,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-06.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-7",
+        "title": "I'm a Scaredy-Mouse!",
+        "seriesNumber": 7,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-07.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-8",
+        "title": "Surfing for Secrets",
+        "seriesNumber": 8,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-08.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-9",
+        "title": "Get the Scoop, Geronimo!",
+        "seriesNumber": 9,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-09.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-10",
+        "title": "My Autosaurus Will Win!",
+        "seriesNumber": 10,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-10.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-11",
+        "title": "Sea Monster Surprise",
+        "seriesNumber": 11,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-11.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-12",
+        "title": "Paws Off the Pearl!",
+        "seriesNumber": 12,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-12.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-13",
+        "title": "The Smelly Search",
+        "seriesNumber": 13,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-13.jpg"
+      },
+      {
+        "id": "geronimo-stilton-cavemice-14",
+        "title": "Shoo, Caveflies!",
+        "seriesNumber": 14,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-cavemice/geronimo-stilton-cavemice-14.jpg"
+      }
+    ]
+  },
+  {
     "slug": "geronimo-stilton-graphic-novels",
     "name": "Geronimo Stilton Graphic Novels",
     "isContinuation": false,
@@ -865,6 +1182,227 @@ const LIBRARY_SERIES = [
         "seriesNumber": 20,
         "author": "Geronimo Stilton",
         "coverFile": "library/geronimo-stilton-graphic-novels/geronimo-stilton-graphic-novels-20.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "geronimo-stilton-kingdom-of-fantasy",
+    "name": "Geronimo Stilton and the Kingdom of Fantasy",
+    "isContinuation": false,
+    "collection": "Geronimo Stilton universe",
+    "author": "Geronimo Stilton",
+    "books": [
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-1",
+        "title": "The Kingdom of Fantasy",
+        "seriesNumber": 1,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-01.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-2",
+        "title": "The Quest for Paradise",
+        "seriesNumber": 2,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-02.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-3",
+        "title": "The Amazing Voyage",
+        "seriesNumber": 3,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-03.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-4",
+        "title": "The Dragon Prophecy",
+        "seriesNumber": 4,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-04.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-5",
+        "title": "The Volcano of Fire",
+        "seriesNumber": 5,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-05.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-6",
+        "title": "The Search for Treasure",
+        "seriesNumber": 6,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-06.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-7",
+        "title": "The Enchanted Charms",
+        "seriesNumber": 7,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-07.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-8",
+        "title": "The Hour of Magic",
+        "seriesNumber": 8,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-08.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-9",
+        "title": "The Wizard's Wand",
+        "seriesNumber": 9,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-09.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-10",
+        "title": "The Ship of Secrets",
+        "seriesNumber": 10,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-10.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-11",
+        "title": "The Guardian of the Realm",
+        "seriesNumber": 11,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-11.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-12",
+        "title": "The Island of Dragons",
+        "seriesNumber": 12,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-12.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-13",
+        "title": "The Battle for the Crystal Castle",
+        "seriesNumber": 13,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-13.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-14",
+        "title": "The Keepers of the Empire",
+        "seriesNumber": 14,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-14.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-15",
+        "title": "The Golden Key",
+        "seriesNumber": 15,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-15.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-16",
+        "title": "The Treasures of the Kingdom",
+        "seriesNumber": 16,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-16.jpg"
+      },
+      {
+        "id": "geronimo-stilton-kingdom-of-fantasy-17",
+        "title": "The Midnight Heist",
+        "seriesNumber": 17,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-kingdom-of-fantasy/geronimo-stilton-kingdom-of-fantasy-17.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "geronimo-stilton-spacemice",
+    "name": "Geronimo Stilton Spacemice",
+    "isContinuation": false,
+    "collection": "Geronimo Stilton universe",
+    "author": "Geronimo Stilton",
+    "books": [
+      {
+        "id": "geronimo-stilton-spacemice-1",
+        "title": "Alien Escape",
+        "seriesNumber": 1,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-01.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-2",
+        "title": "You're Mine, Captain!",
+        "seriesNumber": 2,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-02.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-3",
+        "title": "Ice Planet Adventure",
+        "seriesNumber": 3,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-03.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-4",
+        "title": "The Galactic Goal",
+        "seriesNumber": 4,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-04.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-5",
+        "title": "Rescue Rebellion",
+        "seriesNumber": 5,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-05.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-6",
+        "title": "The Underwater Planet",
+        "seriesNumber": 6,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-06.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-7",
+        "title": "Beware! Space Junk!",
+        "seriesNumber": 7,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-07.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-8",
+        "title": "Away in a Star Sled",
+        "seriesNumber": 8,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-08.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-9",
+        "title": "Slurp Monster Showdown",
+        "seriesNumber": 9,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-09.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-10",
+        "title": "Pirate Spacecat Attack",
+        "seriesNumber": 10,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-10.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-11",
+        "title": "We'll Bite Your Tail, Geronimo!",
+        "seriesNumber": 11,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-11.jpg"
+      },
+      {
+        "id": "geronimo-stilton-spacemice-12",
+        "title": "The Invisible Planet",
+        "seriesNumber": 12,
+        "author": "Geronimo Stilton",
+        "coverFile": "library/geronimo-stilton-spacemice/geronimo-stilton-spacemice-12.jpg"
       }
     ]
   },
