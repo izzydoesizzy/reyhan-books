@@ -514,14 +514,12 @@ button { font-family: inherit; cursor: pointer; }
 
 .spread-cover {
   width: clamp(160px, 22vw, 230px);
+  /* 2/3 is just the pre-load guess so a box is reserved before the
+     image arrives - app.js sets this to the image's real natural
+     ratio once it loads, so the frame fits each book's actual shape
+     (square board books, landscape pop-ups, etc.) instead of
+     cropping or letterboxing everything into one fixed box. */
   aspect-ratio: 2 / 3;
-  /* contain, not cover: chapter-book covers are all a consistent
-     shape so this looks identical for them, but board/picture books
-     (Once Upon a Shelf) come in every shape publishers print -
-     square, landscape, oversized pop-ups - and "cover" was cropping
-     titles and art off the edges. contain always shows the whole
-     cover, letterboxed in the parchment background when it doesn't
-     fill the frame. */
   object-fit: contain;
   border-radius: 8px;
   border: 6px solid #fff;
@@ -944,11 +942,13 @@ button { font-family: inherit; cursor: pointer; }
 .early-cover {
   display: block;
   width: 100%;
+  /* 2/3 is just the pre-load guess (app.js sets the real ratio once
+     each image loads) - these covers span decades of publishers/
+     formats (board books, square picture books, oversized pop-ups),
+     so the frame fits each book's actual shape instead of forcing
+     one box. object-fit stays as a safety net for the brief window
+     before the real ratio is known. */
   aspect-ratio: 2 / 3;
-  /* contain: these covers span decades of publishers/formats (board
-     books, square picture books, oversized pop-ups) - "cover" was
-     cropping titles and art off the edges. Letterboxes into the
-     parchment background instead of ever cropping. */
   object-fit: contain;
   border-radius: 4px 8px 8px 4px;
   background: var(--parchment-edge);

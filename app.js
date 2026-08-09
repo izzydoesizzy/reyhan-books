@@ -47,29 +47,32 @@
       esc(book.title) + '"' + (sizesAttr || "") + ">";
   }
 
+  /* Covers span every shape publishers have ever printed - square
+     board books, landscape pop-ups, tall paperbacks. The CSS aspect-
+     ratio on these classes is just a pre-load guess so a box is
+     reserved before the image arrives; once each image actually
+     loads (real or cached), size its own box to its true proportions
+     instead of leaving it letterboxed/cropped into one fixed shape. */
+  function fitCoverRatio(root, selector) {
+    root.querySelectorAll(selector).forEach(function (img) {
+      function apply() {
+        if (img.naturalWidth && img.naturalHeight) {
+          img.style.aspectRatio = img.naturalWidth + " / " + img.naturalHeight;
+        }
+      }
+      if (img.complete) apply();
+      img.addEventListener("load", apply);
+    });
+  }
+
   /* ---------- views ---------- */
 
-  function renderShelves() {
-    var latest = lib.latest;
-    var html = "";
+  var BEGINNINGS_PREVIEW_COUNT = 12;
 
-    html +=
-      '<section class="easel" aria-label="Just finished">' +
-        '<div class="easel-stand">' + coverImg(latest, "easel-cover") + "</div>" +
-        '<div class="easel-note">' +
-          '<p class="easel-kicker">We just finished this one! — Dad</p>' +
-          '<h1 class="easel-title">' + esc(latest.title) + "</h1>" +
-          '<p class="easel-meta">' + esc(latest.series) +
-            (latest.seriesNumber ? " #" + latest.seriesNumber : "") +
-            '<span class="dot">•</span>' + esc(latest.displayDateRead || "") +
-            (latest.pages ? '<span class="dot">•</span>' + latest.pages + " pages" : "") + "</p>" +
-          '<p class="easel-synopsis">' + esc(latest.synopsis) + "</p>" +
-          '<div class="spread-actions">' +
-            '<a class="btn btn-primary" href="#/book/' + esc(latest.id) + '">Open the book</a>' +
-            '<a class="btn btn-ghost" href="#/passport">See the passport</a>' +
-          "</div>" +
-        "</div>" +
-      "</section>";
+  function renderShelves() {
+    var html =
+      '<h1 class="view-title">Shelves</h1>' +
+      '<p class="view-sub">Every series, grouped together — and a peek at the books from before this log began.</p>';
 
     lib.series.forEach(function (s) {
       html +=
@@ -89,8 +92,33 @@
         "</section>";
     });
 
+    if (lib.earlyBooks.length) {
+      var preview = lib.earlyBooks.slice(0, BEGINNINGS_PREVIEW_COUNT);
+      html +=
+        '<section class="shelf-section" data-series="' + esc(lib.earlyReadsLabel) + '">' +
+          '<div class="shelf-plaque">' +
+            '<span class="swatch" style="background:' + "var(--wood-lo)" + '"></span>' +
+            "<h2>" + esc(lib.earlyReadsLabel) + "</h2>" +
+            '<span class="count">' + lib.earlyBooks.length + " books</span>" +
+          "</div>" +
+          '<p class="view-sub" style="margin:-6px 0 16px">Picture books and board books from ' +
+            esc(lib.earlyReadsRange) + ", before this log's chapter-book chronicle begins.</p>" +
+          '<ul class="early-grid">' +
+          preview.map(function (b) {
+            return '<li><a class="early-card" href="#/book/' + esc(b.id) + '">' +
+              coverImg(b, "early-cover") +
+              '<span class="early-title">' + esc(b.title) + "</span>" +
+              '<span class="early-author">' + esc(b.author) + "</span>" +
+              "</a></li>";
+          }).join("") +
+          "</ul>" +
+          '<a class="btn btn-ghost" href="#/beginnings">See all ' + lib.earlyBooks.length + " books →</a>" +
+        "</section>";
+    }
+
     view.innerHTML = html;
     hydrateCovers(view);
+    fitCoverRatio(view, ".early-cover");
   }
 
   function renderBook(id) {
@@ -132,11 +160,11 @@
     }
 
     view.innerHTML =
-      '<div class="spread-back"><a class="btn btn-ghost" href="#/">← Back to the shelves</a></div>' +
+      '<div class="spread-back"><a class="btn btn-ghost" href="#/shelves">← Back to the shelves</a></div>' +
       '<article class="spread">' +
         '<div class="page page-left">' +
           coverImg(b, "spread-cover") +
-          '<a class="series-chip" style="background:' + b.color + '" href="#/">' +
+          '<a class="series-chip" style="background:' + b.color + '" href="#/shelves">' +
             esc(b.series) + (b.seriesNumber ? " · Book " + b.seriesNumber : "") + "</a>" +
           '<dl class="fact-list">' + facts + "</dl>" +
         "</div>" +
@@ -157,6 +185,7 @@
         "</div>" +
       "</article>";
     hydrateCovers(view);
+    fitCoverRatio(view, ".spread-cover");
   }
 
   function renderJourney() {
@@ -164,8 +193,26 @@
        busiest-month math in buildLibrary() depends on that order),
        so it's only reversed here for display. */
     var monthsNewestFirst = lib.monthKeys.slice().reverse();
+    var latest = lib.latest;
 
     var html =
+      '<section class="easel" aria-label="Just finished">' +
+        '<div class="easel-stand">' + coverImg(latest, "easel-cover") + "</div>" +
+        '<div class="easel-note">' +
+          '<p class="easel-kicker">We just finished this one! — Dad</p>' +
+          '<h2 class="easel-title">' + esc(latest.title) + "</h2>" +
+          '<p class="easel-meta">' + esc(latest.series) +
+            (latest.seriesNumber ? " #" + latest.seriesNumber : "") +
+            '<span class="dot">•</span>' + esc(latest.displayDateRead || "") +
+            (latest.pages ? '<span class="dot">•</span>' + latest.pages + " pages" : "") + "</p>" +
+          '<p class="easel-synopsis">' + esc(latest.synopsis) + "</p>" +
+          '<div class="spread-actions">' +
+            '<a class="btn btn-primary" href="#/book/' + esc(latest.id) + '">Open the book</a>' +
+            '<a class="btn btn-ghost" href="#/passport">See the passport</a>' +
+          "</div>" +
+        "</div>" +
+      "</section>" +
+
       '<h1 class="view-title">The Reading Journey</h1>' +
       '<p class="view-sub">Newest stories first. Follow the trail back to where it all began, one month at a time.</p>' +
       '<div class="trail">';
@@ -243,6 +290,7 @@
   function renderBeginnings() {
     var books = lib.earlyBooks;
     var html =
+      '<div class="spread-back"><a class="btn btn-ghost" href="#/shelves">← Back to the shelves</a></div>' +
       '<h1 class="view-title">' + esc(lib.earlyReadsLabel) + "</h1>" +
       '<p class="view-sub">Picture books, board books, and bedtime stories from before this shelf’s ' +
         "chapter-book chronicle begins — read sometime across " + esc(lib.earlyReadsRange) +
@@ -261,6 +309,7 @@
 
     view.innerHTML = html;
     hydrateCovers(view);
+    fitCoverRatio(view, ".early-cover");
   }
 
   function renderDiscover() {
@@ -333,6 +382,7 @@
     view.querySelectorAll("img[data-discover-cover]").forEach(function (img) {
       img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
     });
+    fitCoverRatio(view, ".discover-cover, .discover-hero-cover");
 
     var browseBtn = document.getElementById("discover-browse-btn");
     var grid = view.querySelector(".discover-grid");
@@ -355,10 +405,10 @@
       renderBook(decodeURIComponent(bookMatch[1]));
       current = null;
       window.scrollTo(0, 0);
-    } else if (hash.indexOf("#/journey") === 0) {
+    } else if (hash.indexOf("#/shelves") === 0) {
       homeScrollMaybeSave();
-      renderJourney();
-      current = "journey";
+      renderShelves();
+      current = "shelves";
       window.scrollTo(0, 0);
     } else if (hash.indexOf("#/passport") === 0) {
       homeScrollMaybeSave();
@@ -366,9 +416,13 @@
       current = "passport";
       window.scrollTo(0, 0);
     } else if (hash.indexOf("#/beginnings") === 0) {
+      /* No longer its own nav item (folded into Shelves as a
+         condensed section) but still a real route - "see all" on
+         Shelves links here. Highlight Shelves in the nav since
+         that's conceptually where this lives now. */
       homeScrollMaybeSave();
       renderBeginnings();
-      current = "beginnings";
+      current = "shelves";
       window.scrollTo(0, 0);
     } else if (hash.indexOf("#/discover") === 0) {
       homeScrollMaybeSave();
@@ -376,8 +430,9 @@
       current = "discover";
       window.scrollTo(0, 0);
     } else {
-      renderShelves();
-      current = "shelves";
+      /* Journey is the default/home view now. */
+      renderJourney();
+      current = "journey";
       window.scrollTo(0, homeScroll);
     }
 
