@@ -1,0 +1,302 @@
+[
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 1,
+    "title": "Lost Treasure of the Emerald Eye",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559638",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-01.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 2,
+    "title": "The Curse of the Cheese Pyramid",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559645",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-02.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 3,
+    "title": "Cat and Mouse in a Haunted House",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559652",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-03.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 4,
+    "title": "I'm Too Fond of My Fur!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559669",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-04.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 5,
+    "title": "Four Mice Deep in the Jungle",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559676",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-05.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 6,
+    "title": "Paws Off, Cheddarface!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559683",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-06.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 7,
+    "title": "Red Pizzas for a Blue Count",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559690",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-07.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 8,
+    "title": "Attack of the Bandit Cats",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559706",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-08.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 9,
+    "title": "A Fabumouse Vacation for Geronimo",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559713",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-09.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 10,
+    "title": "All Because of a Cup of Coffee",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559720",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-10.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 11,
+    "title": "It's Halloween, You 'Fraidy Mouse!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559737",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-11.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 12,
+    "title": "Merry Christmas, Geronimo!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439559744",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-12.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 13,
+    "title": "The Phantom of the Subway",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439661621",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-13.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 14,
+    "title": "The Temple of the Ruby of Fire",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439661638",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-14.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 15,
+    "title": "The Mona Mousa Code",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439661645",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-15.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 16,
+    "title": "A Cheese-Colored Camper",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691390",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-16.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 17,
+    "title": "Watch Your Whiskers, Stilton!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691406",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-17.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 18,
+    "title": "Shipwreck on the Pirate Islands",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691413",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-18.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 19,
+    "title": "My Name Is Stilton, Geronimo Stilton",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691420",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-19.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 20,
+    "title": "Surf's Up, Geronimo!",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691437",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-20.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 21,
+    "title": "The Wild, Wild West",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691444",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-21.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 22,
+    "title": "The Secret of Cacklefur Castle",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691451",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-22.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 23,
+    "title": "Valentine's Day Disaster",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691475",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-23.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 24,
+    "title": "Field Trip to Niagara Falls",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439691468",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-24.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 25,
+    "title": "The Search for Sunken Treasure",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841160",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-25.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 26,
+    "title": "The Mummy with No Name",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841177",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-26.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 27,
+    "title": "The Christmas Toy Factory",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841184",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-27.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 28,
+    "title": "Wedding Crasher",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841191",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-28.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 29,
+    "title": "Down and Out Down Under",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841207",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-29.jpg",
+    "source": "openlibrary-isbn"
+  },
+  {
+    "series": "geronimo-stilton",
+    "seriesNumber": 30,
+    "title": "The Mouse Island Marathon",
+    "author": "Geronimo Stilton",
+    "isbn": "9780439841214",
+    "asin": "",
+    "coverFile": "library/geronimo-stilton/geronimo-stilton-30.jpg",
+    "source": "openlibrary-isbn"
+  }
+]
