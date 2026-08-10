@@ -190,6 +190,14 @@ function buildLibrary() {
   });
   var monthKeys = Object.keys(byMonth).sort();
 
+  /* Books-per-year map, e.g. { "2026": 58 } */
+  var byYear = {};
+  dated.forEach(function (b) {
+    var key = b.dateRead.slice(0, 4);
+    byYear[key] = (byYear[key] || 0) + 1;
+  });
+  var yearKeys = Object.keys(byYear).sort();
+
   var busiestKey = null, busiestCount = 0;
   monthKeys.forEach(function (k) {
     if (byMonth[k].length > busiestCount) { busiestCount = byMonth[k].length; busiestKey = k; }
@@ -235,6 +243,8 @@ function buildLibrary() {
     seriesFirstDate: seriesFirstDate,
     byMonth: byMonth,
     monthKeys: monthKeys,
+    byYear: byYear,
+    yearKeys: yearKeys,
     latest: dated.length ? dated[dated.length - 1] : books[0],
     firstDate: dated.length ? dated[0].dateRead : null,
     lastDate: dated.length ? dated[dated.length - 1].dateRead : null,
