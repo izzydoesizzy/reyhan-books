@@ -314,6 +314,64 @@
     fitCoverRatio(view, ".spread-cover");
   }
 
+  /* Monthly + yearly book-count tracker shown on the Journey view,
+     right under the "just finished" easel. Months read oldest-first
+     (a pace chart reads left-to-right like a timeline); only the
+     most recent 12 are drawn so the bars never get too cramped. */
+  function renderTracker() {
+    if (!lib.monthKeys.length) return "";
+
+    var recentKeys = lib.monthKeys.slice(-12);
+    var maxCount = recentKeys.reduce(function (max, k) {
+      return Math.max(max, lib.byMonth[k].length);
+    }, 1);
+    var currentMonthKey = lib.lastDate ? lib.lastDate.slice(0, 7) : null;
+    var multiYear = lib.yearKeys.length > 1;
+
+    var bars = recentKeys.map(function (k) {
+      var count = lib.byMonth[k].length;
+      var pct = Math.max(16, Math.round((count / maxCount) * 100));
+      var monthName = monthShort(k).slice(0, 3);
+      var label = multiYear ? monthName + " '" + k.slice(2, 4) : monthName;
+      var isCurrent = k === currentMonthKey;
+      return (
+        '<li class="month-bar" title="' + esc(monthLabel(k)) + ': ' + count + (count === 1 ? " book" : " books") + '">' +
+          '<span class="month-bar-count">' + count + "</span>" +
+          '<span class="month-bar-fill' + (isCurrent ? " is-current" : "") + '" style="height:' + pct + '%"></span>' +
+          '<span class="month-bar-label">' + esc(label) + "</span>" +
+        "</li>"
+      );
+    }).join("");
+
+    var currentYearKey = lib.lastDate ? lib.lastDate.slice(0, 4) : null;
+    var years = lib.yearKeys.slice().reverse().map(function (y) {
+      var count = lib.byYear[y];
+      var isCurrent = y === currentYearKey;
+      return (
+        '<li class="year-stat' + (isCurrent ? " is-current" : "") + '">' +
+          '<span class="year-stat-count">' + count + "</span>" +
+          '<span class="year-stat-label">' + y + (isCurrent ? " (so far)" : "") + "</span>" +
+        "</li>"
+      );
+    }).join("");
+
+    return (
+      '<section class="tracker" aria-label="Reading pace">' +
+        '<h2 class="tracker-title">Reading Pace</h2>' +
+        '<div class="tracker-grid">' +
+          '<div class="tracker-card">' +
+            '<p class="tracker-card-label">By month</p>' +
+            '<ul class="month-bars">' + bars + "</ul>" +
+          "</div>" +
+          '<div class="tracker-card">' +
+            '<p class="tracker-card-label">By year</p>' +
+            '<ul class="year-stats">' + years + "</ul>" +
+          "</div>" +
+        "</div>" +
+      "</section>"
+    );
+  }
+
   function renderJourney() {
     /* Newest month first. lib.monthKeys stays ascending (the streak/
        busiest-month math in buildLibrary() depends on that order),
@@ -338,6 +396,8 @@
           "</div>" +
         "</div>" +
       "</section>" +
+
+      renderTracker() +
 
       '<h1 class="view-title">The Reading Journey</h1>' +
       '<p class="view-sub">Newest stories first. Follow the trail back to where it all began, one month at a time.</p>' +
