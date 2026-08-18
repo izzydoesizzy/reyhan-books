@@ -40,6 +40,11 @@ const COVER_OVERRIDES = {
   /* 979-prefix ISBN-13; thin Open Library coverage. Direct
      Google Books image endpoint for volume wad0EQAAQBAJ. */
   "dragon-masters-31": "https://books.google.com/books/content?id=wad0EQAAQBAJ&printsec=frontcover&img=1&zoom=2",
+  /* No covers/once-upon-fairy-tale-01.jpg checked in yet. This is
+     the full-size Amazon art for the 2019 Branches paperback, so
+     the card shows the right edition instead of whatever Open
+     Library returns for the ISBN first. */
+  "once-upon-fairy-tale-01": "https://m.media-amazon.com/images/I/91mtnir6oaL._AC_UF1000,1000_QL80_AIweblab1381794,T1_.jpg",
 };
 
 /* Books' ASINs equal their ISBN-10, and Amazon's cover CDN is
