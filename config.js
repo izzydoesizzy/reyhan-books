@@ -19,6 +19,7 @@ const V2_SERIES_COLORS = {
   "The Last Firehawk": "#E98A2B",
   "Pixie Tricks": "#C77DCA",
   "Coral Keepers": "#35B5AD",
+  "Once Upon a Fairy Tale": "#7FA9E0",
 };
 
 const V2_FALLBACK_COLOR = "#A97B4F";

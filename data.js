@@ -38,6 +38,7 @@ const SERIES_ORDER = [
   "The Last Firehawk",
   "Pixie Tricks",
   "Coral Keepers",
+  "Once Upon a Fairy Tale",
 ];
 
 /* Accent color per series, used by the no-cover fallback card. */
@@ -51,6 +52,7 @@ const SERIES_COLORS = {
   "The Last Firehawk": "#d35400",
   "Pixie Tricks": "#9b59b6",
   "Coral Keepers": "#00b8a9",
+  "Once Upon a Fairy Tale": "#5b8dd6",
 };
 
 /* Series-level metadata: illustrator, reading level, tags, and
@@ -366,6 +368,41 @@ const SERIES_META = {
         "blurb": "Another magic academy where a girl must master her powers with friends to stop a threat to the kingdom.",
         "amazonUsUrl": "https://www.amazon.com/Unicorn-Academy-1-Sophia-Rainbow/dp/1984850822",
         "amazonCaUrl": "https://www.amazon.ca/dp/1984850822"
+      }
+    ]
+  },
+  "Once Upon a Fairy Tale": {
+    "illustrator": "Macky Pamintuan",
+    "ageRange": "Ages 6–8",
+    "gradeLevel": "Grades 1–3",
+    "lexile": "580L",
+    "tags": [
+      "Fairy Tales",
+      "Fantasy",
+      "Humor",
+      "Friendship"
+    ],
+    "suggestions": [
+      {
+        "title": "Whatever After",
+        "author": "Sarah Mlynowski",
+        "blurb": "Another pair of kids who fall through a magic mirror into fairy tales and have to fix the mess they make — a longer read for when these get easy.",
+        "amazonUsUrl": "https://www.amazon.com/Fairest-All-Whatever-After-1/dp/0545403308",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545403308"
+      },
+      {
+        "title": "The Princess in Black",
+        "author": "Shannon Hale & Dean Hale",
+        "blurb": "Fairy-tale royalty turned upside down again: a princess who sneaks off to fight monsters, with the same silly-brave tone.",
+        "amazonUsUrl": "https://www.amazon.com/Princess-Black-Shannon-Hale/dp/0763678880",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0763678880"
+      },
+      {
+        "title": "The Kingdom of Wrenly",
+        "author": "Jordan Quinn",
+        "blurb": "Two friends solving problems across a kingdom of fairies, trolls, and dragons — Kara and Zed energy, one quest per book.",
+        "amazonUsUrl": "https://www.amazon.com/Lost-Stone-Kingdom-Wrenly/dp/1442496908",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1442496908"
       }
     ]
   }
@@ -1472,6 +1509,25 @@ const BOOKS = [
     "amazonCaExact": true,
     "coverIsbn": "1546122451",
     "goodreadsUrl": null,
+    "pages": 96
+  },
+  {
+    "id": "once-upon-fairy-tale-01",
+    "title": "The Magic Mirror",
+    "series": "Once Upon a Fairy Tale",
+    "seriesNumber": 1,
+    "author": "Anna Staniszewski",
+    "dateRead": "2026-08-18",
+    "displayDateRead": "August 18, 2026",
+    "goodreadsRating": 3.92,
+    "synopsis": "The Enchanted Kingdom is stuck in a sweaty heat wave, and everyone is waiting for the Ice Princess to use her magic mirror to bring on winter. The trouble is, the mirror is broken, and nobody in the kingdom wants to help the grumpy princess fix it. It's up to Kara and Zed to figure out how the mirror works, repair it, and get the snow falling again before the whole kingdom melts.",
+    "coverFile": "covers/once-upon-fairy-tale-01.jpg",
+    "amazonUsUrl": "https://www.amazon.com/dp/1338349716",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1338349716",
+    "amazonCaExact": true,
+    "coverIsbn": "1338349716",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/43319583-the-magic-mirror",
     "pages": 96
   }
 ];
