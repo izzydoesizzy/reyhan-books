@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 58**
+**Total Books Read: 59**
 
 A running log of every book Reyhan and I have read together.
 
@@ -115,6 +115,12 @@ A running log of every book Reyhan and I have read together.
 | 7 | The Cloud Kingdom | Katrina Charman | June 2026 |
 | 8 | The Silver Swamp | Katrina Charman | July 2026 |
 
+### Once Upon a Fairy Tale — by Anna Staniszewski (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 1 | The Magic Mirror | Anna Staniszewski | August 18, 2026 |
+
 ---
 
 ## Chronological Log
@@ -179,6 +185,7 @@ A running log of every book Reyhan and I have read together.
 | August 7, 2026 | Dive for the Black Pearl | Coral Keepers #2 | Robin Yardi |
 | August 8, 2026 | The Rise of the Goldfish | Pets Rule! #4 | Susan Tan |
 | August 9, 2026 | Invasion of the Pugs | Pets Rule! #5 | Susan Tan |
+| August 18, 2026 | The Magic Mirror | Once Upon a Fairy Tale #1 | Anna Staniszewski |
 
 ---
 
