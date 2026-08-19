@@ -39,6 +39,7 @@ const SERIES_ORDER = [
   "Pixie Tricks",
   "Coral Keepers",
   "Once Upon a Fairy Tale",
+  "Magic Tree House",
 ];
 
 /* Accent color per series, used by the no-cover fallback card. */
@@ -53,6 +54,7 @@ const SERIES_COLORS = {
   "Pixie Tricks": "#9b59b6",
   "Coral Keepers": "#00b8a9",
   "Once Upon a Fairy Tale": "#5b8dd6",
+  "Magic Tree House": "#2c3e6b",
 };
 
 /* Series-level metadata: illustrator, reading level, tags, and
@@ -403,6 +405,35 @@ const SERIES_META = {
         "blurb": "Two friends solving problems across a kingdom of fairies, trolls, and dragons — Kara and Zed energy, one quest per book.",
         "amazonUsUrl": "https://www.amazon.com/Lost-Stone-Kingdom-Wrenly/dp/1442496908",
         "amazonCaUrl": "https://www.amazon.ca/dp/1442496908"
+      }
+    ]
+  },
+  "Magic Tree House": {
+    "illustrator": "Kelly & Nichole Matthews",
+    "ageRange": "Ages 6–9",
+    "gradeLevel": "Grades 1–4",
+    "lexile": "GN470L",
+    "tags": [
+      "Adventure",
+      "Time Travel",
+      "Fantasy",
+      "History",
+      "Graphic Novel"
+    ],
+    "suggestions": [
+      {
+        "title": "Dinosaurs Before Dark: The Graphic Novel",
+        "author": "Mary Pope Osborne, adapted by Jenny Laird",
+        "blurb": "Book 1 of the graphic novel series — Jack and Annie's first trip in the tree house, back to the age of dinosaurs.",
+        "amazonUsUrl": "https://www.amazon.com/Dinosaurs-Before-Graphic-Novel-Magic/dp/0593174712",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0593174712"
+      },
+      {
+        "title": "Dog Man",
+        "author": "Dav Pilkey",
+        "blurb": "Another silly, fast-moving graphic novel adventure for when these get easy.",
+        "amazonUsUrl": "https://www.amazon.com/Dog-Man-Creator-Captain-Underpants/dp/0545581605",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545581605"
       }
     ]
   }
@@ -1529,6 +1560,25 @@ const BOOKS = [
     "coverIsbn": "1338349716",
     "goodreadsUrl": "https://www.goodreads.com/book/show/43319583-the-magic-mirror",
     "pages": 96
+  },
+  {
+    "id": "magic-tree-house-02",
+    "title": "Magic Tree House: The Knight at Dawn (The Graphic Novel)",
+    "series": "Magic Tree House",
+    "seriesNumber": 2,
+    "author": "Mary Pope Osborne, adapted by Jenny Laird",
+    "dateRead": "2026-08-19",
+    "displayDateRead": "August 19, 2026",
+    "goodreadsRating": 4.22,
+    "synopsis": "The magic tree house whisks Jack and Annie back to the Middle Ages, where they're looking for a knight. Instead they find the Great Hall of a castle mid-feast — and Jack and Annie aren't exactly welcome guests.",
+    "coverFile": "covers/magic-tree-house-02.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Knight-Graphic-Novel-Magic-House/dp/0593174755",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/0593174755",
+    "amazonCaExact": true,
+    "coverIsbn": "0593174755",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/58562609-the-knight-at-dawn-graphic-novel-magic-tree-house",
+    "pages": 176
   }
 ];
 

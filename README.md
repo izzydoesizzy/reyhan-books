@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 59**
+**Total Books Read: 60**
 
 A running log of every book Reyhan and I have read together.
 
@@ -121,6 +121,12 @@ A running log of every book Reyhan and I have read together.
 |---|-------|--------|-----------|
 | 1 | The Magic Mirror | Anna Staniszewski | August 18, 2026 |
 
+### Magic Tree House — Graphic Novels (adapted by Jenny Laird) (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 2 | The Knight at Dawn (The Graphic Novel) | Mary Pope Osborne | August 19, 2026 |
+
 ---
 
 ## Chronological Log
@@ -186,6 +192,7 @@ A running log of every book Reyhan and I have read together.
 | August 8, 2026 | The Rise of the Goldfish | Pets Rule! #4 | Susan Tan |
 | August 9, 2026 | Invasion of the Pugs | Pets Rule! #5 | Susan Tan |
 | August 18, 2026 | The Magic Mirror | Once Upon a Fairy Tale #1 | Anna Staniszewski |
+| August 19, 2026 | The Knight at Dawn (The Graphic Novel) | Magic Tree House #2 | Mary Pope Osborne |
 
 ---
 
