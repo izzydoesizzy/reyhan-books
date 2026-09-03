@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 60**
+**Total Books Read: 61**
 
 A running log of every book Reyhan and I have read together.
 
@@ -92,7 +92,7 @@ A running log of every book Reyhan and I have read together.
 | 1 | Search for the Silver Shell | Robin Yardi | July 18, 2026 |
 | 2 | Dive for the Black Pearl | Robin Yardi | August 7, 2026 |
 
-### Pets Rule! — by Susan Tan (5 read so far)
+### Pets Rule! — by Susan Tan (6 read so far)
 
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
@@ -101,6 +101,7 @@ A running log of every book Reyhan and I have read together.
 | 3 | Kittens Are Monsters! | Susan Tan | July 29, 2026 |
 | 4 | The Rise of the Goldfish | Susan Tan | August 8, 2026 |
 | 5 | Invasion of the Pugs | Susan Tan | August 9, 2026 |
+| 8 | Beware of the Dino-Snake | Susan Tan | September 3, 2026 |
 
 ### The Last Firehawk — by Katrina Charman (complete: 8/8)
 
@@ -193,6 +194,7 @@ A running log of every book Reyhan and I have read together.
 | August 9, 2026 | Invasion of the Pugs | Pets Rule! #5 | Susan Tan |
 | August 18, 2026 | The Magic Mirror | Once Upon a Fairy Tale #1 | Anna Staniszewski |
 | August 19, 2026 | The Knight at Dawn (The Graphic Novel) | Magic Tree House #2 | Mary Pope Osborne |
+| September 3, 2026 | Beware of the Dino-Snake | Pets Rule! #8 | Susan Tan |
 
 ---
 

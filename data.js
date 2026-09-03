@@ -1315,6 +1315,25 @@ const BOOKS = [
     "pages": 96
   },
   {
+    "id": "pets-rule-08",
+    "title": "Beware of the Dino-Snake",
+    "series": "Pets Rule!",
+    "seriesNumber": 8,
+    "author": "Susan Tan",
+    "dateRead": "2026-09-03",
+    "displayDateRead": "September 3, 2026",
+    "goodreadsRating": 4.12,
+    "synopsis": "Ember the chihuahua's garden kingdom faces its scaliest threat yet when a sneaky snake and a tough old turtle team up to seize the Chin family's backyard for themselves. Convinced a real live dino-snake is on the loose, Ember rallies the other pets for an epic showdown to defend their turf, only to discover the truth behind the reptilian duo is far stranger, and funnier, than he imagined.",
+    "coverFile": "covers/pets-rule-08.jpg",
+    "amazonUsUrl": "https://www.amazon.com/dp/1546180257",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1546180257",
+    "amazonCaExact": true,
+    "coverIsbn": "1546180257",
+    "goodreadsUrl": null,
+    "pages": 96
+  },
+  {
     "id": "last-firehawk-01",
     "title": "The Ember Stone",
     "series": "The Last Firehawk",
