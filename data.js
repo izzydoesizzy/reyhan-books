@@ -1654,6 +1654,25 @@ const BOOKS = [
     "coverIsbn": "1338687204",
     "goodreadsUrl": "https://www.goodreads.com/book/show/55979584-mysterious-eye-of-the-dragon",
     "pages": 128
+  },
+  {
+    "id": "magic-tree-house-03",
+    "title": "Magic Tree House: Mummies in the Morning (The Graphic Novel)",
+    "series": "Magic Tree House",
+    "seriesNumber": 3,
+    "author": "Mary Pope Osborne, adapted by Jenny Laird",
+    "dateRead": "2026-09-07",
+    "displayDateRead": "September 7, 2026",
+    "goodreadsRating": 4.2,
+    "synopsis": "The magic tree house whisks Jack and Annie away to ancient Egypt, where they get lost inside a pyramid and come face-to-face with a real mummy — one who needs their help solving a centuries-old riddle before they can find their way back out.",
+    "coverFile": "covers/magic-tree-house-03.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Mummies-Morning-Graphic-Novel-Magic/dp/0593174763",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/0593174763",
+    "amazonCaExact": true,
+    "coverIsbn": "0593174763",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/59446950-mummies-in-the-morning-graphic-novel-magic-tree-house",
+    "pages": 176
   }
 ];
 
