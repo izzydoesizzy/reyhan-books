@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 63**
+**Total Books Read: 64**
 
 A running log of every book Reyhan and I have read together.
 
@@ -122,10 +122,11 @@ A running log of every book Reyhan and I have read together.
 |---|-------|--------|-----------|
 | 1 | The Magic Mirror | Anna Staniszewski | August 18, 2026 |
 
-### Magic Tree House — Graphic Novels (adapted by Jenny Laird) (2 read so far)
+### Magic Tree House — Graphic Novels (adapted by Jenny Laird) (3 read so far)
 
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
+| 1 | Dinosaurs Before Dark (The Graphic Novel) | Mary Pope Osborne | September 11, 2026 |
 | 2 | The Knight at Dawn (The Graphic Novel) | Mary Pope Osborne | August 19, 2026 |
 | 3 | Mummies in the Morning (The Graphic Novel) | Mary Pope Osborne | September 7, 2026 |
 
@@ -204,6 +205,7 @@ A running log of every book Reyhan and I have read together.
 | September 3, 2026 | Beware of the Dino-Snake | Pets Rule! #8 | Susan Tan |
 | September 3, 2026 | Mysterious Eye of the Dragon | Geronimo Stilton #78 | Geronimo Stilton |
 | September 7, 2026 | Mummies in the Morning (The Graphic Novel) | Magic Tree House #3 | Mary Pope Osborne |
+| September 11, 2026 | Dinosaurs Before Dark (The Graphic Novel) | Magic Tree House #1 | Mary Pope Osborne |
 
 ---
 
