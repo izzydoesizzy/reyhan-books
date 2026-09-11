@@ -1673,6 +1673,25 @@ const BOOKS = [
     "coverIsbn": "0593174763",
     "goodreadsUrl": "https://www.goodreads.com/book/show/59446950-mummies-in-the-morning-graphic-novel-magic-tree-house",
     "pages": 176
+  },
+  {
+    "id": "magic-tree-house-01",
+    "title": "Magic Tree House: Dinosaurs Before Dark (The Graphic Novel)",
+    "series": "Magic Tree House",
+    "seriesNumber": 1,
+    "author": "Mary Pope Osborne, adapted by Jenny Laird",
+    "dateRead": "2026-09-11",
+    "displayDateRead": "September 11, 2026",
+    "goodreadsRating": 4.3,
+    "synopsis": "Jack and Annie discover a mysterious tree house filled with books, and before they can figure out where it came from, it whisks them back to the age of dinosaurs. Now they have to explore a prehistoric world and find their way home before dark — or risk becoming some dinosaur's dinner.",
+    "coverFile": "covers/magic-tree-house-01.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Dinosaurs-Before-Graphic-Novel-Magic/dp/0593174682",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/0593174682",
+    "amazonCaExact": true,
+    "coverIsbn": "0593174682",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/55801219-dinosaurs-before-dark",
+    "pages": 176
   }
 ];
 
