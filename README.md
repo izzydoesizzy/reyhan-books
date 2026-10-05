@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 64**
+**Total Books Read: 65**
 
 A running log of every book Reyhan and I have read together.
 
@@ -136,6 +136,12 @@ A running log of every book Reyhan and I have read together.
 |---|-------|--------|-----------|
 | 78 | Mysterious Eye of the Dragon | Geronimo Stilton | September 3, 2026 |
 
+### Dragon Girls — by Maddy Mara (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 1 | Azmina the Gold Glitter Dragon | Maddy Mara | October 5, 2026 |
+
 ---
 
 ## Chronological Log
@@ -206,6 +212,7 @@ A running log of every book Reyhan and I have read together.
 | September 3, 2026 | Mysterious Eye of the Dragon | Geronimo Stilton #78 | Geronimo Stilton |
 | September 7, 2026 | Mummies in the Morning (The Graphic Novel) | Magic Tree House #3 | Mary Pope Osborne |
 | September 11, 2026 | Dinosaurs Before Dark (The Graphic Novel) | Magic Tree House #1 | Mary Pope Osborne |
+| October 5, 2026 | Azmina the Gold Glitter Dragon | Dragon Girls #1 | Maddy Mara |
 
 ---
 
