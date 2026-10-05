@@ -1,6 +1,6 @@
 # 📚 Reyhan's Reading List
 
-**Total Books Read: 64**
+**Total Books Read: 66**
 
 A running log of every book Reyhan and I have read together.
 
@@ -24,7 +24,7 @@ A running log of every book Reyhan and I have read together.
 |---|-------|--------|-----------|
 | 3 | A Warm Welcome | Erica David | February 2026 |
 
-### Dragon Masters — by Tracey West (complete: 31/31)
+### Dragon Masters — by Tracey West (complete: 31/31, plus the special edition guide)
 
 | # | Title | Author | Date Read |
 |---|-------|--------|-----------|
@@ -59,6 +59,7 @@ A running log of every book Reyhan and I have read together.
 | 29 | Magic of the Wizard Dragon | Tracey West | June 2026 |
 | 30 | Vortex of the Chaos Dragon | Tracey West | June 2026 |
 | 31 | Defending the Swamp Dragon | Tracey West | July 18, 2026 |
+| — | The Epic Guide to Dragon Masters (Special Edition) | Tracey West | October 2, 2026 |
 
 ### Llama Quest — by Megan Reyes (complete: 4/4)
 
@@ -136,6 +137,12 @@ A running log of every book Reyhan and I have read together.
 |---|-------|--------|-----------|
 | 78 | Mysterious Eye of the Dragon | Geronimo Stilton | September 3, 2026 |
 
+### Dragon Girls — by Maddy Mara (1 read so far)
+
+| # | Title | Author | Date Read |
+|---|-------|--------|-----------|
+| 1 | Azmina the Gold Glitter Dragon | Maddy Mara | October 5, 2026 |
+
 ---
 
 ## Chronological Log
@@ -206,6 +213,8 @@ A running log of every book Reyhan and I have read together.
 | September 3, 2026 | Mysterious Eye of the Dragon | Geronimo Stilton #78 | Geronimo Stilton |
 | September 7, 2026 | Mummies in the Morning (The Graphic Novel) | Magic Tree House #3 | Mary Pope Osborne |
 | September 11, 2026 | Dinosaurs Before Dark (The Graphic Novel) | Magic Tree House #1 | Mary Pope Osborne |
+| October 2, 2026 | The Epic Guide to Dragon Masters (Special Edition) | Dragon Masters | Tracey West |
+| October 5, 2026 | Azmina the Gold Glitter Dragon | Dragon Girls #1 | Maddy Mara |
 
 ---
 

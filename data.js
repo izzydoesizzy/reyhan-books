@@ -41,6 +41,7 @@ const SERIES_ORDER = [
   "Once Upon a Fairy Tale",
   "Magic Tree House",
   "Geronimo Stilton",
+  "Dragon Girls",
 ];
 
 /* Accent color per series, used by the no-cover fallback card. */
@@ -57,6 +58,7 @@ const SERIES_COLORS = {
   "Once Upon a Fairy Tale": "#5b8dd6",
   "Magic Tree House": "#2c3e6b",
   "Geronimo Stilton": "#c9a227",
+  "Dragon Girls": "#d4af37",
 };
 
 /* Series-level metadata: illustrator, reading level, tags, and
@@ -471,6 +473,34 @@ const SERIES_META = {
         "blurb": "Another illustrated, joke-filled adventure series that keeps the pages turning fast.",
         "amazonUsUrl": "https://www.amazon.com/Last-Kids-Earth-Max-Brallier/dp/0670016616",
         "amazonCaUrl": "https://www.amazon.ca/dp/0670016616"
+      }
+    ]
+  },
+  "Dragon Girls": {
+    "illustrator": "Thais Damião",
+    "ageRange": "Ages 6–9",
+    "gradeLevel": "Grades 1–4",
+    "lexile": null,
+    "tags": [
+      "Fantasy",
+      "Dragons",
+      "Magic",
+      "Friendship"
+    ],
+    "suggestions": [
+      {
+        "title": "Dragon Masters",
+        "author": "Tracey West",
+        "blurb": "Same glittery dragon-magic energy, from the training-dragons side of things instead of being the dragon.",
+        "amazonUsUrl": "https://www.amazon.com/Rise-Earth-Dragon-Masters-1/dp/0545646178",
+        "amazonCaUrl": "https://www.amazon.ca/dp/0545646178"
+      },
+      {
+        "title": "Once Upon a Fairy Tale",
+        "author": "Anna Staniszewski",
+        "blurb": "Another magical-world chapter-book series with kids teaming up to save an enchanted kingdom.",
+        "amazonUsUrl": "https://www.amazon.com/dp/1338349716",
+        "amazonCaUrl": "https://www.amazon.ca/dp/1338349716"
       }
     ]
   }
@@ -1692,6 +1722,44 @@ const BOOKS = [
     "coverIsbn": "0593174682",
     "goodreadsUrl": "https://www.goodreads.com/book/show/55801219-dinosaurs-before-dark",
     "pages": 176
+  },
+  {
+    "id": "dragon-masters-epic-guide",
+    "title": "The Epic Guide to Dragon Masters: A Branches Special Edition",
+    "series": "Dragon Masters",
+    "seriesNumber": null,
+    "author": "Tracey West",
+    "dateRead": "2026-10-02",
+    "displayDateRead": "October 2, 2026",
+    "goodreadsRating": 4.37,
+    "synopsis": "A full-color, 256-page companion to the Dragon Masters series, packed with maps, profiles of every Master and their dragon, notes from the wizards, and the history of the Dragon Masters — perfect for a Dragon Masters fan who wants to dig deeper into the world.",
+    "coverFile": "covers/dragon-masters-epic-guide.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Epic-Guide-Dragon-Masters-Branches/dp/1339023458",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1339023458",
+    "amazonCaExact": true,
+    "coverIsbn": "1339023458",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/195261594-the-epic-guide-to-dragon-masters",
+    "pages": 256
+  },
+  {
+    "id": "dragon-girls-01",
+    "title": "Azmina the Gold Glitter Dragon",
+    "series": "Dragon Girls",
+    "seriesNumber": 1,
+    "author": "Maddy Mara",
+    "dateRead": "2026-10-05",
+    "displayDateRead": "October 5, 2026",
+    "goodreadsRating": 4.06,
+    "synopsis": "Azmina, Willa, and Naomi are thrilled to discover they're Glitter Dragon Girls. Summoned to the Magic Forest by its ruler, the Tree Queen, the girls find out their dragon-selves have incredible abilities — and that as sworn protectors of the forest, they'll need every one of them to stop the troublesome Shadow Sprites from stealing its magic.",
+    "coverFile": "covers/dragon-girls-01.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Azmina-Gold-Glitter-Dragon-Girls/dp/1338680633",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1338680633",
+    "amazonCaExact": true,
+    "coverIsbn": "1338680633",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/54776562-azmina-the-gold-glitter-dragon",
+    "pages": 144
   }
 ];
 
