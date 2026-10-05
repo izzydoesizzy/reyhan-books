@@ -1724,6 +1724,25 @@ const BOOKS = [
     "pages": 176
   },
   {
+    "id": "dragon-masters-epic-guide",
+    "title": "The Epic Guide to Dragon Masters: A Branches Special Edition",
+    "series": "Dragon Masters",
+    "seriesNumber": null,
+    "author": "Tracey West",
+    "dateRead": "2026-10-02",
+    "displayDateRead": "October 2, 2026",
+    "goodreadsRating": 4.37,
+    "synopsis": "A full-color, 256-page companion to the Dragon Masters series, packed with maps, profiles of every Master and their dragon, notes from the wizards, and the history of the Dragon Masters — perfect for a Dragon Masters fan who wants to dig deeper into the world.",
+    "coverFile": "covers/dragon-masters-epic-guide.jpg",
+    "amazonUsUrl": "https://www.amazon.com/Epic-Guide-Dragon-Masters-Branches/dp/1339023458",
+    "amazonUsExact": true,
+    "amazonCaUrl": "https://www.amazon.ca/dp/1339023458",
+    "amazonCaExact": true,
+    "coverIsbn": "1339023458",
+    "goodreadsUrl": "https://www.goodreads.com/book/show/195261594-the-epic-guide-to-dragon-masters",
+    "pages": 256
+  },
+  {
     "id": "dragon-girls-01",
     "title": "Azmina the Gold Glitter Dragon",
     "series": "Dragon Girls",
